@@ -1,0 +1,61 @@
+schema_version: 1
+environment: testnet
+updated_at: "2026-05-27"
+
+protocol:
+  name: xarb
+  release: "v0.1.0"
+
+hub:
+  chain_id: 421614
+  name: arbitrum-sepolia
+  role: hub
+  native_symbol: ETH
+  explorer_url: https://sepolia.arbiscan.io
+  deployment_block: 12345678
+  contracts:
+    hub:
+      address: "0x480Ed95d03c22a3B7A080e7bEe426E6edbfeF4FC"
+      deploy_tx: "0x0000000000000000000000000000000000000000000000000000000000000000"
+    oracle:
+      address: "0x0000000000000000000000000000000000000000"
+      deploy_tx: "0x0000000000000000000000000000000000000000000000000000000000000000"
+
+spokes:
+  - chain_id: 11155111
+    name: sepolia
+    role: spoke
+    native_symbol: ETH
+    explorer_url: https://sepolia.etherscan.io
+    deployment_block: 12345678
+    contracts:
+      spoke:
+        address: "0x01F9111A43D03C80A0A9299a376734Bcac51548f"
+        deploy_tx: "0x0000000000000000000000000000000000000000000000000000000000000000"
+      lending_pool:
+        address: "0x0000000000000000000000000000000000000000"
+        deploy_tx: "0x0000000000000000000000000000000000000000000000000000000000000000"
+      faucet_dispenser:
+        address: "0x0000000000000000000000000000000000000000"
+        deploy_tx: "0x0000000000000000000000000000000000000000000000000000000000000000"
+    substreams:
+      start_block: 12345678
+
+  - chain_id: 80002
+    name: polygon-amoy
+    role: spoke
+    native_symbol: POL
+    explorer_url: https://amoy.polygonscan.com
+    deployment_block: 12345678
+    contracts:
+      spoke:
+        address: "0xb18bB2ffAEd4a0060f63D2a6E5073B76481E302e"
+        deploy_tx: "0x0000000000000000000000000000000000000000000000000000000000000000"
+      lending_pool:
+        address: "0x0000000000000000000000000000000000000000"
+        deploy_tx: "0x0000000000000000000000000000000000000000000000000000000000000000"
+      faucet_dispenser:
+        address: "0x0000000000000000000000000000000000000000"
+        deploy_tx: "0x0000000000000000000000000000000000000000000000000000000000000000"
+    substreams:
+      start_block: 12345678
