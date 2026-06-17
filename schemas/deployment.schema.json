@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/martinbha/xarb-addresses/schemas/deployment.schema.json",
+  "title": "xArb Deployment Address Book",
+  "description": "Public deployment metadata for one xArb environment: hub + spokes, contract addresses, and chain metadata. Contains no secrets (no RPC credentials, private keys, or tokens).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "environment",
+    "updated_at",
+    "protocol",
+    "hub",
+    "spokes"
+  ],
+  "properties": {
+    "schema_version": {
+      "description": "Version of this address-book schema. Bump when the shape changes.",
+      "type": "integer",
+      "const": 1
+    },
+    "environment": {
+      "description": "Logical environment classification (e.g. testnet, mainnet).",
+      "type": "string",
+      "minLength": 1
+    },
+    "updated_at": {
+      "description": "Date this file was last regenerated (YYYY-MM-DD).",
+      "type": "string",
+      "format": "date"
+    },
+    "protocol": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "release"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "release": {
+          "description": "Released contract version, e.g. v0.1.0.",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "hub": {
+      "description": "The single hub chain for this environment.",
+      "$ref": "#/$defs/chain"
+    },
+    "spokes": {
+      "description": "Spoke chains attached to the hub.",
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/chain" }
+    }
+  },
+  "$defs": {
+    "chain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "chain_id",
+        "name",
+        "role",
+        "native_symbol",
+        "explorer_url",
+        "deployment_block",
+        "contracts"
+      ],
+      "properties": {
+        "chain_id": {
+          "description": "EVM chain ID.",
+          "type": "integer",
+          "minimum": 1
+        },
+        "name": {
+          "description": "Human-readable chain name, e.g. arbitrum-sepolia.",
+          "type": "string",
+          "minLength": 1
+        },
+        "role": {
+          "type": "string",
+          "enum": ["hub", "spoke"]
+        },
+        "native_symbol": {
+          "description": "Native gas token symbol, e.g. ETH, POL.",
+          "type": "string",
+          "minLength": 1
+        },
+        "explorer_url": {
+          "description": "Base block-explorer URL for the chain.",
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https?://"
+        },
+        "deployment_block": {
+          "description": "Block height at which the protocol was deployed on this chain.",
+          "type": "integer",
+          "minimum": 0
+        },
+        "contracts": {
+          "description": "Deployed contracts on this chain, keyed by canonical name (hub, oracle, spoke, lending_pool, ...).",
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": { "$ref": "#/$defs/contract" }
+        },
+        "substreams": {
+          "description": "Optional substreams indexing metadata (spokes).",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["start_block"],
+          "properties": {
+            "start_block": { "type": "integer", "minimum": 0 }
+          }
+        }
+      }
+    },
+    "contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["address", "deploy_tx"],
+      "properties": {
+        "address": {
+          "description": "20-byte checksummed or lowercase hex address. May be the zero address for not-yet-deployed entries.",
+          "type": "string",
+          "pattern": "^0x[0-9a-fA-F]{40}$"
+        },
+        "deploy_tx": {
+          "description": "32-byte deployment transaction hash. May be the zero hash as a placeholder.",
+          "type": "string",
+          "pattern": "^0x[0-9a-fA-F]{64}$"
+        }
+      }
+    }
+  }
+}
