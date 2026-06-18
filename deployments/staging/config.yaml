@@ -1,0 +1,53 @@
+schema_version: 2
+environment: staging
+updated_at: "2026-06-18"
+
+protocol:
+  name: xarb
+  release: "v0.1.0"
+
+hub:
+  chain_id: 421614
+  name: arbitrum-sepolia
+  role: hub
+  native_symbol: ETH
+  explorer_url: https://sepolia.arbiscan.io
+  deployment_block: 0
+  contracts:
+    hub:
+      address: "0x0000000000000000000000000000000000000000"
+    oracle:
+      address: "0x0000000000000000000000000000000000000000"
+
+spokes:
+  - chain_id: 421614
+    name: arbitrum-sepolia
+    role: spoke
+    native_symbol: ETH
+    explorer_url: https://sepolia.arbiscan.io
+    deployment_block: 0
+    contracts:
+      spoke:
+        address: "0x0000000000000000000000000000000000000000"
+      lending_pool:
+        address: "0x0000000000000000000000000000000000000000"
+      faucet_dispenser:
+        address: "0x0000000000000000000000000000000000000000"
+    substreams:
+      start_block: 0
+
+  - chain_id: 11155111
+    name: sepolia
+    role: spoke
+    native_symbol: ETH
+    explorer_url: https://sepolia.etherscan.io
+    deployment_block: 0
+    contracts:
+      spoke:
+        address: "0x0000000000000000000000000000000000000000"
+      lending_pool:
+        address: "0x0000000000000000000000000000000000000000"
+      faucet_dispenser:
+        address: "0x0000000000000000000000000000000000000000"
+    substreams:
+      start_block: 0

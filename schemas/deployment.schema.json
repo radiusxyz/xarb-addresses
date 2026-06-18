@@ -17,7 +17,7 @@
     "schema_version": {
       "description": "Version of this address-book schema. Bump when the shape changes.",
       "type": "integer",
-      "const": 1
+      "const": 2
     },
     "environment": {
       "description": "Logical environment classification (e.g. testnet, mainnet).",
@@ -117,17 +117,12 @@
     "contract": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["address", "deploy_tx"],
+      "required": ["address"],
       "properties": {
         "address": {
           "description": "20-byte checksummed or lowercase hex address. May be the zero address for not-yet-deployed entries.",
           "type": "string",
           "pattern": "^0x[0-9a-fA-F]{40}$"
-        },
-        "deploy_tx": {
-          "description": "32-byte deployment transaction hash. May be the zero hash as a placeholder.",
-          "type": "string",
-          "pattern": "^0x[0-9a-fA-F]{64}$"
         }
       }
     }
