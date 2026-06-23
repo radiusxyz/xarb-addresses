@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 environment: dev
 updated_at: "2026-06-23"
 protocol:
@@ -13,9 +13,9 @@ hub:
     deployment_block: 12345678
     contracts:
         hub:
-            address: "0x7218432FaBCDdadA0a8a4a18991D1F7B90F84Ba8"
+            address: "0xB3487cdd0628f5420E881FEDD5592d2F9BB45CBa"
         oracle:
-            address: "0xb6C67166Adc4D7887119B339696e69b16e38eC43"
+            address: "0x40afa2f69cb03B5dB83183226a2987c863E7eE2b"
 spokes:
     - chain_id: 11155111
       name: sepolia
@@ -27,9 +27,9 @@ spokes:
         faucet_dispenser:
             address: "0x0000000000000000000000000000000000000000"
         lending_pool:
-            address: "0x7Ea32b993F260cfB9c8ECCf35eB03a3D0229E18D"
+            address: "0xC704BCA895CFAF16EB5d056b72338512Ee824849"
         spoke:
-            address: "0x2E6d21E5C780A31861373a599665E63a49767F91"
+            address: "0xBFFe23e4A4dD526E5541e681460C8A92029b337E"
       substreams:
         start_block: 0
     - chain_id: 421614
@@ -42,8 +42,8 @@ spokes:
         faucet_dispenser:
             address: "0x0000000000000000000000000000000000000000"
         lending_pool:
-            address: "0x97bcB5F1c66B8B0BcfbdC22350f0fB1F3ec5993a"
+            address: "0x5d672E525476F0D0BC85d3Bb4F0e9AaA429BE188"
         spoke:
-            address: "0x86dC3e07e852180c9751e187134B75177A6D3244"
+            address: "0x088E5c2779dD9F3553B2d3c7d89fF5AebD456adF"
       substreams:
         start_block: 0
