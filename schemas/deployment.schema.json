@@ -17,7 +17,7 @@
     "schema_version": {
       "description": "Version of this address-book schema. Bump when the shape changes.",
       "type": "integer",
-      "const": 2
+      "const": 1
     },
     "environment": {
       "description": "Logical environment classification (e.g. testnet, mainnet).",
