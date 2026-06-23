@@ -1,53 +1,61 @@
 schema_version: 1
 environment: dev
-updated_at: "2026-06-18"
-
+updated_at: "2026-06-23"
 protocol:
-  name: xarb
-  release: "v0.1.0"
-
+    name: xarb
+    release: v0.1.0
 hub:
-  chain_id: 421614
-  name: arbitrum-sepolia
-  role: hub
-  native_symbol: ETH
-  explorer_url: https://sepolia.arbiscan.io
-  deployment_block: 12345678
-  contracts:
-    hub:
-      address: "0x199Ec5e721dc436595e2383c363310De617cF7a0"
-    oracle:
-      address: "0x0000000000000000000000000000000000000000"
-
-spokes:
-  - chain_id: 421614
+    chain_id: 421614
     name: arbitrum-sepolia
-    role: spoke
+    role: hub
     native_symbol: ETH
     explorer_url: https://sepolia.arbiscan.io
     deployment_block: 12345678
     contracts:
-      spoke:
-        address: "0x850A2AB25aE6F66921D8BC05FD99096D6da019BB"
-      lending_pool:
-        address: "0x0000000000000000000000000000000000000000"
-      faucet_dispenser:
-        address: "0x0000000000000000000000000000000000000000"
-    substreams:
-      start_block: 0
-
-  - chain_id: 11155111
-    name: sepolia
-    role: spoke
-    native_symbol: ETH
-    explorer_url: https://sepolia.etherscan.io
-    deployment_block: 12345678
-    contracts:
-      spoke:
-        address: "0x0c7813fD344CF8b591e1eb50a3dCc86690cD6c0E"
-      lending_pool:
-        address: "0x0000000000000000000000000000000000000000"
-      faucet_dispenser:
-        address: "0x0000000000000000000000000000000000000000"
-    substreams:
-      start_block: 0
+        hub:
+            address: "0x9672d09FB059721A0e7ba00838eDC1799bd462F8"
+        oracle:
+            address: "0xdad0F35f0beBEa5E5FF186A2f0be4Da4FF36a0bC"
+spokes:
+    - chain_id: 11155111
+      name: sepolia
+      role: spoke
+      native_symbol: ETH
+      explorer_url: https://sepolia.etherscan.io
+      deployment_block: 12345678
+      contracts:
+        faucet_dispenser:
+            address: "0x0000000000000000000000000000000000000000"
+        lending_pool:
+            address: "0xCb8E70D6d8cc36e1635df7156793f4D7040B845f"
+        spoke:
+            address: "0x607313E6fC2138708bc4450AF267199D3Facb004"
+      substreams:
+        start_block: 0
+    - chain_id: 80002
+      name: polygon-amoy
+      role: spoke
+      native_symbol: POL
+      explorer_url: https://amoy.polygonscan.com
+      deployment_block: 0
+      contracts:
+        USDT:
+            address: "0xC978c9E059C3e073D934b8F02cec8B41231A2B81"
+        deployer:
+            address: "0x67c1BD4630e1361A6F366bB2909920e29BE91547"
+        hub:
+            address: "0x9672d09FB059721A0e7ba00838eDC1799bd462F8"
+        lendingPool:
+            address: "0x222bF04863F192fb55d5598335284E2326881fD4"
+        lendingPoolImplementation:
+            address: "0x3CdE8E8BEA8495C6E5dF95096954e49a6741Ea90"
+        signerAgent:
+            address: "0x0455605be43A52425F047117d9D18B9D50F3f993"
+        spoke:
+            address: "0xD6f792BDC51CA04280158a894b19235585aD8854"
+        spokeImplementation:
+            address: "0x9eB1d78245e7EdF46A04Add7d7D348B2107B8707"
+        wBTC:
+            address: "0xa042DD0F58C321Df94ac3c0F9F4B7F4b55e9241b"
+        wPOL:
+            address: "0xD9eEaB5F4f130cCFe6422256965F5b9f8eD5251D"
