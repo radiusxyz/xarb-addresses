@@ -1,49 +1,49 @@
 schema_version: 1
 environment: dev
-updated_at: "2026-06-23"
+updated_at: "2026-06-24"
 protocol:
-  name: xarb
-  release: v0.1.0
+    name: xarb
+    release: v0.1.0
 hub:
-  chain_id: 421614
-  name: arbitrum-sepolia
-  role: hub
-  native_symbol: ETH
-  explorer_url: https://sepolia.arbiscan.io
-  deployment_block: 12345678
-  contracts:
-    hub:
-      address: "0xB3487cdd0628f5420E881FEDD5592d2F9BB45CBa"
-    oracle:
-      address: "0x40afa2f69cb03B5dB83183226a2987c863E7eE2b"
-spokes:
-  - chain_id: 11155111
-    name: sepolia
-    role: spoke
-    native_symbol: ETH
-    explorer_url: https://sepolia.etherscan.io
-    deployment_block: 12345678
-    contracts:
-      faucet_dispenser:
-        address: "0x0000000000000000000000000000000000000000"
-      lending_pool:
-        address: "0xC704BCA895CFAF16EB5d056b72338512Ee824849"
-      spoke:
-        address: "0xBFFe23e4A4dD526E5541e681460C8A92029b337E"
-    substreams:
-      start_block: 0
-  - chain_id: 421614
+    chain_id: 421614
     name: arbitrum-sepolia
-    role: spoke
+    role: hub
     native_symbol: ETH
     explorer_url: https://sepolia.arbiscan.io
     deployment_block: 12345678
     contracts:
-      faucet_dispenser:
-        address: "0x0000000000000000000000000000000000000000"
-      lending_pool:
-        address: "0x5d672E525476F0D0BC85d3Bb4F0e9AaA429BE188"
-      spoke:
-        address: "0x088E5c2779dD9F3553B2d3c7d89fF5AebD456adF"
-    substreams:
-      start_block: 0
+        hub:
+            address: "0x56852f83AaFc99F352A6AC42d1E5BDa20332f624"
+        oracle:
+            address: "0x82834afdE577AD50C4064793Fa2958160864849a"
+spokes:
+    - chain_id: 11155111
+      name: sepolia
+      role: spoke
+      native_symbol: ETH
+      explorer_url: https://sepolia.etherscan.io
+      deployment_block: 12345678
+      contracts:
+        faucet_dispenser:
+            address: "0x0000000000000000000000000000000000000000"
+        lending_pool:
+            address: "0xE8067216Ab6a3fDB600082CFfCcE4c69Ea5F29ce"
+        spoke:
+            address: "0xeb65F1a0C8298F8f92cB487AeD769af75c1D420E"
+      substreams:
+        start_block: 0
+    - chain_id: 421614
+      name: arbitrum-sepolia
+      role: spoke
+      native_symbol: ETH
+      explorer_url: https://sepolia.arbiscan.io
+      deployment_block: 12345678
+      contracts:
+        faucet_dispenser:
+            address: "0x0000000000000000000000000000000000000000"
+        lending_pool:
+            address: "0x0E056A5c3b2D3C116d4705D8E7Af09D0eb7e8834"
+        spoke:
+            address: "0xEBB02869838EDdc7a2BF09d1bE018F27187b9a85"
+      substreams:
+        start_block: 0
