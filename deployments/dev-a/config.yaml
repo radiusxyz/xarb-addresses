@@ -13,9 +13,9 @@ hub:
     deployment_block: 12345678
     contracts:
         hub:
-            address: "0x2d35ADd4e249e931E10b92FDDca290c935d5f18B"
+            address: "0x86A2D9b64A470cF020174A192c61ED3648b835f9"
         oracle:
-            address: "0x28f38b0E1c84bA73BC3209906F55A734963F4525"
+            address: "0x4404836c37f817f8ddC3451727e3255187b6768d"
 spokes:
     - chain_id: 421614
       name: arbitrum-sepolia
@@ -27,8 +27,37 @@ spokes:
         faucet_dispenser:
             address: "0x0000000000000000000000000000000000000000"
         lending_pool:
-            address: "0x2E4c412971297F07fFE2A19FfDfAf0B992484310"
+            address: "0xB6A09C5a59C3c58cFd882DA57d15ca55E93EEBc4"
         spoke:
-            address: "0x0a6Ae28eb8063aBcAa736e338Eef61C8843Ff254"
+            address: "0x4490c72bA2E007486ac4f30c9E5cC97E150897ed"
       substreams:
         start_block: 0
+    - chain_id: 11155111
+      name: sepolia
+      role: spoke
+      native_symbol: ETH
+      explorer_url: https://sepolia.etherscan.io/
+      deployment_block: 0
+      contracts:
+        USDT:
+            address: "0xB5707676F711671309a66b05430C8ebAE8A84e33"
+        deployer:
+            address: "0x67c1BD4630e1361A6F366bB2909920e29BE91547"
+        hub:
+            address: "0x86A2D9b64A470cF020174A192c61ED3648b835f9"
+        lendingPool:
+            address: "0x2a058EAc267743b3D91f0B20a6A1EBe74FC3e0Bf"
+        lendingPoolImplementation:
+            address: "0x27244C16E3893DA5491dFe0E3dd461Ad901c84E8"
+        signerAgent:
+            address: "0x0455605be43A52425F047117d9D18B9D50F3f993"
+        spoke:
+            address: "0x86C83A094CDeCcBb7AD4F4aF975A5Ff9954d87BC"
+        spokeImplementation:
+            address: "0x2Aa9C32d59C39841d84B11Ccaa38AaB51133529a"
+        tokenDistributor:
+            address: "0x95352e0478165A3E0e427bD47eF9112a91b8e7E0"
+        wBTC:
+            address: "0x1551Ba9072414f71aa14202c42bc4877D774cf79"
+        wPOL:
+            address: "0x3D1155b4F06B9b9400c56518077F10167dF6f46a"
