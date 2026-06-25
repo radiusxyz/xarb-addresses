@@ -5,45 +5,66 @@ protocol:
     name: xarb
     release: v0.1.0
 hub:
-    chain_id: 421614
-    name: arbitrum-sepolia
+    chain_id: 84532
+    name: base-sepolia
     role: hub
     native_symbol: ETH
-    explorer_url: https://sepolia.arbiscan.io
+    explorer_url: https://sepolia.basescan.org
     deployment_block: 12345678
     contracts:
         hub:
-            address: "0xe14252d7Be0ecE65b9E43E159E98c6A469e238bD"
+            address: "0x66d4F1DF4697fA5e332a326b46D99D950bAc4376"
         oracle:
-            address: "0x6dC4b82255C5FB99da301EEC281C717D7d644fB3"
+            address: "0x55842078Feb2BF7Ba143DD3356882A242494FcB4"
 spokes:
-    - chain_id: 11155111
-      name: sepolia
+    - chain_id: 84532
+      name: base-sepolia
       role: spoke
       native_symbol: ETH
-      explorer_url: https://sepolia.etherscan.io
-      deployment_block: 12345678
+      explorer_url: https://sepolia.basescan.org
+      deployment_block: 0
       contracts:
-        faucet_dispenser:
-            address: "0x0000000000000000000000000000000000000000"
-        lending_pool:
-            address: "0x16A3Bb36D883Ee9ecB3b758CA701BE8e6163d23F"
+        USDT:
+            address: "0xcc828615C386679fC5B187b92d637c450b7fB8c7"
+        debtTokenImplementation:
+            address: "0xf2300b711FE21e4E8183bc60469D6069421B03c5"
+        debtTokenUSDT:
+            address: "0x41d243923DD105Fe40476d5f3f403F0766BF17E2"
+        debtTokenWBTC:
+            address: "0x52435F0004a757694A41Faab870fBDB63D5A89e1"
+        debtTokenWPOL:
+            address: "0x7f24e0cCF3dE39856e6D2F855f71E7cc3c3Efa0e"
+        deployer:
+            address: "0x8Ce72a29CbfAbFa12e7F01fd199a1999011b8eDb"
+        hub:
+            address: "0x66d4F1DF4697fA5e332a326b46D99D950bAc4376"
+        hubConfigurator:
+            address: "0xCb4Bc958F672Bc0E8B7507CB884C875Db1d4776F"
+        hubTokenMinter:
+            address: "0x66d4F1DF4697fA5e332a326b46D99D950bAc4376"
+        lendingPool:
+            address: "0x2E4256fAD77E98A7548baFE84B149C7CC169EF3D"
+        lendingPoolImplementation:
+            address: "0x008526B2e52Bc7b837bE1d5fcbb0099DcbB6CAB0"
+        mockOracle:
+            address: "0x55842078Feb2BF7Ba143DD3356882A242494FcB4"
+        rTokenImplementation:
+            address: "0x27Eb5749b74CD28f8D015fb1D15723366c953Df1"
+        rTokenUSDT:
+            address: "0xcF9b83248f7839B71F2bb2A902c6CE3a1102F687"
+        rTokenWBTC:
+            address: "0x967bcbD79451a6303ea91EDfB509f27D85d1f983"
+        rTokenWPOL:
+            address: "0xbF2bE4D9FC71f838f264173cEEB4EaCB3cE03d36"
+        signerAgent:
+            address: "0x0455605be43A52425F047117d9D18B9D50F3f993"
         spoke:
-            address: "0x26eE9F284cFB924F6a6BC50994c6156e42312499"
-      substreams:
-        start_block: 0
-    - chain_id: 421614
-      name: arbitrum-sepolia
-      role: spoke
-      native_symbol: ETH
-      explorer_url: https://sepolia.arbiscan.io
-      deployment_block: 12345678
-      contracts:
-        faucet_dispenser:
-            address: "0x0000000000000000000000000000000000000000"
-        lending_pool:
-            address: "0x65F3dd7212E1ACc3b2f9671CE9f473F8C45E4c4B"
-        spoke:
-            address: "0x3f73fBf14bbDd3303672a480952B77a1e152564D"
-      substreams:
-        start_block: 0
+            address: "0x6a1E72965B0E3aDAD75Aa358bD8C2B81FE92a074"
+        spokeImplementation:
+            address: "0xb4Fec853386ecc62AEc01Ad74953C0DD613a1787"
+        tokenDistributor:
+            address: "0xf4adbd0E54a2E5746e77e4b2500C02d5A198Fd0c"
+        wBTC:
+            address: "0x200fC9D3501c2f8a77Daf48e0E002D02ebacF074"
+        wPOL:
+            address: "0xFbB3919561b819616De7F03Ac7f040Cc59f48785"
