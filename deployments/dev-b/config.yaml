@@ -1,6 +1,6 @@
 schema_version: 1
 environment: dev
-updated_at: "2026-06-24"
+updated_at: "2026-06-25"
 protocol:
     name: xarb
     release: v0.1.0
@@ -13,9 +13,9 @@ hub:
     deployment_block: 12345678
     contracts:
         hub:
-            address: "0x143e151342d5EA919bFD4d21E7665459f61EEcd1"
+            address: "0x741dDDDD166040175d69A4c3b7db9Dc8a0BCCCCA"
         oracle:
-            address: "0x80d61662c88f984B1402213E45442fa2E5c1FCd0"
+            address: "0x6BA9983c90DA131F5E68dd1268E0788fD35Fbb56"
 spokes:
     - chain_id: 11155111
       name: sepolia
@@ -27,9 +27,9 @@ spokes:
         faucet_dispenser:
             address: "0x0000000000000000000000000000000000000000"
         lending_pool:
-            address: "0x1A17516C63CAAF67f95E8ad89d709417AefF438f"
+            address: "0x94F5Be81Ba5626e7A580bF20E97b4dF026b428D0"
         spoke:
-            address: "0xe89E859D81691961077e235c73b36f86CED30061"
+            address: "0xDb90B580de8ADa7eb459AB424a03d285305f47fB"
       substreams:
         start_block: 0
     - chain_id: 421614
@@ -42,8 +42,8 @@ spokes:
         faucet_dispenser:
             address: "0x0000000000000000000000000000000000000000"
         lending_pool:
-            address: "0x3c1702861136758A20b6F9aD10dc19CA7065BD24"
+            address: "0x38a957b10872E241f24df5e0a9f9800D85640e62"
         spoke:
-            address: "0x10f9DDdC83D99E94c3e5f24496950Cf2C5DE9beC"
+            address: "0x6741B472e9138E9981ec2B9f8603D3b584607C6F"
       substreams:
         start_block: 0
