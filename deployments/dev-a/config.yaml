@@ -13,9 +13,9 @@ hub:
     deployment_block: 12345678
     contracts:
         hub:
-            address: "0x86A2D9b64A470cF020174A192c61ED3648b835f9"
+            address: "0x6B7D395827e7Ba8D1011620BfC4d1346EC36292E"
         oracle:
-            address: "0x4404836c37f817f8ddC3451727e3255187b6768d"
+            address: "0xC794e96643add6a076bEcf36c2d3DAf42bf10d0f"
 spokes:
     - chain_id: 421614
       name: arbitrum-sepolia
@@ -27,9 +27,9 @@ spokes:
         faucet_dispenser:
             address: "0x0000000000000000000000000000000000000000"
         lending_pool:
-            address: "0xB6A09C5a59C3c58cFd882DA57d15ca55E93EEBc4"
+            address: "0xaFcf8f6e911b288305bd8B5AFf8dFAA14Ff5f37a"
         spoke:
-            address: "0x4490c72bA2E007486ac4f30c9E5cC97E150897ed"
+            address: "0x92e41d964E3C1C4A4ea2913f3c4DAC86835Fbf69"
       substreams:
         start_block: 0
     - chain_id: 11155111
@@ -40,24 +40,24 @@ spokes:
       deployment_block: 0
       contracts:
         USDT:
-            address: "0xB5707676F711671309a66b05430C8ebAE8A84e33"
+            address: "0x8f6f7a64b449F377A682871E1357333D7aa6Eff5"
         deployer:
             address: "0x67c1BD4630e1361A6F366bB2909920e29BE91547"
         hub:
-            address: "0x86A2D9b64A470cF020174A192c61ED3648b835f9"
+            address: "0x6B7D395827e7Ba8D1011620BfC4d1346EC36292E"
         lendingPool:
-            address: "0x2a058EAc267743b3D91f0B20a6A1EBe74FC3e0Bf"
+            address: "0x0f7eb6107d561fFEC626C38477aF28b5A04688b1"
         lendingPoolImplementation:
-            address: "0x27244C16E3893DA5491dFe0E3dd461Ad901c84E8"
+            address: "0xBAe68cCeB1d486A5e50930E3FC18192a43B969F1"
         signerAgent:
             address: "0x0455605be43A52425F047117d9D18B9D50F3f993"
         spoke:
-            address: "0x86C83A094CDeCcBb7AD4F4aF975A5Ff9954d87BC"
+            address: "0x5AD19421e71bF2603df7AD2584A2ce6db0dd44ED"
         spokeImplementation:
-            address: "0x2Aa9C32d59C39841d84B11Ccaa38AaB51133529a"
+            address: "0x608138Edc942067267a754473BD91cF22270f9A2"
         tokenDistributor:
-            address: "0x95352e0478165A3E0e427bD47eF9112a91b8e7E0"
+            address: "0x774913A91dE120E5fbde0B16d8f958c6626e74ee"
         wBTC:
-            address: "0x1551Ba9072414f71aa14202c42bc4877D774cf79"
+            address: "0x16c08735e5f87dAb294f6cB7CF176b7c5D97DF4A"
         wPOL:
-            address: "0x3D1155b4F06B9b9400c56518077F10167dF6f46a"
+            address: "0xadEc868a0A371e57F44CDE2B3D0814e25F852566"
