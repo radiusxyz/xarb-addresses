@@ -13,9 +13,9 @@ hub:
     deployment_block: 12345678
     contracts:
         hub:
-            address: "0xE577b87227b0eC1a63031C60fFd05B27214877B3"
+            address: "0xeA75B1d0068aa7f8239EfA2D693fbaCC3549252a"
         oracle:
-            address: "0x720059A624c136A1AC1320DD507A109DD168d23B"
+            address: "0xe8384185D6846A4f7fC44550a6D76249b8F9EE1D"
 spokes:
     - chain_id: 84532
       name: base-sepolia
@@ -25,46 +25,46 @@ spokes:
       deployment_block: 0
       contracts:
         USDT:
-            address: "0xC36e2F7e116E50B7A4F5602d9Fa88f9bb6148b06"
+            address: "0x57b42E796Ff7110a61d54eFD08f6e3D81491e338"
         debtTokenImplementation:
-            address: "0x72b6a473Ca11ECCC14e185d1B5b772B004adDf00"
+            address: "0x2c9e19d09FF0168BDDC196fC56156eFC5D881D9e"
         debtTokenUSDT:
-            address: "0xd437Dee62E1a7D08b3B5F17C93234FF531224535"
+            address: "0x1093E9d65e77919951597FD7bf1F96c788fD3942"
         debtTokenWBTC:
-            address: "0x21c7775C5cDDa9610D284634E689f072ea688d81"
+            address: "0xf239c80c26c2F724fF167d2E6F71Dd5548d36119"
         debtTokenWPOL:
-            address: "0x740a2E6a7f386e9973A3065a9096984c3D55Ae94"
+            address: "0xD9eb365F35BB390FBdBF79369FC153d4bd8E4c07"
         deployer:
-            address: "0x8Ce72a29CbfAbFa12e7F01fd199a1999011b8eDb"
+            address: "0x3843F7b068ceee8Bcb4f42258F05329fACb15d51"
         hub:
-            address: "0xE577b87227b0eC1a63031C60fFd05B27214877B3"
+            address: "0xeA75B1d0068aa7f8239EfA2D693fbaCC3549252a"
         hubConfigurator:
-            address: "0x57Dbe2ecfBE0d96B327Ccfd0Eb34c5af06ba365C"
+            address: "0x49f12Fabd97f3466644ECcaDa6dcE554b2b42086"
         hubTokenMinter:
-            address: "0xE577b87227b0eC1a63031C60fFd05B27214877B3"
+            address: "0xeA75B1d0068aa7f8239EfA2D693fbaCC3549252a"
         lendingPool:
-            address: "0xBaF036bA8B4C8E938F8B6Da0394E5Cddaf31F4D9"
+            address: "0x47EAd8ba36955c2Fbe0C9B0B592f6Ca78E214EDb"
         lendingPoolImplementation:
-            address: "0x2e24C0265B835e82bF01d0a1B147D1FdEb742549"
+            address: "0xFffc0Ce39f9302Eed4C1a912222D32eEcCf40853"
         mockOracle:
-            address: "0x720059A624c136A1AC1320DD507A109DD168d23B"
+            address: "0xe8384185D6846A4f7fC44550a6D76249b8F9EE1D"
         rTokenImplementation:
-            address: "0x1415a8Cd8AC0110F4143AE74F9E1065aEDF045Ea"
+            address: "0x413B3d05586fc5a14662d1A6259d71801e59ED6c"
         rTokenUSDT:
-            address: "0x0d324DcA9446AC69e27526f9866A11b78bACc1BC"
+            address: "0xa73208778C15E7E357263A5344205940c6Fa40eC"
         rTokenWBTC:
-            address: "0x1D39d64687CEA4F6e8063247194A3Ef1d2883815"
+            address: "0xf9D385E97a50897cc500E71e0218aF0850e4a4dB"
         rTokenWPOL:
-            address: "0xeD0286368c6ec71206A0539868F0FE21874Ea135"
+            address: "0xC49C68775E163d6DD1871a162263A0E6ED2B1929"
         signerAgent:
             address: "0x0455605be43A52425F047117d9D18B9D50F3f993"
         spoke:
-            address: "0xb12826E1cBe0b63D8b62332a6B2885d6F83Af13a"
+            address: "0xEb44A9d0d655Cd562d413247BdBdB08B9b23c0f8"
         spokeImplementation:
-            address: "0xa33e4bc63b1389E9977A5578523fe776309cE026"
+            address: "0x6a9C88D6Ef5367Be8F1BB815FDA0f22974A86AF8"
         tokenDistributor:
-            address: "0x75D2D502fad2314C9837325D3591E6C3417EdA15"
+            address: "0xdADcfdE6693407A4D5f6f5Ebd6ae0048f26f9769"
         wBTC:
-            address: "0xAA80D417Bd61C10Fb0da1627235d912Aa52EEe65"
+            address: "0xFCeA1097DfF743aa8f9852e0C0d19d0D849F2EB9"
         wPOL:
-            address: "0x07C43bF2F2De67d9aEcAb264a2be3F7e4D840f92"
+            address: "0xf43e194EA55140DD695EF53D6CcDE950d10CB343"
