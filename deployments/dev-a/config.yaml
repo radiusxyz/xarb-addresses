@@ -1,6 +1,6 @@
 schema_version: 1
 environment: dev
-updated_at: "2026-06-23"
+updated_at: "2026-06-25"
 protocol:
     name: xarb
     release: v0.1.0
@@ -13,49 +13,56 @@ hub:
     deployment_block: 12345678
     contracts:
         hub:
-            address: "0x9672d09FB059721A0e7ba00838eDC1799bd462F8"
+            address: "0x2d35ADd4e249e931E10b92FDDca290c935d5f18B"
         oracle:
-            address: "0xdad0F35f0beBEa5E5FF186A2f0be4Da4FF36a0bC"
+            address: "0x28f38b0E1c84bA73BC3209906F55A734963F4525"
 spokes:
-    - chain_id: 11155111
-      name: sepolia
+    - chain_id: 421614
+      name: arbitrum-sepolia
       role: spoke
       native_symbol: ETH
-      explorer_url: https://sepolia.etherscan.io
-      deployment_block: 12345678
-      contracts:
-        faucet_dispenser:
-            address: "0x0000000000000000000000000000000000000000"
-        lending_pool:
-            address: "0xCb8E70D6d8cc36e1635df7156793f4D7040B845f"
-        spoke:
-            address: "0x607313E6fC2138708bc4450AF267199D3Facb004"
-      substreams:
-        start_block: 0
-    - chain_id: 80002
-      name: polygon-amoy
-      role: spoke
-      native_symbol: POL
-      explorer_url: https://amoy.polygonscan.com
+      explorer_url: https://sepolia.arbiscan.io
       deployment_block: 0
       contracts:
         USDT:
-            address: "0xC978c9E059C3e073D934b8F02cec8B41231A2B81"
+            address: "0x73f7F7Dd81DD5a98D59d5D5173fa4E529eeAd00f"
+        debtTokenImplementation:
+            address: "0x46a964d1b98f8C9D2B3F727cE4175Cd6d603D317"
+        debtTokenUSDT:
+            address: "0x1D956A6d434B3aF8EE3755Fb533FB9d1cC04B381"
+        debtTokenWBTC:
+            address: "0x3F9aD21D1A1052c18d6809B617e8254571FdDC5c"
+        debtTokenWPOL:
+            address: "0xfe7630b51cF554D238442FC0bEC1A96f6C989310"
         deployer:
             address: "0x67c1BD4630e1361A6F366bB2909920e29BE91547"
         hub:
-            address: "0x9672d09FB059721A0e7ba00838eDC1799bd462F8"
+            address: "0x2d35ADd4e249e931E10b92FDDca290c935d5f18B"
+        hubConfigurator:
+            address: "0x3a2787b9e8d86cc51A0B6d40261575C14799BeA5"
+        hubTokenMinter:
+            address: "0x2d35ADd4e249e931E10b92FDDca290c935d5f18B"
         lendingPool:
-            address: "0x222bF04863F192fb55d5598335284E2326881fD4"
+            address: "0x2E4c412971297F07fFE2A19FfDfAf0B992484310"
         lendingPoolImplementation:
-            address: "0x3CdE8E8BEA8495C6E5dF95096954e49a6741Ea90"
+            address: "0x2413C688b232bCeCa4d939Cb3752c72c741195FA"
+        mockOracle:
+            address: "0x28f38b0E1c84bA73BC3209906F55A734963F4525"
+        rTokenImplementation:
+            address: "0x8f22e00ce591472A1f6A6f3829Ab309913B2Cd50"
+        rTokenUSDT:
+            address: "0x09eF2164BfD4B4c4AbB1238581cfbbf1F9fD3908"
+        rTokenWBTC:
+            address: "0xe00F3286633a668c8d3546894ED317E4902528b6"
+        rTokenWPOL:
+            address: "0x18c52011B62506F82430170B6BEeaD05F131636a"
         signerAgent:
             address: "0x0455605be43A52425F047117d9D18B9D50F3f993"
         spoke:
-            address: "0xD6f792BDC51CA04280158a894b19235585aD8854"
+            address: "0x0a6Ae28eb8063aBcAa736e338Eef61C8843Ff254"
         spokeImplementation:
-            address: "0x9eB1d78245e7EdF46A04Add7d7D348B2107B8707"
+            address: "0x4c828939D0a9CF59b3c1D2E34DF6Fb68Fb7Df410"
         wBTC:
-            address: "0xa042DD0F58C321Df94ac3c0F9F4B7F4b55e9241b"
+            address: "0x51b600A18E888eAcB87675b947b0Fc78f9098975"
         wPOL:
-            address: "0xD9eEaB5F4f130cCFe6422256965F5b9f8eD5251D"
+            address: "0x1E10de5320a2E3Ac77650fe65c8029B82C3BF13f"
