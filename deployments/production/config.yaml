@@ -7,11 +7,11 @@ protocol:
   release: "v0.1.0"
 
 hub:
-  chain_id: 421614
-  name: arbitrum-sepolia
+  chain_id: 84532
+  name: base-sepolia
   role: hub
   native_symbol: ETH
-  explorer_url: https://sepolia.arbiscan.io
+  explorer_url: https://sepolia.basescan.org
   deployment_block: 0
   contracts:
     hub:
@@ -20,11 +20,11 @@ hub:
       address: "0x0000000000000000000000000000000000000000"
 
 spokes:
-  - chain_id: 421614
-    name: arbitrum-sepolia
+  - chain_id: 84532
+    name: base-sepolia
     role: spoke
     native_symbol: ETH
-    explorer_url: https://sepolia.arbiscan.io
+    explorer_url: https://sepolia.basescan.org
     deployment_block: 0
     contracts:
       spoke:

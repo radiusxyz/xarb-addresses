@@ -5,11 +5,11 @@ protocol:
     name: xarb
     release: v0.1.0
 hub:
-    chain_id: 421614
-    name: arbitrum-sepolia
+    chain_id: 84532
+    name: base-sepolia
     role: hub
     native_symbol: ETH
-    explorer_url: https://sepolia.arbiscan.io
+    explorer_url: https://sepolia.basescan.org
     deployment_block: 12345678
     contracts:
         hub:
@@ -17,11 +17,11 @@ hub:
         oracle:
             address: "0xC794e96643add6a076bEcf36c2d3DAf42bf10d0f"
 spokes:
-    - chain_id: 421614
-      name: arbitrum-sepolia
+    - chain_id: 84532
+      name: base-sepolia
       role: spoke
       native_symbol: ETH
-      explorer_url: https://sepolia.arbiscan.io
+      explorer_url: https://sepolia.basescan.org
       deployment_block: 12345678
       contracts:
         faucet_dispenser:
