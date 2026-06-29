@@ -1,6 +1,6 @@
 schema_version: 1
 environment: dev
-updated_at: "2026-06-25"
+updated_at: "2026-06-29"
 protocol:
     name: xarb
     release: v0.1.0
@@ -9,55 +9,26 @@ hub:
     name: base-sepolia
     role: hub
     native_symbol: ETH
-    explorer_url: https://sepolia.basescan.org
+    explorer_url: https://sepolia.basescan.org/
     deployment_block: 12345678
     contracts:
         hub:
-            address: "0x6B7D395827e7Ba8D1011620BfC4d1346EC36292E"
+            address: "0xc45f03531C9414E0F0361d8c09c6723f63bb54A9"
         oracle:
-            address: "0xC794e96643add6a076bEcf36c2d3DAf42bf10d0f"
+            address: "0x1edea3CAa95Df5d72D4A951353B67Ae484814c98"
 spokes:
     - chain_id: 84532
       name: base-sepolia
       role: spoke
       native_symbol: ETH
-      explorer_url: https://sepolia.basescan.org
+      explorer_url: https://sepolia.basescan.org/
       deployment_block: 12345678
       contracts:
         faucet_dispenser:
             address: "0x0000000000000000000000000000000000000000"
         lending_pool:
-            address: "0xaFcf8f6e911b288305bd8B5AFf8dFAA14Ff5f37a"
+            address: "0xf60fbCD29Efa7550BA26F9982FE96d18bd6D5785"
         spoke:
-            address: "0x92e41d964E3C1C4A4ea2913f3c4DAC86835Fbf69"
+            address: "0xDe9868E306224d54EF53750f5EEf0e422f6D5619"
       substreams:
         start_block: 0
-    - chain_id: 11155111
-      name: sepolia
-      role: spoke
-      native_symbol: ETH
-      explorer_url: https://sepolia.etherscan.io/
-      deployment_block: 0
-      contracts:
-        USDT:
-            address: "0x8f6f7a64b449F377A682871E1357333D7aa6Eff5"
-        deployer:
-            address: "0x67c1BD4630e1361A6F366bB2909920e29BE91547"
-        hub:
-            address: "0x6B7D395827e7Ba8D1011620BfC4d1346EC36292E"
-        lendingPool:
-            address: "0x0f7eb6107d561fFEC626C38477aF28b5A04688b1"
-        lendingPoolImplementation:
-            address: "0xBAe68cCeB1d486A5e50930E3FC18192a43B969F1"
-        signerAgent:
-            address: "0x0455605be43A52425F047117d9D18B9D50F3f993"
-        spoke:
-            address: "0x5AD19421e71bF2603df7AD2584A2ce6db0dd44ED"
-        spokeImplementation:
-            address: "0x608138Edc942067267a754473BD91cF22270f9A2"
-        tokenDistributor:
-            address: "0x774913A91dE120E5fbde0B16d8f958c6626e74ee"
-        wBTC:
-            address: "0x16c08735e5f87dAb294f6cB7CF176b7c5D97DF4A"
-        wPOL:
-            address: "0xadEc868a0A371e57F44CDE2B3D0814e25F852566"
