@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/martinbha/xarb-addresses/schemas/deployment.schema.json",
+  "$id": "https://github.com/radiusxyz/xarb-addresses/schemas/deployment.schema.json",
   "title": "xArb Deployment Address Book",
   "description": "Public deployment metadata for one xArb environment: hub + spokes, contract addresses, and chain metadata. Contains no secrets (no RPC credentials, private keys, or tokens).",
   "type": "object",
@@ -63,7 +63,6 @@
         "role",
         "native_symbol",
         "explorer_url",
-        "deployment_block",
         "contracts"
       ],
       "properties": {
@@ -91,11 +90,6 @@
           "type": "string",
           "format": "uri",
           "pattern": "^https?://"
-        },
-        "deployment_block": {
-          "description": "Block height at which the protocol was deployed on this chain.",
-          "type": "integer",
-          "minimum": 0
         },
         "contracts": {
           "description": "Deployed contracts on this chain, keyed by canonical name (hub, oracle, spoke, lending_pool, ...).",

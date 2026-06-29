@@ -12,7 +12,6 @@ hub:
   role: hub
   native_symbol: ETH
   explorer_url: https://sepolia.basescan.org
-  deployment_block: 0
   contracts:
     hub:
       address: "0x0000000000000000000000000000000000000000"
@@ -25,13 +24,10 @@ spokes:
     role: spoke
     native_symbol: ETH
     explorer_url: https://sepolia.basescan.org
-    deployment_block: 0
     contracts:
       spoke:
         address: "0x0000000000000000000000000000000000000000"
       lending_pool:
-        address: "0x0000000000000000000000000000000000000000"
-      faucet_dispenser:
         address: "0x0000000000000000000000000000000000000000"
     substreams:
       start_block: 0
@@ -41,13 +37,10 @@ spokes:
     role: spoke
     native_symbol: ETH
     explorer_url: https://sepolia.etherscan.io
-    deployment_block: 0
     contracts:
       spoke:
         address: "0x0000000000000000000000000000000000000000"
       lending_pool:
-        address: "0x0000000000000000000000000000000000000000"
-      faucet_dispenser:
         address: "0x0000000000000000000000000000000000000000"
     substreams:
       start_block: 0

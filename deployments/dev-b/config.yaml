@@ -10,7 +10,6 @@ hub:
     role: hub
     native_symbol: ETH
     explorer_url: https://sepolia.basescan.org
-    deployment_block: 12345678
     contracts:
         hub:
             address: "0x2bF7601F849Df20D11684ae82090fba6D37883AE"
@@ -22,7 +21,6 @@ spokes:
       role: spoke
       native_symbol: ETH
       explorer_url: https://sepolia.basescan.org
-      deployment_block: 0
       contracts:
         USDT:
             address: "0x0Bb53650B73c97a478D0423496A8FEB649e2c003"
