@@ -12,9 +12,9 @@ hub:
   explorer_url: https://sepolia.basescan.org
   contracts:
     hub:
-      address: "0x3cCAA46269E3c080041074aEB7130E95D1c84b2D"
+      address: "0xc9AE553Ce2a7EdcBeDFe1D502515ebC643720B31"
     oracle:
-      address: "0x4358ce665D05a9f58462e796E41F8CC0279B635C"
+      address: "0x69260D664125C111E2b894CA77a2E48Cd0E94e7c"
 spokes:
   - chain_id: 84532
     name: base-sepolia
@@ -23,8 +23,8 @@ spokes:
     explorer_url: https://sepolia.basescan.org
     contracts:
       spoke:
-        address: "0x091CA3652d659fa6A8B1711c433C88a65cAB6038"
+        address: "0xb4b8F672bCB656a5fBFF5F91878CcE32eaeC926E"
       lending_pool:
-        address: "0x8705E80fd7315260AcE3438bb3cB9Fb20cDA64Cb"
+        address: "0xAc2fd13de8B94095515e079D486f759836cCCc69"
     substreams:
       start_block: 0
