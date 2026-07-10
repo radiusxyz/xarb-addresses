@@ -1,6 +1,6 @@
 schema_version: 1
 environment: dev
-updated_at: "2026-07-07"
+updated_at: "2026-07-10"
 protocol:
   name: xarb
   release: v0.1.0
@@ -12,9 +12,9 @@ hub:
   explorer_url: https://sepolia.basescan.org
   contracts:
     hub:
-      address: "0xE292471eca6B5b59FF1958967Ad790A944b8bdaa"
+      address: "0xfD55329602B15097Fe3Abce4cabFD2B8EF57ca9f"
     oracle:
-      address: "0xaFBfcAF0e910CfE4F49ED5FA5cC14D532780611c"
+      address: "0x2177Ff13cAFbc630c6698e5545F8c999386D8FEE"
 spokes:
   - chain_id: 84532
     name: base-sepolia
@@ -23,8 +23,8 @@ spokes:
     explorer_url: https://sepolia.basescan.org
     contracts:
       spoke:
-        address: "0x177488aaCDAaFE0196920384e4f984a4eB9c2D80"
+        address: "0x05f8393CBCF9824eDEBF28f6Ef441E55097A2e45"
       lending_pool:
-        address: "0xDa90944ce794917C62f80e5Cd4023A13B67c8051"
+        address: "0x1C418856CeB9b876d9fc6F66CeFA2FCa80E9Ee3B"
     substreams:
       start_block: 0
