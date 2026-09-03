@@ -1,6 +1,6 @@
 schema_version: 1
 environment: dev
-updated_at: "2026-07-03"
+updated_at: "2026-09-01"
 protocol:
   name: xarb
   release: v0.1.0
@@ -21,10 +21,29 @@ spokes:
     role: spoke
     native_symbol: ETH
     explorer_url: https://sepolia.basescan.org/
-    contracts:
-      spoke:
-        address: "0x80f35FEb7FD71a7438a7B4c8374071deF48789C2"
-      lending_pool:
-        address: "0xECb4C6363D7dd229fAc6993f584cdde50F403c0C"
     substreams:
-      start_block: 0
+        start_block: 46242783
+    contracts:
+        hub:
+            address: "0x597403ecA1562a7CCCb0C982c1409310D4462809"
+        oracle:
+            address: "0x1EbFe096cAAEd095AC286381424fe979D520691B"
+        validator_registry:
+            address: "0xdf91237e44b23622Dd616b33630Fb1c9941B4f4a"
+        batch_inbox:
+            address: "0xaA9341972e56525d95Ee650c03a95Fce1996cC9F"
+spokes:
+    - chain_id: 84532
+      name: base-sepolia
+      role: spoke
+      native_symbol: ETH
+      explorer_url: https://sepolia.basescan.org/
+      contracts:
+        lending_pool:
+            address: "0x4CBfcBA180E2DB8023cc82e0e4ac412eD7792296"
+        spoke:
+            address: "0xCc55c53E31D80D6878c43746CA6c163598f72C12"
+        batch_inbox:
+            address: "0xFFEf90FC049b4aaD31590484Bdd13C467327383F"
+      substreams:
+        start_block: 46242784
