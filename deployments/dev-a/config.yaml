@@ -1,6 +1,6 @@
 schema_version: 1
 environment: dev
-updated_at: "2026-09-01"
+updated_at: "2026-09-07"
 protocol:
   name: xarb
   release: v0.1.0
@@ -15,28 +15,36 @@ hub:
       address: "0x597403ecA1562a7CCCb0C982c1409310D4462809"
     oracle:
       address: "0x1EbFe096cAAEd095AC286381424fe979D520691B"
-    validator_registry:
-      address: "0xdf91237e44b23622Dd616b33630Fb1c9941B4f4a"
-    batch_inbox:
-      address: "0xaA9341972e56525d95Ee650c03a95Fce1996cC9F"
     request_gateway:
       address: "0x907334f699aeb2C592f241fcfeba51564d559973"
     request_forwarder:
       address: "0xc45f36A8fEa3c3718Bf0202322b603a388A9a5e9"
+    validator_registry:
+      address: "0xdf91237e44b23622Dd616b33630Fb1c9941B4f4a"
+    batch_inbox:
+      address: "0xaA9341972e56525d95Ee650c03a95Fce1996cC9F"
 spokes:
   - chain_id: 84532
     name: base-sepolia
     role: spoke
     native_symbol: ETH
     explorer_url: https://sepolia.basescan.org/
+    substreams:
+      start_block: 46242784
     contracts:
+      spoke:
+        address: "0xCc55c53E31D80D6878c43746CA6c163598f72C12"
       lending_pool:
         address: "0x4CBfcBA180E2DB8023cc82e0e4ac412eD7792296"
       escrow_vault:
         address: "0xe07475C9df02ab6b14B5067fe60B0D080Be9932E"
-      spoke:
-        address: "0xCc55c53E31D80D6878c43746CA6c163598f72C12"
+      validator_registry:
+        address: "0xdf91237e44b23622Dd616b33630Fb1c9941B4f4a"
       batch_inbox:
         address: "0xFFEf90FC049b4aaD31590484Bdd13C467327383F"
-    substreams:
-      start_block: 46242784
+      wbtc:
+        address: "0x2e01b068c6d7a0A5D7A02d7c5f02C4c7D85D5A24"
+      usdt:
+        address: "0x8ae712C60b099f60bf1C59909A3B95D496E8Db3C"
+      wpol:
+        address: "0xe78a4d5876d940196ba001b5A57feAbB70506022"
