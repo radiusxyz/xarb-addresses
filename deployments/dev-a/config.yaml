@@ -34,6 +34,8 @@ spokes:
             address: "0x55237B3fd9480C082239cDCC6638F1Dc8Fbf6f3A"
         escrow_vault:
             address: "0x76441Bd5f898baeC5424795b05FC7daf06A12644"
+        faucet_address:
+            address: "0x8f3DCd72A9003EA9DEF9bD47bADd14Fb0B5F35DB"
         lending_pool:
             address: "0x2F95f704722091fCe8946E059eD481B3735dA76A"
         spoke:
