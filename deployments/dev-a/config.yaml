@@ -12,17 +12,17 @@ hub:
     explorer_url: https://sepolia.basescan.org
     contracts:
         batch_inbox:
-            address: "0x0B6BC9ea7FD9eAC16Cf0E2b429F6e18a9705EE3d"
+            address: "0xBbe2d0cfe3b4f8525A6394C0502cb198D3FEb6Ec"
         hub:
-            address: "0x0cC5958C33705105817ec399876eF0E9d2f90ac9"
+            address: "0x6F95030c2c6279dacb76F9B85bdc3f3a9AfCB1FB"
         oracle:
-            address: "0x645dD6E1194001DC0d8b4794DdF51bFe53b15269"
+            address: "0xDF2d58A266C28b8227236aaA6b87f46d1688442D"
         request_forwarder:
-            address: "0xD45aFf7586E7e96C3dC0798ade2fC0c5179B8429"
+            address: "0xf7B8FA1D869BbB7A61eB72b13a89C773c2f7ECAF"
         request_gateway:
-            address: "0xbb7e377B64DA568cb288AB5Cff334d63E7d6BAc0"
+            address: "0x125341fF679822AEb9005983aaB1b2Dc8439cfcD"
         validator_registry:
-            address: "0x3C2942ed1767C349dB1AFF54B8E87253E34c7A8a"
+            address: "0xA94Fc6C01cf3b5e2a917824DcD48CE536cfB47aC"
 spokes:
     - chain_id: 84532
       name: base-sepolia
@@ -31,14 +31,12 @@ spokes:
       explorer_url: https://sepolia.basescan.org
       contracts:
         batch_inbox:
-            address: "0xB215A3d4399d62Efd7908702a7581C20F6c6C260"
+            address: "0x55237B3fd9480C082239cDCC6638F1Dc8Fbf6f3A"
         escrow_vault:
-            address: "0xb28B54a2D62edF747AE50350Fc11c3459511C4e8"
-        faucet_address:
-            address: "0x6C2ED809C7A131C0160BA197A020a69C5B92E688"
+            address: "0x76441Bd5f898baeC5424795b05FC7daf06A12644"
         lending_pool:
-            address: "0xf62ded43609237B317FeeB23Af2889EB03A7fC72"
+            address: "0x2F95f704722091fCe8946E059eD481B3735dA76A"
         spoke:
-            address: "0x9cF519EEcEE2c7929b6Fe0BD3E18D25A67866cf2"
+            address: "0xf52AAdDd73a754735f549065817B05f327f260B9"
       substreams:
-        start_block: 46529535
+        start_block: 46545137
