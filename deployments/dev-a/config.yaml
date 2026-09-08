@@ -38,13 +38,5 @@ spokes:
             address: "0xf62ded43609237B317FeeB23Af2889EB03A7fC72"
         spoke:
             address: "0x9cF519EEcEE2c7929b6Fe0BD3E18D25A67866cf2"
-        usdt:
-            address: "0x506Ab35760f4a34c38511BB021472de1ab291670"
-        validator_registry:
-            address: "0x3C2942ed1767C349dB1AFF54B8E87253E34c7A8a"
-        wbtc:
-            address: "0xb84cF7e6eD3233776A42343A479799e03c94DCa6"
-        wpol:
-            address: "0x3aa85Dd14c4CA7c9d27c3147FFc669381C25BB26"
       substreams:
         start_block: 46529535
