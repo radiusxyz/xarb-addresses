@@ -1,46 +1,45 @@
 schema_version: 1
 environment: production
-updated_at: "2026-06-18"
+updated_at: "2026-09-10"
 
 protocol:
   name: xarb
-  release: "v0.1.0"
+  release: v0.1.0
 
 hub:
-  chain_id: 84532
-  name: base-sepolia
+  chain_id: 8453
+  name: base-mainnet
   role: hub
   native_symbol: ETH
-  explorer_url: https://sepolia.basescan.org
+  explorer_url: https://basescan.org
   contracts:
+    batch_inbox:
+      address: "0xD7fa29687d4Dd053bcF861Ca2cadB0E1A048103B"
     hub:
-      address: "0x0000000000000000000000000000000000000000"
+      address: "0x2FBd29c27AAC75b4c86824D1Ff8b29565b08707A"
     oracle:
-      address: "0x0000000000000000000000000000000000000000"
+      address: "0xa9626865224E4348a878b38fA6E807E675d0213a"
+    request_forwarder:
+      address: "0x875E6F882273768043bc41b9489695bC4fB8c533"
+    request_gateway:
+      address: "0xfdB6e4717b76018D0358aE52356938a88E7B6670"
+    validator_registry:
+      address: "0xAaCc8Fea41494f59415f53FE0Cc5E0C84274Bc53"
 
 spokes:
-  - chain_id: 84532
-    name: base-sepolia
+  - chain_id: 8453
+    name: base-mainnet
     role: spoke
     native_symbol: ETH
-    explorer_url: https://sepolia.basescan.org
+    explorer_url: https://basescan.org
     contracts:
-      spoke:
-        address: "0x0000000000000000000000000000000000000000"
+      batch_inbox:
+        address: "0xe9B696f8E385752F690A7E2154710F717429EBCa"
+      escrow_vault:
+        address: "0x53a05603171273C97A37FcAB1eBCEB2ACA5F4d76"
       lending_pool:
-        address: "0x0000000000000000000000000000000000000000"
-    substreams:
-      start_block: 0
-
-  - chain_id: 11155111
-    name: sepolia
-    role: spoke
-    native_symbol: ETH
-    explorer_url: https://sepolia.etherscan.io
-    contracts:
+        address: "0xcE01Fc3162A43526937AAc980003f2631eB96B11"
       spoke:
-        address: "0x0000000000000000000000000000000000000000"
-      lending_pool:
-        address: "0x0000000000000000000000000000000000000000"
+        address: "0x2FD9eB500F3e543E0B6DfdF307Dd93eF4868f486"
     substreams:
-      start_block: 0
+      start_block: 51118814
