@@ -1,5 +1,6 @@
 # Which chains each environment may publish, and the public metadata for each chain.
 # publish tooling and CI both read this file; it is the source of truth for chain names.
+# rpc_urls are public read endpoints used only as a fallback for verification.
 environments:
   dev:
     allowed_chain_ids: [84532, 11155111, 421614]
@@ -13,6 +14,7 @@ chains:
     name: base-sepolia
     native_symbol: ETH
     explorer_url: https://sepolia.basescan.org
+    rpc_urls: [https://sepolia.base.org]
   11155111:
     name: sepolia
     native_symbol: ETH
@@ -25,3 +27,4 @@ chains:
     name: base-mainnet
     native_symbol: ETH
     explorer_url: https://basescan.org
+    rpc_urls: [https://mainnet.base.org]

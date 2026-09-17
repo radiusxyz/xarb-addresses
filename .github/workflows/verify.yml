@@ -1,0 +1,138 @@
+name: Verify address book
+
+on:
+  pull_request:
+    paths:
+      - "deployments/**"
+      - "schemas/**"
+      - "scripts/**"
+      - "environments.yaml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  schema:
+    name: Schema and digests
+    runs-on: ubuntu-latest
+    outputs:
+      environments: ${{ steps.changed.outputs.environments }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pyyaml jsonschema rfc3339-validator "eth-hash[pycryptodome]"
+
+      - name: Validate every environment
+        run: python3 scripts/validate-deployments.py
+
+      - name: Resolve the environments this change touches
+        id: changed
+        run: |
+          base="${{ github.event.pull_request.base.sha || 'HEAD~1' }}"
+          changed="$(git diff --name-only "$base" HEAD -- deployments | awk -F/ '{print $2}' | sort -u)"
+          outside="$(git diff --name-only "$base" HEAD | grep -v '^deployments/' | grep -v '^\.github/' | grep -v '^schemas/' | grep -v '^scripts/' | grep -v '^environments.yaml$' || true)"
+          if [ -n "$outside" ]; then echo "unexpected files changed:"; echo "$outside"; exit 1; fi
+          echo "environments=$(printf '%s\n' $changed | jq -R . | jq -cs .)" >> "$GITHUB_OUTPUT"
+          echo "changed environments: $changed"
+
+  deployment:
+    name: Provenance and chain (${{ matrix.environment }})
+    needs: schema
+    if: needs.schema.outputs.environments != '[]'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        environment: ${{ fromJSON(needs.schema.outputs.environments) }}
+    env:
+      ENV_DIR: deployments/${{ matrix.environment }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pyyaml
+
+      - uses: foundry-rs/foundry-toolchain@v1
+
+      - name: Read provenance from the changed file
+        id: provenance
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import os, yaml
+          data = yaml.safe_load(open(os.environ["ENV_DIR"] + "/config.yaml"))
+          print(f"schema_version={data['schema_version']}")
+          print(f"contracts_commit={data.get('protocol', {}).get('contracts_commit', '')}")
+          PY
+
+      - name: Skip schema-1 environments
+        if: steps.provenance.outputs.schema_version != '2'
+        run: echo "schema_version 1 carries no artifacts; nothing to verify against the chain"
+
+      - name: Check out xarb-infra-contracts at the recorded commit
+        if: steps.provenance.outputs.schema_version == '2'
+        uses: actions/checkout@v4
+        with:
+          repository: radiusxyz/xarb-infra-contracts
+          ref: ${{ steps.provenance.outputs.contracts_commit }}
+          path: contracts
+          submodules: recursive
+          token: ${{ secrets.CONTRACTS_READ_TOKEN || github.token }}
+
+      - name: Artifacts are the recorded commit's config files
+        if: steps.provenance.outputs.schema_version == '2'
+        run: |
+          set -e
+          cmp contracts/config/event-registry-v1.json "$ENV_DIR/artifacts/event-registry-v1.json"
+          cmp contracts/config/abi/hub.json          "$ENV_DIR/artifacts/abi/hub.json"
+          cmp contracts/config/abi/spoke.json        "$ENV_DIR/artifacts/abi/spoke.json"
+          cmp contracts/config/manifests/hub.json    "$ENV_DIR/artifacts/manifests/hub.json"
+          cmp contracts/config/manifests/spoke.json  "$ENV_DIR/artifacts/manifests/spoke.json"
+          echo "all five artifacts are byte-identical to config/ at ${{ steps.provenance.outputs.contracts_commit }}"
+
+      - name: Manifests match the recorded commit's sources
+        if: steps.provenance.outputs.schema_version == '2'
+        working-directory: contracts
+        run: |
+          node utils/diamond/generate_manifest.mjs --target hub --check
+          node utils/diamond/generate_manifest.mjs --target spoke --check
+
+      - name: contracts_commit does not move backwards
+        if: steps.provenance.outputs.schema_version == '2' && github.event_name == 'pull_request'
+        working-directory: contracts
+        run: |
+          previous="$(git -C .. show "${{ github.event.pull_request.base.sha }}:$ENV_DIR/config.yaml" 2>/dev/null | python3 -c 'import sys,yaml; print(yaml.safe_load(sys.stdin).get("protocol",{}).get("contracts_commit",""))' || true)"
+          if [ -z "$previous" ]; then echo "no previous schema-2 publish for this environment"; exit 0; fi
+          git fetch --quiet origin "$previous" || true
+          if git merge-base --is-ancestor "$previous" HEAD; then
+            echo "previous $previous is an ancestor of ${{ steps.provenance.outputs.contracts_commit }}"
+          else
+            echo "::error::contracts_commit $previous -> ${{ steps.provenance.outputs.contracts_commit }} is not a fast-forward; refusing to move the environment backwards"
+            exit 1
+          fi
+
+      - name: Chain agrees with the file
+        if: steps.provenance.outputs.schema_version == '2'
+        env:
+          XARB_RPC_84532: ${{ vars.XARB_RPC_84532 }}
+          XARB_RPC_84532_B: ${{ vars.XARB_RPC_84532_B }}
+          XARB_RPC_11155111: ${{ vars.XARB_RPC_11155111 }}
+          XARB_RPC_11155111_B: ${{ vars.XARB_RPC_11155111_B }}
+          XARB_RPC_8453: ${{ vars.XARB_RPC_8453 }}
+          XARB_RPC_8453_B: ${{ vars.XARB_RPC_8453_B }}
+        run: python3 scripts/verify-onchain.py "$ENV_DIR/config.yaml"
