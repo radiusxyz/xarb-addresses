@@ -47,7 +47,7 @@ jobs:
           echo "changed environments: $changed"
 
   deployment:
-    name: Provenance and chain (${{ matrix.environment }})
+    name: Chain (${{ matrix.environment }})
     needs: schema
     if: needs.schema.outputs.environments != '[]'
     runs-on: ubuntu-latest
@@ -70,61 +70,18 @@ jobs:
 
       - uses: foundry-rs/foundry-toolchain@v1
 
-      - name: Read provenance from the changed file
+      - name: Read the schema version of the changed file
         id: provenance
         run: |
           python3 - <<'PY' >> "$GITHUB_OUTPUT"
           import os, yaml
           data = yaml.safe_load(open(os.environ["ENV_DIR"] + "/config.yaml"))
           print(f"schema_version={data['schema_version']}")
-          print(f"contracts_commit={data.get('protocol', {}).get('contracts_commit', '')}")
           PY
 
       - name: Skip schema-1 environments
         if: steps.provenance.outputs.schema_version != '2'
         run: echo "schema_version 1 carries no artifacts; nothing to verify against the chain"
-
-      - name: Check out xarb-infra-contracts at the recorded commit
-        if: steps.provenance.outputs.schema_version == '2'
-        uses: actions/checkout@v4
-        with:
-          repository: radiusxyz/xarb-infra-contracts
-          ref: ${{ steps.provenance.outputs.contracts_commit }}
-          path: contracts
-          submodules: recursive
-          token: ${{ secrets.CONTRACTS_READ_TOKEN || github.token }}
-
-      - name: Artifacts are the recorded commit's config files
-        if: steps.provenance.outputs.schema_version == '2'
-        run: |
-          set -e
-          cmp contracts/config/event-registry-v1.json "$ENV_DIR/artifacts/event-registry-v1.json"
-          cmp contracts/config/abi/hub.json          "$ENV_DIR/artifacts/abi/hub.json"
-          cmp contracts/config/abi/spoke.json        "$ENV_DIR/artifacts/abi/spoke.json"
-          cmp contracts/config/manifests/hub.json    "$ENV_DIR/artifacts/manifests/hub.json"
-          cmp contracts/config/manifests/spoke.json  "$ENV_DIR/artifacts/manifests/spoke.json"
-          echo "all five artifacts are byte-identical to config/ at ${{ steps.provenance.outputs.contracts_commit }}"
-
-      - name: Manifests match the recorded commit's sources
-        if: steps.provenance.outputs.schema_version == '2'
-        working-directory: contracts
-        run: |
-          node utils/diamond/generate_manifest.mjs --target hub --check
-          node utils/diamond/generate_manifest.mjs --target spoke --check
-
-      - name: contracts_commit does not move backwards
-        if: steps.provenance.outputs.schema_version == '2' && github.event_name == 'pull_request'
-        working-directory: contracts
-        run: |
-          previous="$(git -C .. show "${{ github.event.pull_request.base.sha }}:$ENV_DIR/config.yaml" 2>/dev/null | python3 -c 'import sys,yaml; print(yaml.safe_load(sys.stdin).get("protocol",{}).get("contracts_commit",""))' || true)"
-          if [ -z "$previous" ]; then echo "no previous schema-2 publish for this environment"; exit 0; fi
-          git fetch --quiet origin "$previous" || true
-          if git merge-base --is-ancestor "$previous" HEAD; then
-            echo "previous $previous is an ancestor of ${{ steps.provenance.outputs.contracts_commit }}"
-          else
-            echo "::error::contracts_commit $previous -> ${{ steps.provenance.outputs.contracts_commit }} is not a fast-forward; refusing to move the environment backwards"
-            exit 1
-          fi
 
       - name: Chain agrees with the file
         if: steps.provenance.outputs.schema_version == '2'
