@@ -1,0 +1,7304 @@
+[
+  {
+    "inputs": [],
+    "name": "AccessControlBadConfirmation",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "neededRole",
+        "type": "bytes32"
+      }
+    ],
+    "name": "AccessControlUnauthorizedAccount",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "AccountAlreadyFrozen",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "AccountFrozen",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "AccountLocked",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "AccountNotFrozen",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "AccountUnfreezePending",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "AssetHasOutstandingPositions",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      }
+    ],
+    "name": "AssetInactive",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      }
+    ],
+    "name": "AssetPaused",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      }
+    ],
+    "name": "BorrowCapExceeded",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "BorrowNotEnabled",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "principal",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "requestedCap",
+        "type": "uint256"
+      }
+    ],
+    "name": "CapBelowPrincipal",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "cap",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "requestedPrincipal",
+        "type": "uint256"
+      }
+    ],
+    "name": "CapExceeded",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      }
+    ],
+    "name": "ChainHalted",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "CommitmentCancellationClosed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "CommitmentExpired",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "CommitmentMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "CommitmentNotCancellable",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "CommitmentNotExpired",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "CommitmentNotPending",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint48",
+        "name": "validUntil",
+        "type": "uint48"
+      }
+    ],
+    "name": "CreditAllocationStale",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "CreditLineNotOpen",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "DefaultAdminTransferRequired",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "delegatedPctBps",
+        "type": "uint256"
+      }
+    ],
+    "name": "DelegatedPercentageExceeded",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "EmptySelectorList",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "facet",
+        "type": "address"
+      }
+    ],
+    "name": "FacetHasNoCode",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "healthFactor",
+        "type": "uint256"
+      }
+    ],
+    "name": "HealthFactorTooHigh",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "healthFactor",
+        "type": "uint256"
+      }
+    ],
+    "name": "HealthFactorTooLow",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InsufficientBalance",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidAmount",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidAsset",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidBps",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidChain",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidCollateralFactor",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidCommitmentExecutionStatus",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidDecimals",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "facet",
+        "type": "address"
+      }
+    ],
+    "name": "InvalidFacetAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "init",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes",
+        "name": "initCalldata",
+        "type": "bytes"
+      }
+    ],
+    "name": "InvalidInitialization",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidLiquidationConfiguration",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidLiquidationResult",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidLiquidationStatus",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidLiquidityIndex",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "expected",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "actual",
+        "type": "uint256"
+      }
+    ],
+    "name": "InvalidNonce",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidReserveConfiguration",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidReserveFactor",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "threshold",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "validatorCount",
+        "type": "uint256"
+      }
+    ],
+    "name": "InvalidValidatorThreshold",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "liquidationId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "LiquidationAlreadyActive",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "liquidationId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "LiquidationResultNotReady",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "minimum",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "actual",
+        "type": "uint256"
+      }
+    ],
+    "name": "LiquidationSlippage",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "MalformedProof",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "messageId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "MessageAlreadyProcessed",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoDebtToRepay",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "liquidationHealthFactor",
+        "type": "uint256"
+      }
+    ],
+    "name": "NotLiquidatable",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      }
+    ],
+    "name": "OracleHeartbeatNotConfigured",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "commitmentId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "PendingCapExists",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "actual",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "required",
+        "type": "uint256"
+      }
+    ],
+    "name": "QuorumNotMet",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ReentrancyGuardReentrantCall",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ReservedBitsNotZero",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ReserveFrozen",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ReservePaused",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      }
+    ],
+    "name": "RiskChainNotTracked",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint8",
+        "name": "bits",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint256",
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "SafeCastOverflowedUintDowncast",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes4",
+        "name": "selector",
+        "type": "bytes4"
+      }
+    ],
+    "name": "SelectorAlreadyExists",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes4",
+        "name": "selector",
+        "type": "bytes4"
+      }
+    ],
+    "name": "SelectorDoesNotExist",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes4",
+        "name": "selector",
+        "type": "bytes4"
+      }
+    ],
+    "name": "SelectorIsImmutable",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes4",
+        "name": "selector",
+        "type": "bytes4"
+      },
+      {
+        "internalType": "address",
+        "name": "facet",
+        "type": "address"
+      }
+    ],
+    "name": "SelectorUnchanged",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "previous",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "current",
+        "type": "address"
+      }
+    ],
+    "name": "SignerOrderViolation",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint40",
+        "name": "suppliedTimestamp",
+        "type": "uint40"
+      }
+    ],
+    "name": "SnapshotFromFuture",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SnapshotGrowthExceeded",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SnapshotIndexRegression",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      }
+    ],
+    "name": "SnapshotNotConfigured",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SnapshotRateExceeded",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint40",
+        "name": "previousTimestamp",
+        "type": "uint40"
+      },
+      {
+        "internalType": "uint40",
+        "name": "suppliedTimestamp",
+        "type": "uint40"
+      }
+    ],
+    "name": "SnapshotTimestampRegression",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint40",
+        "name": "suppliedTimestamp",
+        "type": "uint40"
+      }
+    ],
+    "name": "SnapshotTooOld",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "internalType": "address",
+        "name": "expected",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "actual",
+        "type": "address"
+      }
+    ],
+    "name": "SourceSpokeMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint256",
+        "name": "updatedAt",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint48",
+        "name": "heartbeat",
+        "type": "uint48"
+      }
+    ],
+    "name": "StaleOraclePrice",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SystemPaused",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "Unauthorized",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "signer",
+        "type": "address"
+      }
+    ],
+    "name": "UnauthorizedSigner",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint48",
+        "name": "deadline",
+        "type": "uint48"
+      }
+    ],
+    "name": "UnfreezeDeadlineActive",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "UnfreezeNotPending",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      }
+    ],
+    "name": "UnfreezeTargetNotPending",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ZeroEventNonce",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ZeroMessageId",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      }
+    ],
+    "name": "ZeroPrice",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ZeroUser",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "frozen",
+        "type": "bool"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "caller",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "healthFactor",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "freezeGeneration",
+        "type": "uint64"
+      }
+    ],
+    "name": "AccountFreezeUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "locked",
+        "type": "bool"
+      }
+    ],
+    "name": "AccountLockUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum DataTypes.AllocationRiskTier",
+        "name": "tier",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint48",
+        "name": "maxAllocationDuration",
+        "type": "uint48"
+      }
+    ],
+    "name": "AllocationRiskTierUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "configurationData",
+        "type": "uint256"
+      }
+    ],
+    "name": "AssetConfigUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      }
+    ],
+    "name": "AssetMapped",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "configurationData",
+        "type": "uint256"
+      }
+    ],
+    "name": "AssetRegistered",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "messageId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "commitmentId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "BorrowSettled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "messageId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "newCap",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "delegatedPctBps",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint48",
+        "name": "validUntil",
+        "type": "uint48"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "commitmentId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "CapRaiseSettled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "messageId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "newCap",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "delegatedPctBpsAfter",
+        "type": "uint16"
+      }
+    ],
+    "name": "CapReduceSettled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "halted",
+        "type": "bool"
+      }
+    ],
+    "name": "ChainHaltUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "sourceSpoke",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "rateCeiling",
+        "type": "uint128"
+      }
+    ],
+    "name": "ChainMirrorConfigured",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "commitmentId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "enum DataTypes.CommitmentType",
+        "name": "cType",
+        "type": "uint8"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint32",
+        "name": "targetChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint48",
+        "name": "deadline",
+        "type": "uint48"
+      }
+    ],
+    "name": "CommitmentCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "bufferWad",
+        "type": "uint256"
+      }
+    ],
+    "name": "CommitmentHealthBufferUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "commitmentId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "targetChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum DataTypes.CommitmentStatus",
+        "name": "finalStatus",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "hubEventNonce",
+        "type": "uint256"
+      }
+    ],
+    "name": "CommitmentRevocationRequested",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "commitmentId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum DataTypes.CommitmentExecutionStatus",
+        "name": "executionStatus",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum DataTypes.CommitmentStatus",
+        "name": "finalStatus",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "messageId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "CommitmentRevocationSettled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "commitmentId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum DataTypes.CommitmentStatus",
+        "name": "status",
+        "type": "uint8"
+      }
+    ],
+    "name": "CommitmentStatusUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint48",
+        "name": "expiryGrace",
+        "type": "uint48"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint48",
+        "name": "cancelCutoff",
+        "type": "uint48"
+      }
+    ],
+    "name": "CommitmentTimingUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "liquidationId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "borrower",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "principal",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "scaledPrincipal",
+        "type": "uint256"
+      }
+    ],
+    "name": "CreditAllocationInvalidated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "commitmentId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint32",
+        "name": "targetChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "capPrincipal",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "delegatedPctBps",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint48",
+        "name": "validUntil",
+        "type": "uint48"
+      }
+    ],
+    "name": "CreditAllocationPending",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "messageId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "principal",
+        "type": "uint256"
+      }
+    ],
+    "name": "CreditDrawSettled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "messageId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "interestPaid",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "principalPaid",
+        "type": "uint256"
+      }
+    ],
+    "name": "CreditRepaySettled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "messageId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "hubScaledDebt",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "spokeScaledDebt",
+        "type": "uint256"
+      }
+    ],
+    "name": "DebtMirrorDrift",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "currentAdmin",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "canceledAdmin",
+        "type": "address"
+      }
+    ],
+    "name": "DefaultAdminTransferCanceled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousAdmin",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newAdmin",
+        "type": "address"
+      }
+    ],
+    "name": "DefaultAdminTransferred",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "currentAdmin",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "pendingAdmin",
+        "type": "address"
+      }
+    ],
+    "name": "DefaultAdminTransferStarted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "messageId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "DepositSettled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "facetAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "enum IDiamondCut.FacetCutAction",
+            "name": "action",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bytes4[]",
+            "name": "functionSelectors",
+            "type": "bytes4[]"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct IDiamondCut.FacetCut[]",
+        "name": "diamondCut",
+        "type": "tuple[]"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "init",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes",
+        "name": "initCalldata",
+        "type": "bytes"
+      }
+    ],
+    "name": "DiamondCut",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "liquidationId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "DirectRepayLiquidationCancelled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "liquidationId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "borrower",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "liquidator",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint32",
+        "name": "selectedChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "debtAssetId",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "collateralAssetId",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum DataTypes.LiquidationDebtType",
+        "name": "debtType",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "committedMaxDebt",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint48",
+        "name": "deadline",
+        "type": "uint48"
+      }
+    ],
+    "name": "DirectRepayLiquidationCommitted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "liquidationId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "borrower",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "liquidator",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "debtRepaid",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "collateralReceived",
+        "type": "uint256"
+      }
+    ],
+    "name": "DirectRepayLiquidationFinalized",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "liquidationId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "resultHash",
+        "type": "bytes32"
+      }
+    ],
+    "name": "DirectRepayLiquidationResultReceived",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "liquidationId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "debtRepaid",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "collateralReceived",
+        "type": "uint256"
+      }
+    ],
+    "name": "DirectRepayLiquidationSettled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "liquidationId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum DataTypes.LiquidationSkipReason",
+        "name": "reason",
+        "type": "uint8"
+      }
+    ],
+    "name": "DirectRepayLiquidationSkipSettled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "messageId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "EscrowSupplySettled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "nonce",
+        "type": "uint256"
+      }
+    ],
+    "name": "LastEventNonceOverridden",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "nonce",
+        "type": "uint256"
+      }
+    ],
+    "name": "LastReserveEventNonceOverridden",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "liquidationId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      }
+    ],
+    "name": "LiquidationChainAcknowledged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "liquidationId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "destinationChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "destinationSpoke",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum DataTypes.LiquidationAction",
+        "name": "action",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "actionNonce",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes",
+        "name": "payload",
+        "type": "bytes"
+      }
+    ],
+    "name": "LiquidationDeliveryRequested",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint16",
+            "name": "normalCloseFactorBps",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "fullCloseFactorBps",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint48",
+            "name": "requestLifetime",
+            "type": "uint48"
+          },
+          {
+            "internalType": "uint256",
+            "name": "liquidationThresholdWad",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "fullCloseHealthThresholdWad",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "smallDebtThresholdUsd",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "smallCollateralThresholdUsd",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "minRemainingDebtUsd",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "minRemainingCollateralUsd",
+            "type": "uint256"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct DataTypes.LiquidationParameters",
+        "name": "parameters",
+        "type": "tuple"
+      }
+    ],
+    "name": "LiquidationParametersUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "liquidationId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "LiquidationRecoveryRequired",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "registry",
+        "type": "address"
+      }
+    ],
+    "name": "LiquidationValidatorRegistryUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "messageId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "processed",
+        "type": "bool"
+      }
+    ],
+    "name": "MessageProcessedOverridden",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint48",
+        "name": "heartbeat",
+        "type": "uint48"
+      }
+    ],
+    "name": "OracleHeartbeatUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "oracle",
+        "type": "address"
+      }
+    ],
+    "name": "OracleUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "Paused",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "messageId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "scaledBurned",
+        "type": "uint256"
+      }
+    ],
+    "name": "RepaySettled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "pendingAcknowledgementRemoved",
+        "type": "bool"
+      }
+    ],
+    "name": "RiskChainPruned",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "freezeThresholdWad",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "commitmentBufferWad",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint48",
+        "name": "unfreezeTtl",
+        "type": "uint48"
+      }
+    ],
+    "name": "RiskThresholdsUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "previousAdminRole",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "newAdminRole",
+        "type": "bytes32"
+      }
+    ],
+    "name": "RoleAdminChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      }
+    ],
+    "name": "RoleGranted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      }
+    ],
+    "name": "RoleRevoked",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint48",
+        "name": "expiryGrace",
+        "type": "uint48"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint48",
+        "name": "cancelCutoff",
+        "type": "uint48"
+      }
+    ],
+    "name": "SettlementTimingUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "reserveEventNonce",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint40",
+        "name": "spokeTimestamp",
+        "type": "uint40"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "liquidityIndex",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "borrowIndex",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "creditIndex",
+        "type": "uint128"
+      }
+    ],
+    "name": "SnapshotApplied",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint48",
+        "name": "maxSpokeClockSkew",
+        "type": "uint48"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint48",
+        "name": "maxSnapshotRelayAge",
+        "type": "uint48"
+      }
+    ],
+    "name": "SnapshotTimingUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "expectedGeneration",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "observedGeneration",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "freezeNonce",
+        "type": "uint256"
+      }
+    ],
+    "name": "SpokeFreezeGenerationMismatchObserved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "observedUnfreezeEpoch",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "freezeNonce",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "messageId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "SpokeFreezeSettled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "unfreezeEpoch",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "counted",
+        "type": "bool"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "messageId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "SpokeUnfreezeSettled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "commitmentId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "enum DataTypes.CommitmentStatus",
+        "name": "finalStatus",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "messageId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "SupersededCommitmentRevocationObserved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "freezeNonce",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "observedUnfreezeEpoch",
+        "type": "uint64"
+      }
+    ],
+    "name": "UnauthorizedSpokeFreezeObserved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "unfreezeEpoch",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint48",
+        "name": "deadline",
+        "type": "uint48"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint32",
+        "name": "targetCount",
+        "type": "uint32"
+      }
+    ],
+    "name": "UnfreezeAuthorized",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "unfreezeEpoch",
+        "type": "uint64"
+      }
+    ],
+    "name": "UnfreezeCompleted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "targetChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "unfreezeEpoch",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint48",
+        "name": "deadline",
+        "type": "uint48"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "hubEventNonce",
+        "type": "uint256"
+      }
+    ],
+    "name": "UnfreezeDeliveryRequested",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "Unpaused",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "messageId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes32",
+        "name": "commitmentId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "WithdrawSettled",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "acceptDefaultAdminTransfer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "accountLocked",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "locked",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "borrower",
+        "type": "address"
+      }
+    ],
+    "name": "activeLiquidation",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "liquidationId",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "nonce",
+        "type": "uint256"
+      }
+    ],
+    "name": "adminSetLastEventNonce",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint256",
+        "name": "nonce",
+        "type": "uint256"
+      }
+    ],
+    "name": "adminSetLastReserveEventNonce",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "messageId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bool",
+        "name": "processed",
+        "type": "bool"
+      }
+    ],
+    "name": "adminSetMessageProcessed",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      }
+    ],
+    "name": "allocationRiskTier",
+    "outputs": [
+      {
+        "internalType": "enum DataTypes.AllocationRiskTier",
+        "name": "tier",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "liquidationId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "applyReceivedLiquidationResult",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      }
+    ],
+    "name": "assetConfiguration",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "configurationData",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "assetCount",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "count",
+        "type": "uint16"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "authorizeUnfreeze",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newAdmin",
+        "type": "address"
+      }
+    ],
+    "name": "beginDefaultAdminTransfer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "commitmentId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "cancelCommitment",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "cancelCutoff",
+    "outputs": [
+      {
+        "internalType": "uint48",
+        "name": "cutoff",
+        "type": "uint48"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "cancelDefaultAdminTransfer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "liquidationId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "cancelUnexecutedLiquidation",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      },
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      }
+    ],
+    "name": "canonicalAssetByChainToken",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      }
+    ],
+    "name": "chainAssetState",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint128",
+            "name": "liquidityIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "borrowIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "creditIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "liquidityRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "borrowRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "creditRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint40",
+            "name": "lastSpokeTimestamp",
+            "type": "uint40"
+          },
+          {
+            "internalType": "uint40",
+            "name": "lastHubIngestionTimestamp",
+            "type": "uint40"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lastReserveEventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint128",
+            "name": "rateCeiling",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalScaledSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalScaledDebt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalScaledCreditDebt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalCreditPrincipal",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalPendingDebt",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct DataTypes.ChainAssetState",
+        "name": "state",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      }
+    ],
+    "name": "chainCreditLine",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "capPrincipal",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint16",
+            "name": "delegatedPctBps",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint256",
+            "name": "principalKnown",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledPrincipalKnown",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "active",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint48",
+            "name": "validUntil",
+            "type": "uint48"
+          },
+          {
+            "internalType": "uint256",
+            "name": "pendingCapPrincipal",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint16",
+            "name": "pendingDelegatedPctBps",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint48",
+            "name": "pendingValidUntil",
+            "type": "uint48"
+          }
+        ],
+        "internalType": "struct DataTypes.HubCreditLine",
+        "name": "line",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      }
+    ],
+    "name": "chainHalted",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "halted",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      }
+    ],
+    "name": "chainPosition",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "scaledSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lockedScaledSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lockedNominalSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledDebt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "pendingDebt",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct DataTypes.ChainPosition",
+        "name": "position",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      }
+    ],
+    "name": "chainTokenByAsset",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "commitmentHealthBufferWad",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "bufferWad",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "commitmentId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "commitments",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "id",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "enum DataTypes.CommitmentType",
+            "name": "cType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "enum DataTypes.CommitmentStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "uint16",
+            "name": "assetId",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint32",
+            "name": "targetChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint48",
+            "name": "deadline",
+            "type": "uint48"
+          },
+          {
+            "internalType": "uint64",
+            "name": "nonce",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint256",
+            "name": "frozenScaledAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "isMaxWithdraw",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct DataTypes.Commitment",
+        "name": "commitment",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      },
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "sourceSpoke",
+        "type": "address"
+      },
+      {
+        "internalType": "uint128",
+        "name": "rateCeiling",
+        "type": "uint128"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint40",
+            "name": "spokeTimestamp",
+            "type": "uint40"
+          },
+          {
+            "internalType": "uint128",
+            "name": "liquidityIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "borrowIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "creditIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "liquidityRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "borrowRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "creditRate",
+            "type": "uint128"
+          }
+        ],
+        "internalType": "struct DataTypes.IndexSnapshot",
+        "name": "baseline",
+        "type": "tuple"
+      }
+    ],
+    "name": "configureChainAsset",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      }
+    ],
+    "name": "configuredSpoke",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "spoke",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      }
+    ],
+    "name": "debtBalance",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "balance",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      }
+    ],
+    "name": "debtBalanceOnChain",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "balance",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "DEFAULT_ADMIN_ROLE",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "defaultAdmin",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "facetAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "enum IDiamondCut.FacetCutAction",
+            "name": "action",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bytes4[]",
+            "name": "functionSelectors",
+            "type": "bytes4[]"
+          }
+        ],
+        "internalType": "struct IDiamondCut.FacetCut[]",
+        "name": "cuts",
+        "type": "tuple[]"
+      },
+      {
+        "internalType": "address",
+        "name": "init",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes",
+        "name": "initCalldata",
+        "type": "bytes"
+      }
+    ],
+    "name": "diamondCut",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "commitmentId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "expireCommitment",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "expiryGrace",
+    "outputs": [
+      {
+        "internalType": "uint48",
+        "name": "grace",
+        "type": "uint48"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes4",
+        "name": "selector",
+        "type": "bytes4"
+      }
+    ],
+    "name": "facetAddress",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "facetAddress_",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "facetAddresses",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "facetAddresses_",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "facet",
+        "type": "address"
+      }
+    ],
+    "name": "facetFunctionSelectors",
+    "outputs": [
+      {
+        "internalType": "bytes4[]",
+        "name": "selectors",
+        "type": "bytes4[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "facets",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "facetAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "bytes4[]",
+            "name": "functionSelectors",
+            "type": "bytes4[]"
+          }
+        ],
+        "internalType": "struct IDiamondLoupe.Facet[]",
+        "name": "facets_",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "commitmentId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "failCommitment",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "liquidationId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "finalizeRecoveredLiquidation",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "freeze",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "freezeEligibility",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "eligible",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint256",
+        "name": "factor",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "blockNumber",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint64",
+        "name": "unfreezeEpoch",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "freezeHealthThresholdWad",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "thresholdWad",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "freezeState",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "enum DataTypes.FreezeStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint64",
+            "name": "unfreezeEpoch",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint48",
+            "name": "unfreezeDeadline",
+            "type": "uint48"
+          },
+          {
+            "internalType": "uint32",
+            "name": "pendingUnfreezeAcks",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "freezeGeneration",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct DataTypes.UserFreezeState",
+        "name": "state",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "enum DataTypes.LiquidationAction",
+            "name": "action",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "sourceChainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "sourceContract",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "sourceBlockNumber",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "destinationChainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "destinationContract",
+            "type": "address"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "liquidationId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "payloadHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "actionNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "deadline",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct DataTypes.LiquidationAttestation",
+        "name": "attestation",
+        "type": "tuple"
+      }
+    ],
+    "name": "getLiquidationAttestationDigest",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "digest",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getRoleAdmin",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "grantRole",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "hasRole",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "healthFactor",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "factor",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      }
+    ],
+    "name": "isChainMapped",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "mapped",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "isFrozen",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "frozen",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "lastEventNonce",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "nonce",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      }
+    ],
+    "name": "lastReserveEventNonce",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "nonce",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "liqHF",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "factor",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "liquidationId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      }
+    ],
+    "name": "liquidationChainStatus",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "required",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "settled",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "liquidationId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      }
+    ],
+    "name": "liquidationInstruction",
+    "outputs": [
+      {
+        "internalType": "bytes",
+        "name": "payload",
+        "type": "bytes"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "liquidationParameters",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint16",
+            "name": "normalCloseFactorBps",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "fullCloseFactorBps",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint48",
+            "name": "requestLifetime",
+            "type": "uint48"
+          },
+          {
+            "internalType": "uint256",
+            "name": "liquidationThresholdWad",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "fullCloseHealthThresholdWad",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "smallDebtThresholdUsd",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "smallCollateralThresholdUsd",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "minRemainingDebtUsd",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "minRemainingCollateralUsd",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct DataTypes.LiquidationParameters",
+        "name": "parameters",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "liquidationId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "liquidationRequiredChains",
+    "outputs": [
+      {
+        "internalType": "uint32[]",
+        "name": "chainIds",
+        "type": "uint32[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "liquidationId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "liquidationReservations",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "paymentScaled",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "collateralScaled",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "liquidationId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "liquidations",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "id",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "address",
+            "name": "borrower",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "liquidator",
+            "type": "address"
+          },
+          {
+            "internalType": "uint32",
+            "name": "selectedChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint16",
+            "name": "debtAssetId",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "collateralAssetId",
+            "type": "uint16"
+          },
+          {
+            "internalType": "enum DataTypes.LiquidationDebtType",
+            "name": "debtType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "enum DataTypes.LiquidationStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint48",
+            "name": "committedAt",
+            "type": "uint48"
+          },
+          {
+            "internalType": "uint48",
+            "name": "deadline",
+            "type": "uint48"
+          },
+          {
+            "internalType": "uint64",
+            "name": "nonce",
+            "type": "uint64"
+          },
+          {
+            "internalType": "bool",
+            "name": "borrowerWasFrozen",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint16",
+            "name": "bonusBps",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "protocolFeeBps",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint32",
+            "name": "requiredChainCount",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "settledChainCount",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "liquidationHealthFactor",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "maxDebtToCover",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "minCollateralToReceive",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "committedMaxDebt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "committedBorrowerScaledDebt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "committedBorrowerScaledCollateral",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "committedLiquidatorScaledSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "committedBorrowerEventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "committedLiquidatorEventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "committedCreditPrincipal",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "committedCreditScaledPrincipal",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "debtPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "collateralPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "actualDebtRepaid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "actualCollateralReceived",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct DataTypes.Liquidation",
+        "name": "liquidation",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "liquidationValidatorRegistry",
+    "outputs": [
+      {
+        "internalType": "contract IValidatorRegistry",
+        "name": "registry",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      }
+    ],
+    "name": "maxAllocationDuration",
+    "outputs": [
+      {
+        "internalType": "uint48",
+        "name": "duration",
+        "type": "uint48"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      }
+    ],
+    "name": "maxWithdrawEligibility",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "eligibleScaled",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "quotedAmount",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "oracle",
+    "outputs": [
+      {
+        "internalType": "contract IOracle",
+        "name": "oracleAddress",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      }
+    ],
+    "name": "oracleHeartbeat",
+    "outputs": [
+      {
+        "internalType": "uint48",
+        "name": "heartbeat",
+        "type": "uint48"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "pause",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "paused",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "isPaused",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "pendingDefaultAdmin",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "pendingUnfreezeChains",
+    "outputs": [
+      {
+        "internalType": "uint32[]",
+        "name": "chainIds",
+        "type": "uint32[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "policyConfiguration",
+    "outputs": [
+      {
+        "internalType": "uint48",
+        "name": "maxSpokeClockSkew",
+        "type": "uint48"
+      },
+      {
+        "internalType": "uint48",
+        "name": "maxSnapshotRelayAge",
+        "type": "uint48"
+      },
+      {
+        "internalType": "uint48",
+        "name": "expiryGrace_",
+        "type": "uint48"
+      },
+      {
+        "internalType": "uint48",
+        "name": "cancelCutoff_",
+        "type": "uint48"
+      },
+      {
+        "internalType": "uint256",
+        "name": "freezeThresholdWad",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "commitmentBufferWad",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint48",
+        "name": "unfreezeTtl",
+        "type": "uint48"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "messageId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "processedMessage",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "processed",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      }
+    ],
+    "name": "pruneRiskChain",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint32",
+        "name": "targetChainId",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint48",
+        "name": "deadline",
+        "type": "uint48"
+      }
+    ],
+    "name": "recordPendingBorrow",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "commitmentId",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint32",
+        "name": "targetChainId",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint16",
+        "name": "delegatedPctBps",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint48",
+        "name": "deadline",
+        "type": "uint48"
+      }
+    ],
+    "name": "recordPendingCreditCapRaise",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "commitmentId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint256",
+        "name": "capPrincipal",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint32",
+        "name": "targetChainId",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint48",
+        "name": "deadline",
+        "type": "uint48"
+      }
+    ],
+    "name": "recordPendingWithdraw",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "commitmentId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint256",
+        "name": "committedAmount",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "refreshUnfreeze",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "configurationData",
+        "type": "uint256"
+      }
+    ],
+    "name": "registerAsset",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "renounceRole",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "borrower",
+        "type": "address"
+      },
+      {
+        "internalType": "uint32",
+        "name": "spokeChainId",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint16",
+        "name": "debtAssetId",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint16",
+        "name": "collateralAssetId",
+        "type": "uint16"
+      },
+      {
+        "internalType": "enum DataTypes.LiquidationDebtType",
+        "name": "debtType",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint256",
+        "name": "maxDebtToCover",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "minCollateralToReceive",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint48",
+        "name": "deadline",
+        "type": "uint48"
+      }
+    ],
+    "name": "requestDirectRepayLiquidation",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "liquidationId",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "requestUnfreezeResync",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      },
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      }
+    ],
+    "name": "resolveAssetId",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "uint32",
+        "name": "targetChainId",
+        "type": "uint32"
+      }
+    ],
+    "name": "retryUnfreeze",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "revokeRole",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "riskHF",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "factor",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "locked",
+        "type": "bool"
+      }
+    ],
+    "name": "setAccountLocked",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "internalType": "enum DataTypes.AllocationRiskTier",
+        "name": "tier",
+        "type": "uint8"
+      }
+    ],
+    "name": "setAllocationRiskTier",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "internalType": "bool",
+        "name": "halted",
+        "type": "bool"
+      }
+    ],
+    "name": "setChainHalted",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint48",
+        "name": "expiryGrace_",
+        "type": "uint48"
+      },
+      {
+        "internalType": "uint48",
+        "name": "cancelCutoff_",
+        "type": "uint48"
+      }
+    ],
+    "name": "setCommitmentTiming",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint256",
+        "name": "configurationData",
+        "type": "uint256"
+      }
+    ],
+    "name": "setConfiguration",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint16",
+            "name": "normalCloseFactorBps",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint16",
+            "name": "fullCloseFactorBps",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint48",
+            "name": "requestLifetime",
+            "type": "uint48"
+          },
+          {
+            "internalType": "uint256",
+            "name": "liquidationThresholdWad",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "fullCloseHealthThresholdWad",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "smallDebtThresholdUsd",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "smallCollateralThresholdUsd",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "minRemainingDebtUsd",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "minRemainingCollateralUsd",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct DataTypes.LiquidationParameters",
+        "name": "parameters",
+        "type": "tuple"
+      }
+    ],
+    "name": "setLiquidationParameters",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "registry",
+        "type": "address"
+      }
+    ],
+    "name": "setLiquidationValidatorRegistry",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint48",
+        "name": "heartbeat",
+        "type": "uint48"
+      }
+    ],
+    "name": "setOracleHeartbeat",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "freezeThresholdWad",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "commitmentBufferWad",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint48",
+        "name": "unfreezeTtl",
+        "type": "uint48"
+      }
+    ],
+    "name": "setRiskThresholds",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint48",
+        "name": "maxSpokeClockSkew",
+        "type": "uint48"
+      },
+      {
+        "internalType": "uint48",
+        "name": "maxSnapshotRelayAge",
+        "type": "uint48"
+      }
+    ],
+    "name": "setSnapshotTiming",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint32",
+            "name": "sourceChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "address",
+            "name": "sourceSpoke",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "eventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "reserveEventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "messageId",
+            "type": "bytes32"
+          }
+        ],
+        "internalType": "struct DataTypes.SettlementContext",
+        "name": "ctx",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "commitmentId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "token",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint40",
+                "name": "spokeTimestamp",
+                "type": "uint40"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditRate",
+                "type": "uint128"
+              }
+            ],
+            "internalType": "struct DataTypes.IndexSnapshot",
+            "name": "snap",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct DataTypes.BorrowPayload",
+        "name": "payload",
+        "type": "tuple"
+      }
+    ],
+    "name": "settleBorrow",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint32",
+            "name": "sourceChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "address",
+            "name": "sourceSpoke",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "eventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "reserveEventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "messageId",
+            "type": "bytes32"
+          }
+        ],
+        "internalType": "struct DataTypes.SettlementContext",
+        "name": "ctx",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "commitmentId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "token",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "newCap",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint48",
+            "name": "validUntil",
+            "type": "uint48"
+          }
+        ],
+        "internalType": "struct DataTypes.CapRaisePayload",
+        "name": "payload",
+        "type": "tuple"
+      }
+    ],
+    "name": "settleCapRaise",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint32",
+            "name": "sourceChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "address",
+            "name": "sourceSpoke",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "eventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "reserveEventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "messageId",
+            "type": "bytes32"
+          }
+        ],
+        "internalType": "struct DataTypes.SettlementContext",
+        "name": "ctx",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "token",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "newCap",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct DataTypes.CapReducePayload",
+        "name": "payload",
+        "type": "tuple"
+      }
+    ],
+    "name": "settleCapReduce",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint32",
+            "name": "sourceChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "address",
+            "name": "sourceSpoke",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "eventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "reserveEventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "messageId",
+            "type": "bytes32"
+          }
+        ],
+        "internalType": "struct DataTypes.SettlementContext",
+        "name": "ctx",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "commitmentId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "enum DataTypes.CommitmentExecutionStatus",
+            "name": "executionStatus",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "hubEventNonce",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct DataTypes.CommitmentRevocationPayload",
+        "name": "payload",
+        "type": "tuple"
+      }
+    ],
+    "name": "settleCommitmentRevocation",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint32",
+            "name": "sourceChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "address",
+            "name": "sourceSpoke",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "eventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "reserveEventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "messageId",
+            "type": "bytes32"
+          }
+        ],
+        "internalType": "struct DataTypes.SettlementContext",
+        "name": "ctx",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "token",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "principal",
+            "type": "uint256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint40",
+                "name": "spokeTimestamp",
+                "type": "uint40"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditRate",
+                "type": "uint128"
+              }
+            ],
+            "internalType": "struct DataTypes.IndexSnapshot",
+            "name": "snap",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "principal",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledPrincipal",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct DataTypes.CreditLineSnapshot",
+            "name": "lineAfter",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct DataTypes.CreditDrawPayload",
+        "name": "payload",
+        "type": "tuple"
+      }
+    ],
+    "name": "settleCreditDraw",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint32",
+            "name": "sourceChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "address",
+            "name": "sourceSpoke",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "eventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "reserveEventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "messageId",
+            "type": "bytes32"
+          }
+        ],
+        "internalType": "struct DataTypes.SettlementContext",
+        "name": "ctx",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "token",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "interestPaid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "principalPaid",
+            "type": "uint256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint40",
+                "name": "spokeTimestamp",
+                "type": "uint40"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditRate",
+                "type": "uint128"
+              }
+            ],
+            "internalType": "struct DataTypes.IndexSnapshot",
+            "name": "snap",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "principal",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledPrincipal",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct DataTypes.CreditLineSnapshot",
+            "name": "lineAfter",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct DataTypes.CreditRepayPayload",
+        "name": "payload",
+        "type": "tuple"
+      }
+    ],
+    "name": "settleCreditRepay",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint32",
+            "name": "sourceChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "address",
+            "name": "sourceSpoke",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "eventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "reserveEventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "messageId",
+            "type": "bytes32"
+          }
+        ],
+        "internalType": "struct DataTypes.SettlementContext",
+        "name": "ctx",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "token",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint40",
+                "name": "spokeTimestamp",
+                "type": "uint40"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditRate",
+                "type": "uint128"
+              }
+            ],
+            "internalType": "struct DataTypes.IndexSnapshot",
+            "name": "snap",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct DataTypes.DepositPayload",
+        "name": "payload",
+        "type": "tuple"
+      }
+    ],
+    "name": "settleDeposit",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint32",
+            "name": "sourceChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "address",
+            "name": "sourceSpoke",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "eventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "reserveEventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "messageId",
+            "type": "bytes32"
+          }
+        ],
+        "internalType": "struct DataTypes.SettlementContext",
+        "name": "ctx",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "token",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint40",
+                "name": "spokeTimestamp",
+                "type": "uint40"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditRate",
+                "type": "uint128"
+              }
+            ],
+            "internalType": "struct DataTypes.IndexSnapshot",
+            "name": "snap",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct DataTypes.EscrowSupplyPayload",
+        "name": "payload",
+        "type": "tuple"
+      }
+    ],
+    "name": "settleEscrowSupply",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint32",
+            "name": "sourceChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "address",
+            "name": "sourceSpoke",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "eventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "reserveEventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "messageId",
+            "type": "bytes32"
+          }
+        ],
+        "internalType": "struct DataTypes.SettlementContext",
+        "name": "ctx",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "token",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledBurned",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledDebtAfter",
+            "type": "uint256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint40",
+                "name": "spokeTimestamp",
+                "type": "uint40"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditRate",
+                "type": "uint128"
+              }
+            ],
+            "internalType": "struct DataTypes.IndexSnapshot",
+            "name": "snap",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct DataTypes.RepayPayload",
+        "name": "payload",
+        "type": "tuple"
+      }
+    ],
+    "name": "settleRepay",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint32",
+            "name": "sourceChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "address",
+            "name": "sourceSpoke",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "eventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "reserveEventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "messageId",
+            "type": "bytes32"
+          }
+        ],
+        "internalType": "struct DataTypes.SettlementContext",
+        "name": "ctx",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "freezeNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint64",
+            "name": "observedUnfreezeEpoch",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint256",
+            "name": "observedHealthFactor",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "hubBlockNumber",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint64",
+            "name": "freezeGeneration",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct DataTypes.SpokeFreezePayload",
+        "name": "payload",
+        "type": "tuple"
+      }
+    ],
+    "name": "settleSpokeFreeze",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint32",
+            "name": "sourceChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "address",
+            "name": "sourceSpoke",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "eventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "reserveEventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "messageId",
+            "type": "bytes32"
+          }
+        ],
+        "internalType": "struct DataTypes.SettlementContext",
+        "name": "ctx",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "uint64",
+            "name": "unfreezeEpoch",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct DataTypes.SpokeUnfreezePayload",
+        "name": "payload",
+        "type": "tuple"
+      }
+    ],
+    "name": "settleSpokeUnfreeze",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint32",
+            "name": "sourceChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "address",
+            "name": "sourceSpoke",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "eventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "reserveEventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "messageId",
+            "type": "bytes32"
+          }
+        ],
+        "internalType": "struct DataTypes.SettlementContext",
+        "name": "ctx",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "commitmentId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "token",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledBurned",
+            "type": "uint256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint40",
+                "name": "spokeTimestamp",
+                "type": "uint40"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditRate",
+                "type": "uint128"
+              }
+            ],
+            "internalType": "struct DataTypes.IndexSnapshot",
+            "name": "snap",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct DataTypes.WithdrawPayload",
+        "name": "payload",
+        "type": "tuple"
+      }
+    ],
+    "name": "settleWithdraw",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "enum DataTypes.LiquidationAction",
+            "name": "action",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "sourceChainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "sourceContract",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "sourceBlockNumber",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "destinationChainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "destinationContract",
+            "type": "address"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "liquidationId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "payloadHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "actionNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "deadline",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct DataTypes.LiquidationAttestation",
+        "name": "attestation",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "liquidationId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "address",
+            "name": "borrower",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "liquidator",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "treasury",
+            "type": "address"
+          },
+          {
+            "internalType": "uint32",
+            "name": "sourceChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "address",
+            "name": "debtAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "collateralAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "enum DataTypes.LiquidationDebtType",
+            "name": "debtType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint64",
+            "name": "permitGeneration",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint256",
+            "name": "borrowerEventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "liquidatorEventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "debtReserveEventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "collateralReserveEventNonce",
+            "type": "uint256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "principal",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledPrincipal",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct DataTypes.CreditLineSnapshot",
+            "name": "selectedCreditLineAfter",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint256",
+                "name": "actualDebtRepaid",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledPaymentBurned",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledDebtBurned",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "interestPaid",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "principalPaid",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "grossCollateralSeized",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "netCollateralReceived",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "protocolFeeCollateral",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledCollateralToLiquidator",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledCollateralToTreasury",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "borrowerScaledDebtAfter",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "borrowerScaledCollateralAfter",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "liquidatorScaledPaymentAfter",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "liquidatorScaledCollateralAfter",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "treasuryScaledCollateralAfter",
+                "type": "uint256"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "uint40",
+                    "name": "spokeTimestamp",
+                    "type": "uint40"
+                  },
+                  {
+                    "internalType": "uint128",
+                    "name": "liquidityIndex",
+                    "type": "uint128"
+                  },
+                  {
+                    "internalType": "uint128",
+                    "name": "borrowIndex",
+                    "type": "uint128"
+                  },
+                  {
+                    "internalType": "uint128",
+                    "name": "creditIndex",
+                    "type": "uint128"
+                  },
+                  {
+                    "internalType": "uint128",
+                    "name": "liquidityRate",
+                    "type": "uint128"
+                  },
+                  {
+                    "internalType": "uint128",
+                    "name": "borrowRate",
+                    "type": "uint128"
+                  },
+                  {
+                    "internalType": "uint128",
+                    "name": "creditRate",
+                    "type": "uint128"
+                  }
+                ],
+                "internalType": "struct DataTypes.IndexSnapshot",
+                "name": "debtSnapshot",
+                "type": "tuple"
+              },
+              {
+                "components": [
+                  {
+                    "internalType": "uint40",
+                    "name": "spokeTimestamp",
+                    "type": "uint40"
+                  },
+                  {
+                    "internalType": "uint128",
+                    "name": "liquidityIndex",
+                    "type": "uint128"
+                  },
+                  {
+                    "internalType": "uint128",
+                    "name": "borrowIndex",
+                    "type": "uint128"
+                  },
+                  {
+                    "internalType": "uint128",
+                    "name": "creditIndex",
+                    "type": "uint128"
+                  },
+                  {
+                    "internalType": "uint128",
+                    "name": "liquidityRate",
+                    "type": "uint128"
+                  },
+                  {
+                    "internalType": "uint128",
+                    "name": "borrowRate",
+                    "type": "uint128"
+                  },
+                  {
+                    "internalType": "uint128",
+                    "name": "creditRate",
+                    "type": "uint128"
+                  }
+                ],
+                "internalType": "struct DataTypes.IndexSnapshot",
+                "name": "collateralSnapshot",
+                "type": "tuple"
+              },
+              {
+                "internalType": "uint256",
+                "name": "debtTotalScaledSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "debtTotalScaledDebt",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "debtTotalScaledCreditDebt",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "debtTotalCreditPrincipal",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "collateralTotalScaledSupply",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "collateralTotalScaledDebt",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "collateralTotalScaledCreditDebt",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "collateralTotalCreditPrincipal",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct DataTypes.PoolLiquidationResult",
+            "name": "poolResult",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "asset",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "capBefore",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "principal",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledPrincipal",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "reserveEventNonce",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct DataTypes.CreditInvalidationResult[]",
+            "name": "creditInvalidations",
+            "type": "tuple[]"
+          }
+        ],
+        "internalType": "struct DataTypes.LiquidationExecutionResult",
+        "name": "result",
+        "type": "tuple"
+      },
+      {
+        "internalType": "bytes",
+        "name": "quorumProof",
+        "type": "bytes"
+      }
+    ],
+    "name": "submitDirectRepayLiquidationResult",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "enum DataTypes.LiquidationAction",
+            "name": "action",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "sourceChainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "sourceContract",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "sourceBlockNumber",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "destinationChainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "destinationContract",
+            "type": "address"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "liquidationId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "payloadHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "actionNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "deadline",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct DataTypes.LiquidationAttestation",
+        "name": "attestation",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "liquidationId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "address",
+            "name": "borrower",
+            "type": "address"
+          },
+          {
+            "internalType": "uint32",
+            "name": "sourceChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "liquidationNonce",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "permitGeneration",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint256",
+            "name": "borrowerEventNonce",
+            "type": "uint256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "asset",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "capBefore",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "principal",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "scaledPrincipal",
+                "type": "uint256"
+              },
+              {
+                "internalType": "uint256",
+                "name": "reserveEventNonce",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct DataTypes.CreditInvalidationResult[]",
+            "name": "creditInvalidations",
+            "type": "tuple[]"
+          }
+        ],
+        "internalType": "struct DataTypes.LiquidationStateAck",
+        "name": "acknowledgement",
+        "type": "tuple"
+      },
+      {
+        "internalType": "bytes",
+        "name": "quorumProof",
+        "type": "bytes"
+      }
+    ],
+    "name": "submitLiquidationStateAck",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "enum DataTypes.LiquidationAction",
+            "name": "action",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "sourceChainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "sourceContract",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "sourceBlockNumber",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "destinationChainId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "destinationContract",
+            "type": "address"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "liquidationId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "payloadHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint256",
+            "name": "actionNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "deadline",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct DataTypes.LiquidationAttestation",
+        "name": "attestation",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "liquidationId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "address",
+            "name": "borrower",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "liquidator",
+            "type": "address"
+          },
+          {
+            "internalType": "uint32",
+            "name": "sourceChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "enum DataTypes.LiquidationSkipReason",
+            "name": "reason",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint64",
+            "name": "liquidationNonce",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct DataTypes.LiquidationSkippedResult",
+        "name": "result",
+        "type": "tuple"
+      },
+      {
+        "internalType": "bytes",
+        "name": "quorumProof",
+        "type": "bytes"
+      }
+    ],
+    "name": "submitSkippedDirectRepayLiquidationResult",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      }
+    ],
+    "name": "supplyBalance",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "balance",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      }
+    ],
+    "name": "supplyBalanceOnChain",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "balance",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes4",
+        "name": "interfaceId",
+        "type": "bytes4"
+      }
+    ],
+    "name": "supportsInterface",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "unfreezeAuthorizationTtl",
+    "outputs": [
+      {
+        "internalType": "uint48",
+        "name": "ttl",
+        "type": "uint48"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "unfreezeEligibility",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "eligible",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint256",
+        "name": "factor",
+        "type": "uint256"
+      },
+      {
+        "internalType": "enum DataTypes.FreezeStatus",
+        "name": "status",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint64",
+        "name": "epoch",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint48",
+        "name": "deadline",
+        "type": "uint48"
+      },
+      {
+        "internalType": "uint32",
+        "name": "outstandingTargets",
+        "type": "uint32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "uint32",
+        "name": "chainId",
+        "type": "uint32"
+      }
+    ],
+    "name": "unfreezeStatus",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "requiredEpoch",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "acknowledgedEpoch",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint256",
+        "name": "outboundNonce",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "campaignNonce",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "unpause",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "userActiveChains",
+    "outputs": [
+      {
+        "internalType": "uint32[]",
+        "name": "chainIds",
+        "type": "uint32[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "userCommitmentNonce",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "nonce",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "userDelegatedPctBpsTotal",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "delegatedPctBps",
+        "type": "uint16"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "userRiskChains",
+    "outputs": [
+      {
+        "internalType": "uint32[]",
+        "name": "chainIds",
+        "type": "uint32[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "commitmentId",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint32",
+        "name": "targetChainId",
+        "type": "uint32"
+      }
+    ],
+    "name": "verifyCommitment",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "valid",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
