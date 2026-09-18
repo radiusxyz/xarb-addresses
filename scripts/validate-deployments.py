@@ -8,6 +8,11 @@ Beyond the JSON schema this checks what the schema cannot express:
   - when artifacts are declared: every artifact exists under the environment directory and
     its digest matches (sha256 for JSON copies, keccak256 for manifests), and
     nothing sits under artifacts/ undeclared
+  - when routes.yaml sits next to config.yaml: it carries the two route lists
+    xarb-operations-infra reads, with the same ids on both sides, every route
+    joining the hub and one of the spokes, propagator routes naming the
+    destination chain's batch_inbox, and ids equal to
+    keccak256(abi.encode(ROUTE_TYPEHASH, source, destination))
 
 Usage:
     python3 scripts/validate-deployments.py [deployments/<env>/config.yaml ...]
@@ -93,6 +98,88 @@ def check_environment(data: dict, directory: str, environments: dict) -> list[st
     return errors
 
 
+ROUTE_TYPEHASH = "Route(uint32 sourceChainId,address sourceContract,uint32 destinationChainId,address destinationContract)"
+
+
+def route_id(source_chain: int, source: str, destination_chain: int, destination: str) -> str | None:
+    digest = keccak256(ROUTE_TYPEHASH.encode())
+    if digest is None:
+        return None
+    encoded = bytes.fromhex(digest) + source_chain.to_bytes(32, "big") + bytes(12) + bytes.fromhex(source[2:]) \
+        + destination_chain.to_bytes(32, "big") + bytes(12) + bytes.fromhex(destination[2:])
+    return "0x" + keccak256(encoded)
+
+
+def check_routes(data: dict, env_dir: Path) -> list[str]:
+    path = env_dir / "routes.yaml"
+    if not path.is_file():
+        return []
+    errors = []
+    routes = yaml.safe_load(path.read_text()) or {}
+    indexer = routes.get("xarb_indexer_routes")
+    propagator = routes.get("xarb_propagator_routes")
+    if not isinstance(indexer, list) or not indexer or not isinstance(propagator, list) or not propagator:
+        return ["routes.yaml: xarb_indexer_routes and xarb_propagator_routes must both be non-empty lists"]
+
+    hub = data["hub"]
+    hub_key = (hub["chain_id"], hub["contracts"]["hub"]["address"].lower())
+    spokes = {(s["chain_id"], s["contracts"]["spoke"]["address"].lower()): s for s in data["spokes"]}
+    inbox_of = {hub_key: (hub["contracts"].get("batch_inbox") or {}).get("address", "").lower()}
+    inbox_of.update({k: (s["contracts"].get("batch_inbox") or {}).get("address", "").lower() for k, s in spokes.items()})
+    expected_pairs = set()
+    for spoke_key in spokes:
+        expected_pairs.add((hub_key, spoke_key))
+        expected_pairs.add((spoke_key, hub_key))
+
+    def endpoint(route: dict, label: str) -> tuple | None:
+        try:
+            src = (int(route["source_chain_id"]), str(route["source_contract"]).lower())
+            dst = (int(route["destination_chain_id"]), str(route["destination_contract"]).lower())
+        except (KeyError, ValueError, TypeError):
+            errors.append(f"routes.yaml: {label} lacks source/destination chain and contract")
+            return None
+        return src, dst
+
+    seen_pairs = set()
+    for label, routes_list in (("indexer", indexer), ("propagator", propagator)):
+        for index, route in enumerate(routes_list):
+            where = f"{label} route {index}"
+            rid = str(route.get("id", "")).lower()
+            if not (rid.startswith("0x") and len(rid) == 66):
+                errors.append(f"routes.yaml: {where} id must be a 32-byte hex string")
+                continue
+            pair = endpoint(route, where)
+            if pair is None:
+                continue
+            if pair not in expected_pairs:
+                errors.append(f"routes.yaml: {where} joins {pair[0]} -> {pair[1]}, which is not hub<->spoke in config.yaml")
+            expected = route_id(pair[0][0], pair[0][1], pair[1][0], pair[1][1])
+            if expected is not None and expected != rid:
+                errors.append(f"routes.yaml: {where} id {rid} is not keccak of its endpoints ({expected})")
+            if label == "propagator":
+                seen_pairs.add(pair)
+                if not str(route.get("name", "")).strip():
+                    errors.append(f"routes.yaml: {where} needs a name")
+                inbox = str(route.get("inbox", "")).lower()
+                if not inbox or inbox != inbox_of.get(pair[1], ""):
+                    errors.append(f"routes.yaml: {where} inbox {inbox or '<missing>'} is not the destination's batch_inbox in config.yaml")
+                try:
+                    if int(route.get("genesis_block", 0)) <= 0:
+                        errors.append(f"routes.yaml: {where} genesis_block must be > 0")
+                except (ValueError, TypeError):
+                    errors.append(f"routes.yaml: {where} genesis_block must be an integer")
+    indexer_ids = {str(r.get("id", "")).lower() for r in indexer}
+    propagator_ids = {str(r.get("id", "")).lower() for r in propagator}
+    if indexer_ids != propagator_ids:
+        errors.append(f"routes.yaml: indexer and propagator route ids differ: {sorted(indexer_ids ^ propagator_ids)}")
+    if len(indexer_ids) != len(indexer) or len(propagator_ids) != len(propagator):
+        errors.append("routes.yaml: duplicate route ids")
+    missing = expected_pairs - seen_pairs
+    if missing:
+        errors.append(f"routes.yaml: propagator routes missing for {sorted(missing)}")
+    return errors
+
+
 def check_artifacts(data: dict, env_dir: Path) -> list[str]:
     errors = []
     if "artifacts" not in data:
@@ -137,7 +224,7 @@ def main(argv: list[str]) -> int:
 
     failed = 0
     for config in configs:
-        rel = config.relative_to(ROOT)
+        rel = config.relative_to(ROOT) if config.is_relative_to(ROOT) else config
         data = yaml.safe_load(config.read_text())
         errors = [
             f"{'/'.join(str(p) for p in err.path) or '<root>'}: {err.message}"
@@ -146,6 +233,7 @@ def main(argv: list[str]) -> int:
         if not errors:
             errors += check_environment(data, config.parent.name, environments)
             errors += check_artifacts(data, config.parent)
+            errors += check_routes(data, config.parent)
         if errors:
             failed += 1
             print(f"FAIL {rel}")

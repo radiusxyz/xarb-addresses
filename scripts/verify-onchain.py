@@ -15,6 +15,8 @@ deployed, so this script works from the address book alone:
     to the manifest's entries
   - spoke wiring (lendingPool, escrowVault, hub) and batch inbox destinations
     match the file
+  - when routes.yaml is present, every propagator route is registered on its
+    inbox with exactly the source, destination and genesis block the file says
   - when two RPC endpoints are configured for a chain, both must agree
 
 Reads are pinned to a block a few behind the head so a lagging endpoint or a
@@ -240,6 +242,21 @@ def main() -> int:
         verify_diamond(label, chain, contracts["spoke"], manifests["spoke"])
         verify_implementation(f"{label}.lending_pool", chain, contracts["lending_pool"], manifests["spoke"], "LendingPool")
         verify_implementation(f"{label}.escrow_vault", chain, contracts["escrow_vault"], manifests["spoke"], "EscrowVault")
+
+    routes_path = env_dir / "routes.yaml"
+    if routes_path.is_file():
+        routes = yaml.safe_load(routes_path.read_text()) or {}
+        for route in routes.get("xarb_propagator_routes", []):
+            chain = chains[int(route["destination_chain_id"])]
+            registered = chain.call(route["inbox"], "routeRegistered(bytes32)(bool)", route["id"])
+            if registered != "true":
+                raise Failure(f"route {route['id']} is not registered on inbox {route['inbox']}")
+            config = chain.call(route["inbox"], "routeConfig(bytes32)((uint32,address,uint32,address,uint64))", route["id"])
+            fields = [f.strip().split(" ")[0].lower() for f in config.strip("()").split(",")]
+            expected = [str(route["source_chain_id"]), route["source_contract"].lower(), str(route["destination_chain_id"]), route["destination_contract"].lower(), str(route["genesis_block"])]
+            if fields != expected:
+                raise Failure(f"route {route['id']} on {route['inbox']} is {fields} on chain, routes.yaml says {expected}")
+        print(f"  routes: {len(routes.get('xarb_propagator_routes', []))} propagator routes registered on their inboxes with matching config")
 
     print("on-chain verification passed")
     return 0
