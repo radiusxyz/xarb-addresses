@@ -1,10 +1,28 @@
 schema_version: 1
 environment: staging
-updated_at: "2026-06-18"
+updated_at: "2026-09-18"
 
 protocol:
   name: xarb
-  release: "v0.1.0"
+  release: "463a5a9"
+  contracts_commit: 463a5a94b9072fd9e8ec2a59735384c5f1df161e
+
+artifacts:
+  event_registry:
+    path: artifacts/event-registry-v1.json
+    sha256: "cbb7dc7e731e1b4bfe8095d071a930cfc3ccde334a1d2e1375f16e33c60740e4"
+  hub_abi:
+    path: artifacts/abi/hub.json
+    sha256: "481b447aa81816d0010632da2e424c9196712405e9da5b85b4ba956ce709343e"
+  spoke_abi:
+    path: artifacts/abi/spoke.json
+    sha256: "b3303e9ae904337cae84fcd4e4fe01d4c6d9679bc4018046402bba47c7ef0bd9"
+  hub_manifest:
+    path: artifacts/manifests/hub.json
+    keccak256: "0x047f9d989aa579bed1540b6ffbd8a70eacbe710a691d5a8c5d396aa7138f8ff9"
+  spoke_manifest:
+    path: artifacts/manifests/spoke.json
+    keccak256: "0x23100ceb4e5668b26eb2ebe1a90a5929b362872c65be2713cef113893f9935bc"
 
 hub:
   chain_id: 84532
@@ -13,10 +31,20 @@ hub:
   native_symbol: ETH
   explorer_url: https://sepolia.basescan.org
   contracts:
+    batch_inbox:
+      address: "0x1f6b558212bFbfA146B611fE39c208AB1cbf0D7e"
     hub:
-      address: "0x0000000000000000000000000000000000000000"
+      address: "0x50aD1d37Ec2B6C671Ac5F94d92Ca7Fb1b19428Ce"
     oracle:
-      address: "0x0000000000000000000000000000000000000000"
+      address: "0xA0ABD40d81603C592Fa33fbab5C9561D4bC43B93"
+    request_forwarder:
+      address: "0x0B91aBaD5b7Ab20eB78F82b2b115d3de7811C484"
+    request_gateway:
+      address: "0xA9906d0a24895867d43D6FA3fB4912B60592050e"
+    validator_registry:
+      address: "0x5AD14abcb8933117c80ce47Ab5bf39e682d2473D"
+  substreams:
+    start_block: 46843192
 
 spokes:
   - chain_id: 84532
@@ -25,22 +53,15 @@ spokes:
     native_symbol: ETH
     explorer_url: https://sepolia.basescan.org
     contracts:
-      spoke:
-        address: "0x0000000000000000000000000000000000000000"
+      batch_inbox:
+        address: "0x437d7C1E09e55C9AF745f8cdaF43fE9435e376ae"
+      escrow_vault:
+        address: "0x59211d35E7A23e7c8ce0cccEa37f674Ea9282Ab5"
       lending_pool:
-        address: "0x0000000000000000000000000000000000000000"
-    substreams:
-      start_block: 0
-
-  - chain_id: 11155111
-    name: sepolia
-    role: spoke
-    native_symbol: ETH
-    explorer_url: https://sepolia.etherscan.io
-    contracts:
+        address: "0x2e035346A6E5b89690743c75CCb6cC55b10210C5"
       spoke:
-        address: "0x0000000000000000000000000000000000000000"
-      lending_pool:
-        address: "0x0000000000000000000000000000000000000000"
+        address: "0x55f33c91C37cE9042761a19eF459498b209174be"
+      validator_registry:
+        address: "0x5AD14abcb8933117c80ce47Ab5bf39e682d2473D"
     substreams:
-      start_block: 0
+      start_block: 46843286
