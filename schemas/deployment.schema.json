@@ -66,24 +66,16 @@
       }
     },
     "artifacts": {
-      "description": "Release artifacts copied byte-for-byte from xarb-infra-contracts config/, with their digests. Optional; the publish tool always writes them.",
+      "description": "Release artifacts copied byte-for-byte from xarb-infra-contracts config/: the event registry and the diamond manifests (which pin the ABI by sha256). Optional; the publish tool always writes them.",
       "type": "object",
       "additionalProperties": false,
       "required": [
         "event_registry",
-        "hub_abi",
-        "spoke_abi",
         "hub_manifest",
         "spoke_manifest"
       ],
       "properties": {
         "event_registry": {
-          "$ref": "#/$defs/sha256Artifact"
-        },
-        "hub_abi": {
-          "$ref": "#/$defs/sha256Artifact"
-        },
-        "spoke_abi": {
           "$ref": "#/$defs/sha256Artifact"
         },
         "hub_manifest": {
