@@ -5,7 +5,7 @@ Beyond the JSON schema this checks what the schema cannot express:
   - the environment directory name matches the file's `environment`
   - every chain_id is allowed for that environment (environments.yaml)
   - chain name / native_symbol / explorer_url match environments.yaml
-  - schema_version 2: every artifact exists under the environment directory and
+  - when artifacts are declared: every artifact exists under the environment directory and
     its digest matches (sha256 for JSON copies, keccak256 for manifests), and
     nothing sits under artifacts/ undeclared
 
@@ -95,7 +95,10 @@ def check_environment(data: dict, directory: str, environments: dict) -> list[st
 
 def check_artifacts(data: dict, env_dir: Path) -> list[str]:
     errors = []
-    if data.get("schema_version") != 2:
+    if "artifacts" not in data:
+        artifacts_dir = env_dir / "artifacts"
+        if artifacts_dir.is_dir() and any(artifacts_dir.rglob("*")):
+            return ["artifacts/ exists on disk but config.yaml declares no artifacts"]
         return errors
     for name, artifact in data.get("artifacts", {}).items():
         path = env_dir / artifact["path"]

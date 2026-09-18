@@ -70,21 +70,21 @@ jobs:
 
       - uses: foundry-rs/foundry-toolchain@v1
 
-      - name: Read the schema version of the changed file
+      - name: Does the changed file declare artifacts
         id: provenance
         run: |
           python3 - <<'PY' >> "$GITHUB_OUTPUT"
           import os, yaml
           data = yaml.safe_load(open(os.environ["ENV_DIR"] + "/config.yaml"))
-          print(f"schema_version={data['schema_version']}")
+          print(f"has_artifacts={'true' if 'artifacts' in data else 'false'}")
           PY
 
-      - name: Skip schema-1 environments
-        if: steps.provenance.outputs.schema_version != '2'
-        run: echo "schema_version 1 carries no artifacts; nothing to verify against the chain"
+      - name: Skip environments without artifacts
+        if: steps.provenance.outputs.has_artifacts != 'true'
+        run: echo "no artifacts declared; nothing to verify against the chain"
 
       - name: Chain agrees with the file
-        if: steps.provenance.outputs.schema_version == '2'
+        if: steps.provenance.outputs.has_artifacts == 'true'
         env:
           XARB_RPC_84532: ${{ vars.XARB_RPC_84532 }}
           XARB_RPC_84532_B: ${{ vars.XARB_RPC_84532_B }}

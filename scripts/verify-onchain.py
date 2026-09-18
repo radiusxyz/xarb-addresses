@@ -7,8 +7,12 @@ deployed, so this script works from the address book alone:
 
   - every listed contract has code on its chain
   - hub and spoke diamonds route exactly the selectors the artifacts manifests
-    declare, and each facet's code, with its library link slots zeroed, hashes
-    to the manifest's runtimeCodeHashUnlinked
+    declare, and each facet's code, with its deployment-address slots zeroed,
+    hashes to the manifest's runtimeCodeHashUnlinked
+  - every external library a facet links, found through the facet's link
+    slots, hashes to the manifest's entry the same way
+  - the LendingPool and EscrowVault implementations behind their proxies hash
+    to the manifest's entries
   - spoke wiring (lendingPool, escrowVault, hub) and batch inbox destinations
     match the file
   - when two RPC endpoints are configured for a chain, both must agree
@@ -82,6 +86,41 @@ def masked_hash(code_hex: str, references: list[dict]) -> str:
     return keccak(bytes(buffer))
 
 
+IMPLEMENTATION_SLOT = "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc"
+
+
+def artifact_entry(manifest: dict, name: str) -> dict:
+    for entry in manifest["sizeArtifacts"]:
+        if entry["artifact"].split(":")[1] == name:
+            return entry
+    raise Failure(f"manifest has no sizeArtifacts entry for {name}")
+
+
+def linked_libraries(code_hex: str, ranges: list[dict]) -> set[str]:
+    code = bytes.fromhex(code_hex[2:])
+    return {"0x" + code[r["start"]:r["start"] + 20].hex() for r in ranges if r["length"] == 20}
+
+
+def verify_code(label: str, chain: Chain, address: str, entry: dict) -> None:
+    code = chain.code(address)
+    if code == "0x":
+        raise Failure(f"{label} {address} has no code")
+    if masked_hash(code, entry["maskedRanges"]) != entry["runtimeCodeHashUnlinked"]:
+        raise Failure(f"{label} at {address} is not the manifest's build of {entry['artifact'].split(':')[1]}")
+
+
+def verify_implementation(label: str, chain: Chain, proxy: str, manifest: dict, name: str) -> None:
+    word = cast("storage", proxy, IMPLEMENTATION_SLOT, "--rpc-url", chain.urls[0], "--block", str(chain.block))
+    implementation = "0x" + word[-40:]
+    if int(implementation, 16) == 0:
+        raise Failure(f"{label} {proxy} has no implementation in the ERC-1967 slot")
+    entry = artifact_entry(manifest, name)
+    verify_code(f"{label} implementation", chain, implementation, entry)
+    print(f"  {label}: implementation {implementation} is the manifest's {name}")
+    libraries = {address: {name} for address in linked_libraries(chain.code(implementation), entry["maskedRanges"])}
+    verify_libraries(label, chain, libraries, manifest)
+
+
 def parse_list(value: str) -> list[str]:
     return [item.strip() for item in value.strip("[]").split(",") if item.strip()]
 
@@ -90,6 +129,7 @@ def verify_diamond(label: str, chain: Chain, address: str, manifest: dict) -> No
     facets = parse_list(chain.call(address, "facetAddresses()(address[])"))
     if len(facets) != len(manifest["facets"]):
         raise Failure(f"{label}: chain has {len(facets)} facets, manifest lists {len(manifest['facets'])}")
+    libraries: dict[str, set[str]] = {}
     for facet in manifest["facets"]:
         first = facet["functions"][0]["selector"]
         facet_address = chain.call(address, "facetAddress(bytes4)(address)", first)
@@ -99,9 +139,31 @@ def verify_diamond(label: str, chain: Chain, address: str, manifest: dict) -> No
         expected = {item["selector"] for item in facet["functions"]}
         if routed != expected:
             raise Failure(f"{label}: {facet['name']} routing differs from the manifest by {sorted(routed ^ expected)}")
-        if masked_hash(chain.code(facet_address), facet["linkReferences"]) != facet["runtimeCodeHashUnlinked"]:
+        code = chain.code(facet_address)
+        if masked_hash(code, facet["maskedRanges"]) != facet["runtimeCodeHashUnlinked"]:
             raise Failure(f"{label}: {facet['name']} at {facet_address} is not the manifest's build")
+        for library in linked_libraries(code, facet["maskedRanges"]):
+            libraries.setdefault(library, set()).add(facet["name"])
     print(f"  {label}: {len(facets)} facets, {sum(len(f['functions']) for f in manifest['facets'])} selectors, code matches the manifest")
+    verify_libraries(label, chain, libraries, manifest)
+
+
+def verify_libraries(label: str, chain: Chain, libraries: dict[str, set[str]], manifest: dict) -> None:
+    entries = [e for e in manifest["sizeArtifacts"] if any(l["artifact"] == e["artifact"] for l in manifest["libraries"])]
+    matched = 0
+    for address in sorted(libraries):
+        code = chain.code(address)
+        if code == "0x":
+            raise Failure(f"{label}: library {address} linked by {sorted(libraries[address])} has no code")
+        digest = None
+        for entry in entries:
+            if masked_hash(code, entry["maskedRanges"]) == entry["runtimeCodeHashUnlinked"]:
+                digest = entry["artifact"].split(":")[1]
+                break
+        if digest is None:
+            raise Failure(f"{label}: library {address} linked by {sorted(libraries[address])} matches no library in the manifest")
+        matched += 1
+    print(f"  {label}: {matched} linked libraries match the manifest")
 
 
 def require_code(label: str, chain: Chain, address: str) -> None:
@@ -119,8 +181,8 @@ def main() -> int:
     config_path = Path(args.config).resolve()
     env_dir = config_path.parent
     data = yaml.safe_load(config_path.read_text())
-    if data.get("schema_version") != 2:
-        raise Failure("on-chain verification needs schema_version 2 (artifacts with manifests)")
+    if "artifacts" not in data:
+        raise Failure("on-chain verification needs the artifacts block (manifests)")
     environments = yaml.safe_load((ROOT / "environments.yaml").read_text())
 
     rpc_urls: dict[int, list[str]] = {}
@@ -176,6 +238,8 @@ def main() -> int:
             if destination.lower() != contracts["spoke"].lower():
                 raise Failure(f"{label} batch_inbox destination is {destination}, not the spoke")
         verify_diamond(label, chain, contracts["spoke"], manifests["spoke"])
+        verify_implementation(f"{label}.lending_pool", chain, contracts["lending_pool"], manifests["spoke"], "LendingPool")
+        verify_implementation(f"{label}.escrow_vault", chain, contracts["escrow_vault"], manifests["spoke"], "EscrowVault")
 
     print("on-chain verification passed")
     return 0
