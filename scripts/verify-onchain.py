@@ -291,6 +291,8 @@ def main() -> int:
         if "tokens" in spoke:
             verify_tokens(label, chain, contracts["lending_pool"], spoke["tokens"])
         if "faucet" in spoke:
+            if "tokens" not in spoke:
+                raise Failure(f"{label}.faucet needs the spoke's tokens list")
             verify_faucet(label, chain, spoke["faucet"], spoke["tokens"])
 
     routes_path = env_dir / "routes.yaml"
