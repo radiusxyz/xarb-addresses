@@ -1,0 +1,197 @@
+{
+  "formatVersion": 1,
+  "protocolVersion": 1,
+  "eventCount": 19,
+  "events": [
+    {
+      "name": "DepositInitiated",
+      "sourceRole": "SPOKE",
+      "signature": "DepositInitiated(address,address,uint256,(uint32,address,address,uint256,uint256,bytes32),(uint40,uint128,uint128,uint128,uint128,uint128,uint128))",
+      "topic0": "0x7d8f41507f19013c44f2591771e85e231d7ca8eb7c2949b44b25079b794369e4",
+      "classification": "BATCH",
+      "actionKind": 1,
+      "destination": "FIXED_HUB",
+      "lane": "STRICT_USER_RESERVE"
+    },
+    {
+      "name": "BorrowInitiated",
+      "sourceRole": "SPOKE",
+      "signature": "BorrowInitiated(address,address,uint256,bytes32,(uint32,address,address,uint256,uint256,bytes32),(uint40,uint128,uint128,uint128,uint128,uint128,uint128))",
+      "topic0": "0xc33b6218319ea2990094a077857a2a4d248a11a6832807a7a418a10d2a365089",
+      "classification": "BATCH",
+      "actionKind": 2,
+      "destination": "FIXED_HUB",
+      "lane": "STRICT_USER_RESERVE"
+    },
+    {
+      "name": "RepayInitiated",
+      "sourceRole": "SPOKE",
+      "signature": "RepayInitiated(address,address,uint256,uint256,uint256,(uint32,address,address,uint256,uint256,bytes32),(uint40,uint128,uint128,uint128,uint128,uint128,uint128))",
+      "topic0": "0x3d94fb6d96198e57594b83f9289f545d92c604441328d9fe882088d6ddce38f9",
+      "classification": "BATCH",
+      "actionKind": 3,
+      "destination": "FIXED_HUB",
+      "lane": "STRICT_USER_RESERVE"
+    },
+    {
+      "name": "WithdrawInitiated",
+      "sourceRole": "SPOKE",
+      "signature": "WithdrawInitiated(address,address,uint256,uint256,bytes32,(uint32,address,address,uint256,uint256,bytes32),(uint40,uint128,uint128,uint128,uint128,uint128,uint128))",
+      "topic0": "0x5453d0eadec1050e34e5ed261daceddf949014baf9ea319bbbb1d68cca81ef9b",
+      "classification": "BATCH",
+      "actionKind": 4,
+      "destination": "FIXED_HUB",
+      "lane": "STRICT_USER_RESERVE"
+    },
+    {
+      "name": "CreditDrawInitiated",
+      "sourceRole": "SPOKE",
+      "signature": "CreditDrawInitiated(address,address,uint256,(uint32,address,address,uint256,uint256,bytes32),(uint40,uint128,uint128,uint128,uint128,uint128,uint128),(uint256,uint256))",
+      "topic0": "0xe771e5af63b2615da733353f42cb3debd8bbba8a4c7ea407fc30896bad814e18",
+      "classification": "BATCH",
+      "actionKind": 5,
+      "destination": "FIXED_HUB",
+      "lane": "STRICT_USER_RESERVE"
+    },
+    {
+      "name": "CreditRepayInitiated",
+      "sourceRole": "SPOKE",
+      "signature": "CreditRepayInitiated(address,address,uint256,uint256,(uint32,address,address,uint256,uint256,bytes32),(uint40,uint128,uint128,uint128,uint128,uint128,uint128),(uint256,uint256))",
+      "topic0": "0xe11e654eb1e5650448f2c389b9f91ecfa47a23bd1735b820065098219328ce9e",
+      "classification": "BATCH",
+      "actionKind": 6,
+      "destination": "FIXED_HUB",
+      "lane": "STRICT_USER_RESERVE"
+    },
+    {
+      "name": "CapRaiseApplied",
+      "sourceRole": "SPOKE",
+      "signature": "CapRaiseApplied(address,address,uint256,uint48,bytes32,uint256,(uint32,address,address,uint256,uint256,bytes32))",
+      "topic0": "0x1d1b165545696676e63073608091bd244a133341ab2d5928a9546d100178bbc1",
+      "classification": "BATCH",
+      "actionKind": 7,
+      "destination": "FIXED_HUB",
+      "lane": "STRICT_USER_RESERVE"
+    },
+    {
+      "name": "CapReduceInitiated",
+      "sourceRole": "SPOKE",
+      "signature": "CapReduceInitiated(address,address,uint256,(uint32,address,address,uint256,uint256,bytes32))",
+      "topic0": "0x52037bdf7e39ecac56b11035210c8a093b628cccabfeb29156db2ee944b806bc",
+      "classification": "BATCH",
+      "actionKind": 8,
+      "destination": "FIXED_HUB",
+      "lane": "STRICT_USER_RESERVE"
+    },
+    {
+      "name": "EscrowSupplied",
+      "sourceRole": "SPOKE",
+      "signature": "EscrowSupplied(address,address,uint256,(uint32,address,address,uint256,uint256,bytes32),(uint40,uint128,uint128,uint128,uint128,uint128,uint128))",
+      "topic0": "0x8812c3069112a69546393b5f8427efc9f686d6a29063b330a8bf85a4854d434d",
+      "classification": "BATCH",
+      "actionKind": 9,
+      "destination": "FIXED_HUB",
+      "lane": "STRICT_USER_RESERVE"
+    },
+    {
+      "name": "SpokeFreezeApplied",
+      "sourceRole": "SPOKE",
+      "signature": "SpokeFreezeApplied(address,uint256,uint64,uint256,uint256,uint64,(uint32,address,address,uint256,uint256,bytes32))",
+      "topic0": "0xf217d873a4002be2dd8a945a0b62b87cbb47dda9003fa2eadd386a26adcb7f4a",
+      "classification": "BATCH",
+      "actionKind": 11,
+      "destination": "FIXED_HUB",
+      "lane": "STRICT_USER"
+    },
+    {
+      "name": "SpokeUnfreezeApplied",
+      "sourceRole": "SPOKE",
+      "signature": "SpokeUnfreezeApplied(address,uint64,uint32,uint256)",
+      "topic0": "0x563d19a31a8033696b7afb09076616cca082586bfdb9e9b04f74de29af2a86ea",
+      "classification": "BATCH",
+      "actionKind": 12,
+      "destination": "FIXED_HUB",
+      "lane": "STRICT_USER"
+    },
+    {
+      "name": "CommitmentRevocationApplied",
+      "sourceRole": "SPOKE",
+      "signature": "CommitmentRevocationApplied(address,bytes32,uint8,uint256,(uint32,address,address,uint256,uint256,bytes32))",
+      "topic0": "0xc30bbd08fdfbbf4af4da6efed20039799ec7044a79341d9137a3971c0bdb8127",
+      "classification": "BATCH",
+      "actionKind": 13,
+      "destination": "FIXED_HUB",
+      "lane": "STRICT_USER"
+    },
+    {
+      "name": "UnfreezeDeliveryRequested",
+      "sourceRole": "HUB",
+      "signature": "UnfreezeDeliveryRequested(address,uint32,uint64,uint48,uint256)",
+      "topic0": "0x5fb486a37cb2a20ed4f04c3812a1f3ebe42df794d35a2706d6f19ed0ee9f9281",
+      "classification": "BATCH",
+      "actionKind": 261,
+      "destination": "TARGET_CHAIN",
+      "lane": "DUPLICATE_SAFE_HUB_MESSAGE"
+    },
+    {
+      "name": "CommitmentRevocationRequested",
+      "sourceRole": "HUB",
+      "signature": "CommitmentRevocationRequested(bytes32,address,uint32,uint8,uint256)",
+      "topic0": "0xa3e627f946558c700163b4865c1b8269f50c245d3542dfcb6a5c970a25e46d2d",
+      "classification": "BATCH",
+      "actionKind": 262,
+      "destination": "TARGET_CHAIN",
+      "lane": "DUPLICATE_SAFE_HUB_MESSAGE"
+    },
+    {
+      "name": "AccountFreezeUpdated",
+      "sourceRole": "HUB",
+      "signature": "AccountFreezeUpdated(address,bool,address,uint256,uint64)",
+      "topic0": "0x29934cc783bbb8c24213404ba9a6d1cca822a016fe0f9a38dbd0ed511e7f6007",
+      "classification": "DIRECT_FREEZE",
+      "actionKind": 0,
+      "destination": "RISK_CHAIN_TARGETS",
+      "lane": "FREEZE_GENERATION"
+    },
+    {
+      "name": "LiquidationDeliveryRequested",
+      "sourceRole": "HUB",
+      "signature": "LiquidationDeliveryRequested(bytes32,uint32,address,uint8,uint256,bytes)",
+      "topic0": "0x10a41ba742b16e397c26866629c2fb503cf6d66335faf41af15dab0e46c4c317",
+      "classification": "DIRECT_LIQUIDATION",
+      "actionKind": 0,
+      "destination": "TARGET_CHAIN",
+      "lane": "LIQUIDATION_ACTION"
+    },
+    {
+      "name": "DirectRepayLiquidationExecuted",
+      "sourceRole": "SPOKE",
+      "signature": "DirectRepayLiquidationExecuted(bytes32,address,address,(bytes32,address,address,address,uint32,address,address,uint8,uint64,uint256,uint256,uint256,uint256,(uint256,uint256),(uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,(uint40,uint128,uint128,uint128,uint128,uint128,uint128),(uint40,uint128,uint128,uint128,uint128,uint128,uint128),uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256),(address,uint256,uint256,uint256,uint256)[]))",
+      "topic0": "0x036489f5fea78512a03ebae16c0b50be7c1503a4e8d8bf393c4dd4bddd0eda5d",
+      "classification": "DIRECT_LIQUIDATION",
+      "actionKind": 0,
+      "destination": "FIXED_HUB",
+      "lane": "LIQUIDATION_ACTION"
+    },
+    {
+      "name": "DirectRepayLiquidationSkipped",
+      "sourceRole": "SPOKE",
+      "signature": "DirectRepayLiquidationSkipped(bytes32,address,uint8,(bytes32,address,address,uint32,uint8,uint64))",
+      "topic0": "0xbddcdc509b485986be85ad4af8ed7788fea9e573eddc6da7f61e0f663f1ed430",
+      "classification": "DIRECT_LIQUIDATION",
+      "actionKind": 0,
+      "destination": "FIXED_HUB",
+      "lane": "LIQUIDATION_ACTION"
+    },
+    {
+      "name": "LiquidationStateApplied",
+      "sourceRole": "SPOKE",
+      "signature": "LiquidationStateApplied(bytes32,address,uint32,(bytes32,address,uint32,uint64,uint64,uint256,(address,uint256,uint256,uint256,uint256)[]))",
+      "topic0": "0xdc1a9b86876e461c0cf498622de6b5fbce2302546f0eb3edc3a843889a2646df",
+      "classification": "DIRECT_LIQUIDATION",
+      "actionKind": 0,
+      "destination": "FIXED_HUB",
+      "lane": "LIQUIDATION_ACTION"
+    }
+  ]
+}
