@@ -8,6 +8,9 @@ Beyond the JSON schema this checks what the schema cannot express:
   - when artifacts are declared: every artifact exists under the environment directory and
     its digest matches (sha256 for JSON copies, keccak256 for manifests), and
     nothing sits under artifacts/ undeclared
+  - spoke tokens: unique addresses and symbols, no zero address
+  - spoke faucet: requires tokens, every drip names a token symbol exactly once,
+    no zero address, and no faucet at all in production
   - when routes.yaml sits next to config.yaml: it carries the two route lists
     xarb-operations-infra reads, with the same ids on both sides, every route
     joining the hub and one of the spokes, propagator routes naming the
@@ -95,6 +98,48 @@ def check_environment(data: dict, directory: str, environments: dict) -> list[st
                 expected, actual = expected.rstrip("/"), str(actual or "").rstrip("/")
             if actual != expected:
                 errors.append(f"{label}/{key}: expected {meta[key]} for chain {chain_id}, got {node.get(key)}")
+    return errors
+
+
+ZERO_ADDRESS = "0x" + "0" * 40
+
+
+def check_tokens(data: dict) -> list[str]:
+    errors = []
+    for index, spoke in enumerate(data.get("spokes", [])):
+        label = f"spokes/{index}"
+        tokens = spoke.get("tokens")
+        faucet = spoke.get("faucet")
+        symbols: set[str] = set()
+        addresses: set[str] = set()
+        for position, token in enumerate(tokens or []):
+            where = f"{label}/tokens/{position}"
+            address = token["address"].lower()
+            if address == ZERO_ADDRESS:
+                errors.append(f"{where}: zero address")
+            if address in addresses:
+                errors.append(f"{where}: duplicate address {token['address']}")
+            if token["symbol"] in symbols:
+                errors.append(f"{where}: duplicate symbol {token['symbol']}")
+            addresses.add(address)
+            symbols.add(token["symbol"])
+        if faucet is None:
+            continue
+        where = f"{label}/faucet"
+        if data.get("environment") == "production":
+            errors.append(f"{where}: faucets are not published for production")
+        if not tokens:
+            errors.append(f"{where}: needs the spoke's tokens list to resolve drips")
+        for key in ("address", "owner", "operator"):
+            if faucet[key].lower() == ZERO_ADDRESS:
+                errors.append(f"{where}/{key}: zero address")
+        dripped: set[str] = set()
+        for position, drip in enumerate(faucet["drips"]):
+            if drip["token"] not in symbols:
+                errors.append(f"{where}/drips/{position}: {drip['token']} is not a token of this spoke")
+            if drip["token"] in dripped:
+                errors.append(f"{where}/drips/{position}: {drip['token']} dripped twice")
+            dripped.add(drip["token"])
     return errors
 
 
@@ -232,6 +277,7 @@ def main(argv: list[str]) -> int:
         ]
         if not errors:
             errors += check_environment(data, config.parent.name, environments)
+            errors += check_tokens(data)
             errors += check_artifacts(data, config.parent)
             errors += check_routes(data, config.parent)
         if errors:

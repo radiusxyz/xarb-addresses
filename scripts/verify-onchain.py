@@ -15,6 +15,12 @@ deployed, so this script works from the address book alone:
     to the manifest's entries
   - spoke wiring (lendingPool, escrowVault, hub) and batch inbox destinations
     match the file
+  - spoke tokens are exactly the LendingPool's getReservesList(), in order, and
+    each token's decimals() matches (symbol() is compared ignoring case: the
+    file carries the ledger's canonical symbol)
+  - the faucet's tokens()/amounts()/nativeAmount() match the file; owner() and
+    operator() only warn when they differ, since the owner can change them
+    without a republish and they do not affect what the faucet dispenses
   - when routes.yaml is present, every propagator route is registered on its
     inbox with exactly the source, destination and genesis block the file says
   - when two RPC endpoints are configured for a chain, both must agree
@@ -168,6 +174,48 @@ def verify_libraries(label: str, chain: Chain, libraries: dict[str, set[str]], m
     print(f"  {label}: {matched} linked libraries match the manifest")
 
 
+def unquote(value: str) -> str:
+    return value.strip().strip('"')
+
+
+def verify_tokens(label: str, chain: Chain, pool: str, tokens: list[dict]) -> None:
+    reserves = [item.lower() for item in parse_list(chain.call(pool, "getReservesList()(address[])"))]
+    listed = [token["address"].lower() for token in tokens]
+    if reserves != listed:
+        raise Failure(f"{label}: lending_pool reserves are {reserves}, file lists {listed}")
+    for token in tokens:
+        require_code(f"{label}.tokens.{token['symbol']}", chain, token["address"])
+        symbol = unquote(chain.call(token["address"], "symbol()(string)"))
+        if symbol.lower() != token["symbol"].lower():
+            raise Failure(f"{label}: token {token['address']} is {symbol} on chain, file says {token['symbol']}")
+        decimals = int(chain.call(token["address"], "decimals()(uint8)"))
+        if decimals != token["decimals"]:
+            raise Failure(f"{label}: token {token['symbol']} has {decimals} decimals, file says {token['decimals']}")
+    print(f"  {label}: {len(tokens)} tokens match the lending_pool reserves")
+
+
+def verify_faucet(label: str, chain: Chain, faucet: dict, tokens: list[dict]) -> None:
+    address = faucet["address"]
+    require_code(f"{label}.faucet", chain, address)
+    by_symbol = {token["symbol"]: token["address"].lower() for token in tokens}
+    expected_tokens = [by_symbol[drip["token"]] for drip in faucet["drips"]]
+    expected_amounts = [drip["amount"] for drip in faucet["drips"]]
+    on_chain_tokens = [item.lower() for item in parse_list(chain.call(address, "tokens()(address[])"))]
+    on_chain_amounts = [item.split(" ")[0] for item in parse_list(chain.call(address, "amounts()(uint256[])"))]
+    if on_chain_tokens != expected_tokens:
+        raise Failure(f"{label}.faucet: tokens() is {on_chain_tokens}, file drips {expected_tokens}")
+    if on_chain_amounts != expected_amounts:
+        raise Failure(f"{label}.faucet: amounts() is {on_chain_amounts}, file says {expected_amounts}")
+    native = chain.call(address, "nativeAmount()(uint256)").split(" ")[0]
+    if native != faucet["native_amount"]:
+        raise Failure(f"{label}.faucet: nativeAmount() is {native}, file says {faucet['native_amount']}")
+    for view in ("owner", "operator"):
+        actual = chain.call(address, f"{view}()(address)")
+        if actual.lower() != faucet[view].lower():
+            print(f"  warn {label}.faucet: {view}() is {actual}, file says {faucet[view]} (stale snapshot; republish to refresh)")
+    print(f"  {label}.faucet: {len(faucet['drips'])} drips and native amount match the chain")
+
+
 def require_code(label: str, chain: Chain, address: str) -> None:
     if chain.code(address) == "0x":
         raise Failure(f"{label} {address} has no code on chain {chain.chain_id}")
@@ -225,8 +273,6 @@ def main() -> int:
         label = f"spoke[{spoke['chain_id']}]"
         contracts = {name: entry["address"] for name, entry in spoke["contracts"].items()}
         for name, address in contracts.items():
-            if name == "faucet_address":
-                continue
             require_code(f"{label}.{name}", chain, address)
         for view, key in (("lendingPool()(address)", "lending_pool"), ("escrowVault()(address)", "escrow_vault")):
             actual = chain.call(contracts["spoke"], view)
@@ -242,6 +288,10 @@ def main() -> int:
         verify_diamond(label, chain, contracts["spoke"], manifests["spoke"])
         verify_implementation(f"{label}.lending_pool", chain, contracts["lending_pool"], manifests["spoke"], "LendingPool")
         verify_implementation(f"{label}.escrow_vault", chain, contracts["escrow_vault"], manifests["spoke"], "EscrowVault")
+        if "tokens" in spoke:
+            verify_tokens(label, chain, contracts["lending_pool"], spoke["tokens"])
+        if "faucet" in spoke:
+            verify_faucet(label, chain, spoke["faucet"], spoke["tokens"])
 
     routes_path = env_dir / "routes.yaml"
     if routes_path.is_file():

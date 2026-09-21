@@ -17,7 +17,7 @@
     "schema_version": {
       "description": "Version of this address-book schema. Bump when the shape changes.",
       "type": "integer",
-      "const": 1
+      "const": 2
     },
     "environment": {
       "description": "Logical environment classification (e.g. testnet, mainnet).",
@@ -149,6 +149,41 @@
               "minimum": 0
             }
           }
+        },
+        "tokens": {
+          "description": "Reserve tokens of this spoke's LendingPool, in getReservesList() order. Spokes only.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/token"
+          }
+        },
+        "faucet": {
+          "description": "Test-token faucet on this spoke chain, a snapshot of the FaucetDispenser's on-chain state. Non-production spokes only.",
+          "$ref": "#/$defs/faucet"
+        }
+      },
+      "if": {
+        "properties": {
+          "role": {
+            "const": "hub"
+          }
+        }
+      },
+      "then": {
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "tokens"
+              ]
+            },
+            {
+              "required": [
+                "faucet"
+              ]
+            }
+          ]
         }
       }
     },
@@ -203,6 +238,90 @@
         "keccak256": {
           "type": "string",
           "pattern": "^0x[0-9a-f]{64}$"
+        }
+      }
+    },
+    "token": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "symbol",
+        "address",
+        "decimals"
+      ],
+      "properties": {
+        "symbol": {
+          "description": "Canonical symbol from the deployment ledger; the key faucet.drips[].token refers to. The on-chain symbol() may differ in case.",
+          "type": "string",
+          "minLength": 1
+        },
+        "address": {
+          "description": "ERC-20 address on this chain.",
+          "type": "string",
+          "pattern": "^0x[0-9a-fA-F]{40}$"
+        },
+        "decimals": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 255
+        }
+      }
+    },
+    "faucet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "address",
+        "owner",
+        "operator",
+        "native_amount",
+        "drips"
+      ],
+      "properties": {
+        "address": {
+          "description": "FaucetDispenser address.",
+          "type": "string",
+          "pattern": "^0x[0-9a-fA-F]{40}$"
+        },
+        "owner": {
+          "description": "owner() at publish time.",
+          "type": "string",
+          "pattern": "^0x[0-9a-fA-F]{40}$"
+        },
+        "operator": {
+          "description": "operator() at publish time; the account allowed to drip.",
+          "type": "string",
+          "pattern": "^0x[0-9a-fA-F]{40}$"
+        },
+        "native_amount": {
+          "description": "nativeAmount() in wei per drip, as a decimal string.",
+          "type": "string",
+          "pattern": "^[0-9]+$"
+        },
+        "drips": {
+          "description": "tokens()/amounts() of the faucet, in on-chain order.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "token",
+              "amount"
+            ],
+            "properties": {
+              "token": {
+                "description": "symbol of an entry in this spoke's tokens list.",
+                "type": "string",
+                "minLength": 1
+              },
+              "amount": {
+                "description": "wei per drip, as a decimal string.",
+                "type": "string",
+                "pattern": "^[0-9]+$"
+              }
+            }
+          }
         }
       }
     }
