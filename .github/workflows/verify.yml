@@ -41,7 +41,7 @@ jobs:
         run: |
           base="${{ github.event.pull_request.base.sha || 'HEAD~1' }}"
           changed="$(git diff --name-only "$base" HEAD -- deployments | awk -F/ '{print $2}' | sort -u)"
-          outside="$(git diff --name-only "$base" HEAD | grep -v '^deployments/' | grep -v '^\.github/' | grep -v '^schemas/' | grep -v '^scripts/' | grep -v '^environments.yaml$' || true)"
+          outside="$(git diff --name-only "$base" HEAD | grep -v -E '^(deployments/|\.github/|schemas/|scripts/|environments\.yaml$|README\.md$|\.gitignore$)' || true)"
           if [ -n "$outside" ]; then echo "unexpected files changed:"; echo "$outside"; exit 1; fi
           echo "environments=$(printf '%s\n' $changed | jq -R . | jq -cs .)" >> "$GITHUB_OUTPUT"
           echo "changed environments: $changed"
