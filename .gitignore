@@ -1,0 +1,23 @@
+# Assistant and editor state
+.serena/
+.claude/
+.cursor/
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Local secrets and scratch. This repository holds public metadata only.
+.env
+.env.*
+*.pem
+*.key
+scratch/

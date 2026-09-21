@@ -1,0 +1,95 @@
+name: Verify address book
+
+on:
+  pull_request:
+    paths:
+      - "deployments/**"
+      - "schemas/**"
+      - "scripts/**"
+      - "environments.yaml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  schema:
+    name: Schema and digests
+    runs-on: ubuntu-latest
+    outputs:
+      environments: ${{ steps.changed.outputs.environments }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pyyaml jsonschema rfc3339-validator "eth-hash[pycryptodome]"
+
+      - name: Validate every environment
+        run: python3 scripts/validate-deployments.py
+
+      - name: Resolve the environments this change touches
+        id: changed
+        run: |
+          base="${{ github.event.pull_request.base.sha || 'HEAD~1' }}"
+          changed="$(git diff --name-only "$base" HEAD -- deployments | awk -F/ '{print $2}' | sort -u)"
+          outside="$(git diff --name-only "$base" HEAD | grep -v -E '^(deployments/|\.github/|schemas/|scripts/|environments\.yaml$|README\.md$|\.gitignore$)' || true)"
+          if [ -n "$outside" ]; then echo "unexpected files changed:"; echo "$outside"; exit 1; fi
+          echo "environments=$(printf '%s\n' $changed | jq -R . | jq -cs .)" >> "$GITHUB_OUTPUT"
+          echo "changed environments: $changed"
+
+  deployment:
+    name: Chain (${{ matrix.environment }})
+    needs: schema
+    if: needs.schema.outputs.environments != '[]'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        environment: ${{ fromJSON(needs.schema.outputs.environments) }}
+    env:
+      ENV_DIR: deployments/${{ matrix.environment }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install pyyaml
+
+      - uses: foundry-rs/foundry-toolchain@v1
+
+      - name: Does the changed file declare artifacts
+        id: provenance
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import os, yaml
+          data = yaml.safe_load(open(os.environ["ENV_DIR"] + "/config.yaml"))
+          print(f"has_artifacts={'true' if 'artifacts' in data else 'false'}")
+          PY
+
+      - name: Skip environments without artifacts
+        if: steps.provenance.outputs.has_artifacts != 'true'
+        run: echo "no artifacts declared; nothing to verify against the chain"
+
+      - name: Chain agrees with the file
+        if: steps.provenance.outputs.has_artifacts == 'true'
+        env:
+          XARB_RPC_84532: ${{ vars.XARB_RPC_84532 }}
+          XARB_RPC_84532_B: ${{ vars.XARB_RPC_84532_B }}
+          XARB_RPC_11155111: ${{ vars.XARB_RPC_11155111 }}
+          XARB_RPC_11155111_B: ${{ vars.XARB_RPC_11155111_B }}
+          XARB_RPC_8453: ${{ vars.XARB_RPC_8453 }}
+          XARB_RPC_8453_B: ${{ vars.XARB_RPC_8453_B }}
+        run: python3 scripts/verify-onchain.py "$ENV_DIR/config.yaml"
