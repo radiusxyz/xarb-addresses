@@ -1,44 +1,61 @@
 schema_version: 1
 environment: dev
-updated_at: "2026-09-08"
+updated_at: "2026-09-21"
+
 protocol:
-    name: xarb
-    release: v0.1.0
+  name: xarb
+  release: "3cb578f"
+  contracts_commit: 3cb578fa22121581a83c857eb7b0fff6e96cb37a
+
+artifacts:
+  event_registry:
+    path: artifacts/event-registry-v1.json
+    sha256: "cbb7dc7e731e1b4bfe8095d071a930cfc3ccde334a1d2e1375f16e33c60740e4"
+  hub_manifest:
+    path: artifacts/manifests/hub.json
+    keccak256: "0x047f9d989aa579bed1540b6ffbd8a70eacbe710a691d5a8c5d396aa7138f8ff9"
+  spoke_manifest:
+    path: artifacts/manifests/spoke.json
+    keccak256: "0x23100ceb4e5668b26eb2ebe1a90a5929b362872c65be2713cef113893f9935bc"
+
 hub:
-    chain_id: 84532
+  chain_id: 84532
+  name: base-sepolia
+  role: hub
+  native_symbol: ETH
+  explorer_url: https://sepolia.basescan.org
+  contracts:
+    batch_inbox:
+      address: "0x919EE4B4E42b4D1c928ecBD5C96713859ABA186a"
+    hub:
+      address: "0x4003953053fF9358e21d9F06464599D121c1e164"
+    oracle:
+      address: "0x8e4e9D1c29258Ed50Def1bA1E99CC26B2270B577"
+    request_forwarder:
+      address: "0x2359f95DDC77C5bd6ab8D22c5c35c75A52dd59CF"
+    request_gateway:
+      address: "0x8080Eb33b4DEd3685f6B001CCC416f42e30f2c8d"
+    validator_registry:
+      address: "0xFD65EB821400698f3c929aa15b8c7F3E3B77a5d5"
+  substreams:
+    start_block: 47094571
+
+spokes:
+  - chain_id: 84532
     name: base-sepolia
-    role: hub
+    role: spoke
     native_symbol: ETH
     explorer_url: https://sepolia.basescan.org
     contracts:
-        batch_inbox:
-            address: "0xBbe2d0cfe3b4f8525A6394C0502cb198D3FEb6Ec"
-        hub:
-            address: "0x6F95030c2c6279dacb76F9B85bdc3f3a9AfCB1FB"
-        oracle:
-            address: "0xDF2d58A266C28b8227236aaA6b87f46d1688442D"
-        request_forwarder:
-            address: "0xf7B8FA1D869BbB7A61eB72b13a89C773c2f7ECAF"
-        request_gateway:
-            address: "0x125341fF679822AEb9005983aaB1b2Dc8439cfcD"
-        validator_registry:
-            address: "0xA94Fc6C01cf3b5e2a917824DcD48CE536cfB47aC"
-spokes:
-    - chain_id: 84532
-      name: base-sepolia
-      role: spoke
-      native_symbol: ETH
-      explorer_url: https://sepolia.basescan.org
-      contracts:
-        batch_inbox:
-            address: "0x55237B3fd9480C082239cDCC6638F1Dc8Fbf6f3A"
-        escrow_vault:
-            address: "0x76441Bd5f898baeC5424795b05FC7daf06A12644"
-        faucet_address:
-            address: "0x8f3DCd72A9003EA9DEF9bD47bADd14Fb0B5F35DB"
-        lending_pool:
-            address: "0x2F95f704722091fCe8946E059eD481B3735dA76A"
-        spoke:
-            address: "0xf52AAdDd73a754735f549065817B05f327f260B9"
-      substreams:
-        start_block: 46545137
+      batch_inbox:
+        address: "0x3D769A2A0feF3D3d8f3E2515c7f523E7Aa268214"
+      escrow_vault:
+        address: "0x3fc580e4fDcc0170B430D483515329E2d90ac24c"
+      lending_pool:
+        address: "0x5d1230ea3FD858eEEB56a981804F77ffBd14Fe39"
+      spoke:
+        address: "0xfe806F1312453F7c6A5C7e73595620e6DbEE5448"
+      validator_registry:
+        address: "0xFD65EB821400698f3c929aa15b8c7F3E3B77a5d5"
+    substreams:
+      start_block: 47094665
