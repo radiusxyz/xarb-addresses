@@ -4,8 +4,8 @@ updated_at: "2026-09-21"
 
 protocol:
   name: xarb
-  release: "3cb578f"
-  contracts_commit: 3cb578fa22121581a83c857eb7b0fff6e96cb37a
+  release: "9d02a2c"
+  contracts_commit: 9d02a2cc95f797cb2afc48c90ad105afc1bec859
 
 artifacts:
   event_registry:
@@ -13,10 +13,10 @@ artifacts:
     sha256: "cbb7dc7e731e1b4bfe8095d071a930cfc3ccde334a1d2e1375f16e33c60740e4"
   hub_manifest:
     path: artifacts/manifests/hub.json
-    keccak256: "0x047f9d989aa579bed1540b6ffbd8a70eacbe710a691d5a8c5d396aa7138f8ff9"
+    keccak256: "0xfb842f5ecc659d55ddff043b73febed75bf4414fe5ba9d63e6cc823e683a055f"
   spoke_manifest:
     path: artifacts/manifests/spoke.json
-    keccak256: "0x23100ceb4e5668b26eb2ebe1a90a5929b362872c65be2713cef113893f9935bc"
+    keccak256: "0x6681830248cf7f6c908003117735f9d0b5a21472a2484e0175b590f7c2491a23"
 
 hub:
   chain_id: 84532
@@ -57,5 +57,27 @@ spokes:
         address: "0xfe806F1312453F7c6A5C7e73595620e6DbEE5448"
       validator_registry:
         address: "0xFD65EB821400698f3c929aa15b8c7F3E3B77a5d5"
+    tokens:
+      - symbol: "WBTC"
+        address: "0x148739c74Da23cA1288b12fb9Dd97833308e9440"
+        decimals: 18
+      - symbol: "USDT"
+        address: "0xA4c00f41b0b27A9720419836028D9B8c5d8222a5"
+        decimals: 18
+      - symbol: "WPOL"
+        address: "0x43Ac4A59C1Cb9B4c48219AFe183a561c327D43b8"
+        decimals: 18
+    faucet:
+      address: "0xB229B8a8508c283e1eF6130aa0A0899d836c6618"
+      owner: "0xFD4444796E2E662231b6333F28670e4B9Fe3A0F0"
+      operator: "0x67643FD0a1eD17F520b2d4BE0c52247798F4b005"
+      native_amount: "1000000000000000"
+      drips:
+        - token: "WBTC"
+          amount: "10000000000000000"
+        - token: "USDT"
+          amount: "1000000000000000000000"
+        - token: "WPOL"
+          amount: "1000000000000000000000"
     substreams:
       start_block: 47094665
