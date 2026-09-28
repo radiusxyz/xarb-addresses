@@ -6,8 +6,9 @@ Beyond the JSON schema this checks what the schema cannot express:
   - every chain_id is allowed for that environment (environments.yaml)
   - chain name / native_symbol / explorer_url match environments.yaml
   - when artifacts are declared: every artifact exists under the environment directory and
-    its digest matches (sha256 for JSON copies, keccak256 for manifests), and
-    nothing sits under artifacts/ undeclared
+    its digest matches (sha256 for JSON copies, keccak256 for manifests), nothing sits
+    under artifacts/ undeclared, and each diamond ABI's sha256 equals the abiSha256 its
+    manifest pins
   - spoke tokens: unique addresses and symbols, no zero address
   - spoke faucet: requires tokens, every drip names a token symbol exactly once,
     no zero address, and no faucet at all in production
@@ -225,6 +226,41 @@ def check_routes(data: dict, env_dir: Path) -> list[str]:
     return errors
 
 
+def flatten_artifacts(artifacts: dict) -> list[tuple[str, dict]]:
+    """Name/entry pairs, descending one level into the abi map."""
+    flat = []
+    for name, entry in artifacts.items():
+        if "path" in entry:
+            flat.append((name, entry))
+        else:
+            flat.extend((f"{name}/{key}", value) for key, value in entry.items())
+    return flat
+
+
+def check_abi_matches_manifest(data: dict, env_dir: Path) -> list[str]:
+    """A diamond's published ABI must be the one its manifest pinned.
+
+    The manifest records abiSha256 over the same bytes the ABI file holds, so a
+    mismatch means the two were produced from different builds and whoever
+    consumes the ABI would be talking to a contract the manifest does not
+    describe.
+    """
+    errors = []
+    artifacts = data.get("artifacts", {})
+    abis = artifacts.get("abi", {})
+    for target in ("hub", "spoke"):
+        abi, manifest = abis.get(target), artifacts.get(f"{target}_manifest")
+        if not abi or not manifest:
+            continue
+        manifest_path = env_dir / manifest["path"]
+        if not manifest_path.is_file():
+            continue
+        pinned = json.loads(manifest_path.read_text()).get("abiSha256", "")
+        if pinned.removeprefix("0x") != abi["sha256"]:
+            errors.append(f"artifacts/abi/{target}: sha256 {abi['sha256']} is not the {pinned} its manifest pins")
+    return errors
+
+
 def check_artifacts(data: dict, env_dir: Path) -> list[str]:
     errors = []
     if "artifacts" not in data:
@@ -232,7 +268,9 @@ def check_artifacts(data: dict, env_dir: Path) -> list[str]:
         if artifacts_dir.is_dir() and any(artifacts_dir.rglob("*")):
             return ["artifacts/ exists on disk but config.yaml declares no artifacts"]
         return errors
-    for name, artifact in data.get("artifacts", {}).items():
+    declared_paths = set()
+    for name, artifact in flatten_artifacts(data["artifacts"]):
+        declared_paths.add(artifact["path"])
         path = env_dir / artifact["path"]
         if not path.is_file():
             errors.append(f"artifacts/{name}: {artifact['path']} does not exist")
@@ -250,10 +288,10 @@ def check_artifacts(data: dict, env_dir: Path) -> list[str]:
                 errors.append(f"artifacts/{name}: keccak256 mismatch (file 0x{actual})")
     artifacts_dir = env_dir / "artifacts"
     on_disk = sorted(str(p.relative_to(env_dir)) for p in artifacts_dir.rglob("*") if p.is_file()) if artifacts_dir.is_dir() else []
-    declared = {a["path"] for a in data.get("artifacts", {}).values()}
     for extra in on_disk:
-        if extra not in declared:
+        if extra not in declared_paths:
             errors.append(f"artifacts: {extra} is on disk but not declared in config.yaml")
+    errors += check_abi_matches_manifest(data, env_dir)
     return errors
 
 

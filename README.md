@@ -23,3 +23,23 @@ instead of hand-maintained inventory:
   for `production`.
 
 Hub entries carry neither block.
+
+## Schema v3: contract ABIs
+
+`artifacts.abi` carries the ABI of every contract this deployment runs, copied
+byte-for-byte from `xarb-infra-contracts` `config/abi/`. Off-chain components
+read these instead of keeping their own copy, so an ABI change reaches them by
+redeploying rather than by editing each repository.
+
+Keys match a chain's `contracts` keys (`lending_pool`, `batch_inbox`,
+`request_gateway`, ...) so an address and its ABI share a name. The set follows
+`config/abi-exports.json` in the contracts repository and grows with the
+protocol, so the schema leaves it open rather than enumerating it; it also holds
+entries with no address of their own, such as the reserve token implementations.
+
+`hub` and `spoke` are the merged diamond ABIs. CI checks their `sha256` against
+the `abiSha256` the matching manifest pins, so a book cannot carry an ABI from a
+different build than the manifest describes.
+
+The block is optional: a book published before ABIs were carried stays valid.
+When present it must hold at least `hub` and `spoke`.
