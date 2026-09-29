@@ -1,0 +1,1806 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "governance",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "destination_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "registry_",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [],
+    "name": "AccessControlBadConfirmation",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint48",
+        "name": "schedule",
+        "type": "uint48"
+      }
+    ],
+    "name": "AccessControlEnforcedDefaultAdminDelay",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "AccessControlEnforcedDefaultAdminRules",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "defaultAdmin",
+        "type": "address"
+      }
+    ],
+    "name": "AccessControlInvalidDefaultAdmin",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "neededRole",
+        "type": "bytes32"
+      }
+    ],
+    "name": "AccessControlUnauthorizedAccount",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "expected",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "actual",
+        "type": "uint64"
+      }
+    ],
+    "name": "BatchNonceMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "actionKind",
+        "type": "uint16"
+      }
+    ],
+    "name": "InvalidActionKind",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "version",
+        "type": "uint16"
+      }
+    ],
+    "name": "InvalidActivationVersion",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidChain",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidGenesisBlock",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "count",
+        "type": "uint256"
+      }
+    ],
+    "name": "InvalidLeafCount",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "expected",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint16",
+        "name": "actual",
+        "type": "uint16"
+      }
+    ],
+    "name": "InvalidProtocolVersion",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidShortString",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "threshold",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "validatorCount",
+        "type": "uint256"
+      }
+    ],
+    "name": "InvalidValidatorThreshold",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "leafIndex",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint64",
+        "name": "expected",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "actual",
+        "type": "uint64"
+      }
+    ],
+    "name": "LeafBatchNonceMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "expected",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint32",
+        "name": "actual",
+        "type": "uint32"
+      }
+    ],
+    "name": "LeafIndexMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "leafIndex",
+        "type": "uint32"
+      }
+    ],
+    "name": "LeafOrderViolation",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "leafIndex",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint16",
+        "name": "expected",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint16",
+        "name": "actual",
+        "type": "uint16"
+      }
+    ],
+    "name": "LeafProtocolVersionMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "leafIndex",
+        "type": "uint32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "expected",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "actual",
+        "type": "bytes32"
+      }
+    ],
+    "name": "LeafRouteMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "leafIndex",
+        "type": "uint32"
+      },
+      {
+        "internalType": "uint64",
+        "name": "expected",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "actual",
+        "type": "uint64"
+      }
+    ],
+    "name": "LeafSourceBlockMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "actionKind",
+        "type": "uint16"
+      }
+    ],
+    "name": "MalformedLeafPayload",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "MalformedProof",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint32",
+        "name": "leafIndex",
+        "type": "uint32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "expected",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "actual",
+        "type": "bytes32"
+      }
+    ],
+    "name": "MessageIdMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "expected",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "actual",
+        "type": "bytes32"
+      }
+    ],
+    "name": "PreviousBatchMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "actual",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "required",
+        "type": "uint256"
+      }
+    ],
+    "name": "QuorumNotMet",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ReentrancyGuardReentrantCall",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "routeId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "RouteAlreadyRegistered",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "routeId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "RouteDisabled",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "expected",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "actual",
+        "type": "bytes32"
+      }
+    ],
+    "name": "RouteIdentityMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "routeId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "RouteNotRegistered",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint8",
+        "name": "bits",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint256",
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "SafeCastOverflowedUintDowncast",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "previous",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "current",
+        "type": "address"
+      }
+    ],
+    "name": "SignerOrderViolation",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint64",
+        "name": "expectedStart",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "actualStart",
+        "type": "uint64"
+      },
+      {
+        "internalType": "uint64",
+        "name": "actualEnd",
+        "type": "uint64"
+      }
+    ],
+    "name": "SourceRangeMismatch",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "str",
+        "type": "string"
+      }
+    ],
+    "name": "StringTooLong",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "signer",
+        "type": "address"
+      }
+    ],
+    "name": "UnauthorizedSigner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ZeroSourceBlockHash",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "batchId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "routeId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint64",
+        "name": "routeBatchNonce",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "sourceEndBlock",
+        "type": "uint64"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint32",
+        "name": "leafCount",
+        "type": "uint32"
+      }
+    ],
+    "name": "BatchExecuted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [],
+    "name": "DefaultAdminDelayChangeCanceled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint48",
+        "name": "newDelay",
+        "type": "uint48"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint48",
+        "name": "effectSchedule",
+        "type": "uint48"
+      }
+    ],
+    "name": "DefaultAdminDelayChangeScheduled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [],
+    "name": "DefaultAdminTransferCanceled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newAdmin",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint48",
+        "name": "acceptSchedule",
+        "type": "uint48"
+      }
+    ],
+    "name": "DefaultAdminTransferScheduled",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [],
+    "name": "EIP712DomainChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint16",
+        "name": "protocolVersion",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "activationBlock",
+        "type": "uint64"
+      }
+    ],
+    "name": "ProtocolActivationSet",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "previousAdminRole",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "newAdminRole",
+        "type": "bytes32"
+      }
+    ],
+    "name": "RoleAdminChanged",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      }
+    ],
+    "name": "RoleGranted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      }
+    ],
+    "name": "RoleRevoked",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "routeId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint32",
+        "name": "sourceChainId",
+        "type": "uint32"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "sourceContract",
+        "type": "address"
+      }
+    ],
+    "name": "RouteAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "bytes32",
+        "name": "routeId",
+        "type": "bytes32"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "enabled",
+        "type": "bool"
+      }
+    ],
+    "name": "RouteEnabledSet",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "acceptDefaultAdminTransfer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "protocolVersion",
+        "type": "uint16"
+      }
+    ],
+    "name": "activation",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "activationBlock",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "activeProtocolVersion",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "activeVersion",
+        "type": "uint16"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "routeId_",
+        "type": "bytes32"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint32",
+            "name": "sourceChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "address",
+            "name": "sourceContract",
+            "type": "address"
+          },
+          {
+            "internalType": "uint32",
+            "name": "destinationChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "address",
+            "name": "destinationContract",
+            "type": "address"
+          },
+          {
+            "internalType": "uint64",
+            "name": "genesisBlock",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct IBatchInbox.RouteConfig",
+        "name": "cfg",
+        "type": "tuple"
+      }
+    ],
+    "name": "addRoute",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newAdmin",
+        "type": "address"
+      }
+    ],
+    "name": "beginDefaultAdminTransfer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "cancelDefaultAdminTransfer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint48",
+        "name": "newDelay",
+        "type": "uint48"
+      }
+    ],
+    "name": "changeDefaultAdminDelay",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint16",
+            "name": "protocolVersion",
+            "type": "uint16"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "routeId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "routeBatchNonce",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "sourceStartBlock",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "sourceEndBlock",
+            "type": "uint64"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "sourceEndBlockHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "previousBatchId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "leafCount",
+            "type": "uint32"
+          }
+        ],
+        "internalType": "struct IBatchInbox.BatchHeader",
+        "name": "header",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint16",
+            "name": "protocolVersion",
+            "type": "uint16"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "routeId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "routeBatchNonce",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint32",
+            "name": "leafIndex",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "sourceBlockNumber",
+            "type": "uint64"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "sourceTransactionHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "transactionIndex",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "logIndex",
+            "type": "uint32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "messageId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint16",
+            "name": "actionKind",
+            "type": "uint16"
+          },
+          {
+            "internalType": "bytes",
+            "name": "payload",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct IBatchInbox.BatchLeaf[]",
+        "name": "leaves",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "computeBatchId",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint16",
+            "name": "protocolVersion",
+            "type": "uint16"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "routeId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "routeBatchNonce",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint32",
+            "name": "leafIndex",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "sourceBlockNumber",
+            "type": "uint64"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "sourceTransactionHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "transactionIndex",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "logIndex",
+            "type": "uint32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "messageId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint16",
+            "name": "actionKind",
+            "type": "uint16"
+          },
+          {
+            "internalType": "bytes",
+            "name": "payload",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct IBatchInbox.BatchLeaf[]",
+        "name": "leaves",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "computeLeavesHash",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint32",
+            "name": "sourceChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "address",
+            "name": "sourceContract",
+            "type": "address"
+          },
+          {
+            "internalType": "uint32",
+            "name": "destinationChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "address",
+            "name": "destinationContract",
+            "type": "address"
+          },
+          {
+            "internalType": "uint64",
+            "name": "genesisBlock",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct IBatchInbox.RouteConfig",
+        "name": "cfg",
+        "type": "tuple"
+      }
+    ],
+    "name": "computeRouteId",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "DEFAULT_ADMIN_ROLE",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "defaultAdmin",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "defaultAdminDelay",
+    "outputs": [
+      {
+        "internalType": "uint48",
+        "name": "",
+        "type": "uint48"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "defaultAdminDelayIncreaseWait",
+    "outputs": [
+      {
+        "internalType": "uint48",
+        "name": "",
+        "type": "uint48"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "destination",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "domainSeparator",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "eip712Domain",
+    "outputs": [
+      {
+        "internalType": "bytes1",
+        "name": "fields",
+        "type": "bytes1"
+      },
+      {
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "version",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "chainId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "verifyingContract",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "salt",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "extensions",
+        "type": "uint256[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint16",
+            "name": "protocolVersion",
+            "type": "uint16"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "routeId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "routeBatchNonce",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "sourceStartBlock",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "sourceEndBlock",
+            "type": "uint64"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "sourceEndBlockHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "previousBatchId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "leafCount",
+            "type": "uint32"
+          }
+        ],
+        "internalType": "struct IBatchInbox.BatchHeader",
+        "name": "header",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint16",
+            "name": "protocolVersion",
+            "type": "uint16"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "routeId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "routeBatchNonce",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint32",
+            "name": "leafIndex",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "sourceBlockNumber",
+            "type": "uint64"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "sourceTransactionHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "transactionIndex",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "logIndex",
+            "type": "uint32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "messageId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint16",
+            "name": "actionKind",
+            "type": "uint16"
+          },
+          {
+            "internalType": "bytes",
+            "name": "payload",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct IBatchInbox.BatchLeaf[]",
+        "name": "leaves",
+        "type": "tuple[]"
+      },
+      {
+        "internalType": "bytes",
+        "name": "quorumProof",
+        "type": "bytes"
+      }
+    ],
+    "name": "executeBatch",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint16",
+            "name": "protocolVersion",
+            "type": "uint16"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "routeId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "routeBatchNonce",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "sourceStartBlock",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint64",
+            "name": "sourceEndBlock",
+            "type": "uint64"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "sourceEndBlockHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "previousBatchId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "leafCount",
+            "type": "uint32"
+          }
+        ],
+        "internalType": "struct IBatchInbox.BatchHeader",
+        "name": "header",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint16",
+            "name": "protocolVersion",
+            "type": "uint16"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "routeId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "routeBatchNonce",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint32",
+            "name": "leafIndex",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint64",
+            "name": "sourceBlockNumber",
+            "type": "uint64"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "sourceTransactionHash",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "transactionIndex",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "logIndex",
+            "type": "uint32"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "messageId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "uint16",
+            "name": "actionKind",
+            "type": "uint16"
+          },
+          {
+            "internalType": "bytes",
+            "name": "payload",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct IBatchInbox.BatchLeaf[]",
+        "name": "leaves",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "getBatchDigest",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      }
+    ],
+    "name": "getRoleAdmin",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "grantRole",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "hasRole",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "routeId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "lastSourceEndBlock",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "sourceEndBlock",
+        "type": "uint64"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "MAX_LEAVES",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "pendingDefaultAdmin",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "newAdmin",
+        "type": "address"
+      },
+      {
+        "internalType": "uint48",
+        "name": "schedule",
+        "type": "uint48"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "pendingDefaultAdminDelay",
+    "outputs": [
+      {
+        "internalType": "uint48",
+        "name": "newDelay",
+        "type": "uint48"
+      },
+      {
+        "internalType": "uint48",
+        "name": "schedule",
+        "type": "uint48"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "registry",
+    "outputs": [
+      {
+        "internalType": "contract IValidatorRegistry",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "renounceRole",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "role",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "revokeRole",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "rollbackDefaultAdminDelay",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "routeId_",
+        "type": "bytes32"
+      }
+    ],
+    "name": "routeConfig",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint32",
+            "name": "sourceChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "address",
+            "name": "sourceContract",
+            "type": "address"
+          },
+          {
+            "internalType": "uint32",
+            "name": "destinationChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "address",
+            "name": "destinationContract",
+            "type": "address"
+          },
+          {
+            "internalType": "uint64",
+            "name": "genesisBlock",
+            "type": "uint64"
+          }
+        ],
+        "internalType": "struct IBatchInbox.RouteConfig",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "routeId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "routeEnabled",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "enabled",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "routeId",
+        "type": "bytes32"
+      }
+    ],
+    "name": "routeRegistered",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "registered",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "routeId_",
+        "type": "bytes32"
+      }
+    ],
+    "name": "routeState",
+    "outputs": [
+      {
+        "internalType": "uint64",
+        "name": "nextBatchNonce",
+        "type": "uint64"
+      },
+      {
+        "internalType": "bytes32",
+        "name": "lastBatchId",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "version",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint64",
+        "name": "activationBlock",
+        "type": "uint64"
+      }
+    ],
+    "name": "setActivation",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "routeId_",
+        "type": "bytes32"
+      },
+      {
+        "internalType": "bool",
+        "name": "enabled",
+        "type": "bool"
+      }
+    ],
+    "name": "setRouteEnabled",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes4",
+        "name": "interfaceId",
+        "type": "bytes4"
+      }
+    ],
+    "name": "supportsInterface",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

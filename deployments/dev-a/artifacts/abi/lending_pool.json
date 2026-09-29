@@ -1,0 +1,2736 @@
+[
+  {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "target",
+        "type": "address"
+      }
+    ],
+    "name": "AddressEmptyCode",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "BorrowNotEnabled",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "ceiling",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "requestedPrincipal",
+        "type": "uint256"
+      }
+    ],
+    "name": "DrainCeilingExceeded",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "implementation",
+        "type": "address"
+      }
+    ],
+    "name": "ERC1967InvalidImplementation",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ERC1967NonPayable",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "FailedCall",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "FlashLoanCallbackFailed",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      }
+    ],
+    "name": "FlashLoanDisabled",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "expectedBalance",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "actualBalance",
+        "type": "uint256"
+      }
+    ],
+    "name": "FlashLoanNotRepaid",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InsufficientBalance",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidAddress",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidAmount",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidAsset",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidBps",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidInitialization",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidLiquidationResult",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NoDebtToRepay",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NotInitializing",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ReentrancyGuardReentrantCall",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ReserveFrozen",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      }
+    ],
+    "name": "ReserveInactive",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ReserveNotHubMapped",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ReservePaused",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint8",
+        "name": "bits",
+        "type": "uint8"
+      },
+      {
+        "internalType": "uint256",
+        "name": "value",
+        "type": "uint256"
+      }
+    ],
+    "name": "SafeCastOverflowedUintDowncast",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      }
+    ],
+    "name": "SafeERC20FailedOperation",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "Unauthorized",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "UUPSUnauthorizedCallContext",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "bytes32",
+        "name": "slot",
+        "type": "bytes32"
+      }
+    ],
+    "name": "UUPSUnsupportedProxiableUUID",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "AdminRescue",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "principal",
+        "type": "uint256"
+      }
+    ],
+    "name": "CreditDrawn",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "baseRate",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "slope1",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "slope2",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "optimalUtilization",
+        "type": "uint128"
+      }
+    ],
+    "name": "CreditRateModelUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "payer",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "interestPaid",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "principalPaid",
+        "type": "uint256"
+      }
+    ],
+    "name": "CreditRepaid",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "drainCeiling",
+        "type": "uint256"
+      }
+    ],
+    "name": "DrainCeilingUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "EscrowSupplied",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "receiver",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "initiator",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "premium",
+        "type": "uint256"
+      }
+    ],
+    "name": "FlashLoan",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "enabled",
+        "type": "bool"
+      }
+    ],
+    "name": "FlashLoanEnabledUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "premiumBps",
+        "type": "uint16"
+      }
+    ],
+    "name": "FlashLoanPremiumUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "guardian",
+        "type": "address"
+      }
+    ],
+    "name": "GuardianUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "version",
+        "type": "uint64"
+      }
+    ],
+    "name": "Initialized",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "maxOutflowPerWindow",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint48",
+        "name": "windowDuration",
+        "type": "uint48"
+      }
+    ],
+    "name": "OutflowLimitUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnerTransferred",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "currentOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "pendingOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnerTransferStarted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "reserveFactorBps",
+        "type": "uint16"
+      }
+    ],
+    "name": "ReserveFactorUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "mapped",
+        "type": "bool"
+      }
+    ],
+    "name": "ReserveHubMappingUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "decimals",
+        "type": "uint8"
+      }
+    ],
+    "name": "ReserveInitialized",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "baseRate",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "slope1",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "slope2",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "optimalUtilization",
+        "type": "uint128"
+      }
+    ],
+    "name": "ReserveRateModelUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "liquidityIndex",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "borrowIndex",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "creditIndex",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "liquidityRate",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "borrowRate",
+        "type": "uint128"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint128",
+        "name": "creditRate",
+        "type": "uint128"
+      }
+    ],
+    "name": "ReserveRatesUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "active",
+        "type": "bool"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "paused",
+        "type": "bool"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "frozen",
+        "type": "bool"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "borrowingEnabled",
+        "type": "bool"
+      }
+    ],
+    "name": "ReserveStatusUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "rToken",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "variableDebtToken",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "creditDebtToken",
+        "type": "address"
+      }
+    ],
+    "name": "ReserveTokensInitialized",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "spoke",
+        "type": "address"
+      }
+    ],
+    "name": "SpokeUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "cap",
+        "type": "uint256"
+      }
+    ],
+    "name": "SupplyCapUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "TreasuryWithdrawn",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "implementation",
+        "type": "address"
+      }
+    ],
+    "name": "Upgraded",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "acceptOwnerTransfer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "adminRescue",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "beginOwnerTransfer",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      }
+    ],
+    "name": "borrow",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      }
+    ],
+    "name": "drawCredit",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint40",
+            "name": "spokeTimestamp",
+            "type": "uint40"
+          },
+          {
+            "internalType": "uint128",
+            "name": "liquidityIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "borrowIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "creditIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "liquidityRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "borrowRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "creditRate",
+            "type": "uint128"
+          }
+        ],
+        "internalType": "struct DataTypes.IndexSnapshot",
+        "name": "snapshot",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "enum DataTypes.LiquidationDebtType",
+            "name": "debtType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "debtAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "collateralAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "borrower",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "liquidator",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "treasury",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "nominalDebtToRepay",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledPaymentToBurn",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledDebtToBurn",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "creditInterestPaid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "creditPrincipalPaid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "grossScaledCollateral",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "liquidatorScaledCollateral",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "treasuryScaledCollateral",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct DataTypes.PoolLiquidationParams",
+        "name": "params",
+        "type": "tuple"
+      }
+    ],
+    "name": "executeDirectRepayLiquidation",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "actualDebtRepaid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledPaymentBurned",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledDebtBurned",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "interestPaid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "principalPaid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "grossCollateralSeized",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "netCollateralReceived",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "protocolFeeCollateral",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledCollateralToLiquidator",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledCollateralToTreasury",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "borrowerScaledDebtAfter",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "borrowerScaledCollateralAfter",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "liquidatorScaledPaymentAfter",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "liquidatorScaledCollateralAfter",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "treasuryScaledCollateralAfter",
+            "type": "uint256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint40",
+                "name": "spokeTimestamp",
+                "type": "uint40"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditRate",
+                "type": "uint128"
+              }
+            ],
+            "internalType": "struct DataTypes.IndexSnapshot",
+            "name": "debtSnapshot",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint40",
+                "name": "spokeTimestamp",
+                "type": "uint40"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditRate",
+                "type": "uint128"
+              }
+            ],
+            "internalType": "struct DataTypes.IndexSnapshot",
+            "name": "collateralSnapshot",
+            "type": "tuple"
+          },
+          {
+            "internalType": "uint256",
+            "name": "debtTotalScaledSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "debtTotalScaledDebt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "debtTotalScaledCreditDebt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "debtTotalCreditPrincipal",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "collateralTotalScaledSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "collateralTotalScaledDebt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "collateralTotalScaledCreditDebt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "collateralTotalCreditPrincipal",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct DataTypes.PoolLiquidationResult",
+        "name": "result",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "flashLoanPremiumBps",
+    "outputs": [
+      {
+        "internalType": "uint16",
+        "name": "premiumBps",
+        "type": "uint16"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "receiver",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes",
+        "name": "params",
+        "type": "bytes"
+      },
+      {
+        "internalType": "address",
+        "name": "initiator",
+        "type": "address"
+      }
+    ],
+    "name": "flashLoanSimple",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "premium",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      }
+    ],
+    "name": "getIndexSnapshot",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint40",
+            "name": "spokeTimestamp",
+            "type": "uint40"
+          },
+          {
+            "internalType": "uint128",
+            "name": "liquidityIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "borrowIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "creditIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "liquidityRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "borrowRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "creditRate",
+            "type": "uint128"
+          }
+        ],
+        "internalType": "struct DataTypes.IndexSnapshot",
+        "name": "snapshot",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      }
+    ],
+    "name": "getNormalizedCreditDebt",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "creditIndex",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      }
+    ],
+    "name": "getNormalizedDebt",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "borrowIndex",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      }
+    ],
+    "name": "getNormalizedIncome",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "liquidityIndex",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      }
+    ],
+    "name": "getOutflowLimit",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "maxOutflowPerWindow",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "outflowInWindow",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint48",
+            "name": "windowStart",
+            "type": "uint48"
+          },
+          {
+            "internalType": "uint48",
+            "name": "windowDuration",
+            "type": "uint48"
+          }
+        ],
+        "internalType": "struct DataTypes.OutflowLimit",
+        "name": "limit",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      }
+    ],
+    "name": "getRateCeiling",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "rateCeiling",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      }
+    ],
+    "name": "getReserve",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "underlying",
+            "type": "address"
+          },
+          {
+            "internalType": "bool",
+            "name": "active",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "paused",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "frozen",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "borrowingEnabled",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint8",
+            "name": "decimals",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bool",
+            "name": "hubMapped",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "flashLoanEnabled",
+            "type": "bool"
+          },
+          {
+            "internalType": "uint16",
+            "name": "reserveFactorBps",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint256",
+            "name": "drainCeiling",
+            "type": "uint256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint128",
+                "name": "baseRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "slope1",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "slope2",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "optimalUtilization",
+                "type": "uint128"
+              }
+            ],
+            "internalType": "struct DataTypes.RateModelConfig",
+            "name": "rateModel",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint128",
+                "name": "baseRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "slope1",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "slope2",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "optimalUtilization",
+                "type": "uint128"
+              }
+            ],
+            "internalType": "struct DataTypes.RateModelConfig",
+            "name": "creditRateModel",
+            "type": "tuple"
+          },
+          {
+            "internalType": "uint128",
+            "name": "liquidityIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "borrowIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "creditIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "liquidityRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "borrowRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "creditRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint40",
+            "name": "lastUpdateTimestamp",
+            "type": "uint40"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalScaledSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalScaledDebt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalScaledCreditDebt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalCreditPrincipal",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "accruedToTreasury",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "rTokenAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "variableDebtTokenAddress",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "creditDebtTokenAddress",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct DataTypes.SpokeReserve",
+        "name": "reserve",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getReservesList",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "list",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "guardian",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "owner_",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "tokenFactory_",
+        "type": "address"
+      },
+      {
+        "internalType": "uint16",
+        "name": "flashLoanPremiumBps_",
+        "type": "uint16"
+      }
+    ],
+    "name": "initialize",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "uint8",
+        "name": "decimals",
+        "type": "uint8"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint128",
+            "name": "baseRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "slope1",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "slope2",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "optimalUtilization",
+            "type": "uint128"
+          }
+        ],
+        "internalType": "struct DataTypes.RateModelConfig",
+        "name": "rateModel",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint128",
+            "name": "baseRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "slope1",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "slope2",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "optimalUtilization",
+            "type": "uint128"
+          }
+        ],
+        "internalType": "struct DataTypes.RateModelConfig",
+        "name": "creditRateModel",
+        "type": "tuple"
+      },
+      {
+        "internalType": "uint16",
+        "name": "reserveFactorBps",
+        "type": "uint16"
+      },
+      {
+        "internalType": "uint256",
+        "name": "drainCeiling",
+        "type": "uint256"
+      }
+    ],
+    "name": "initReserve",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      }
+    ],
+    "name": "isFlashLoanEnabled",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "enabled",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      }
+    ],
+    "name": "isReserveInitialized",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "initialized",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      }
+    ],
+    "name": "maxFlashLoan",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "pendingOwner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "maxScaledAmount",
+        "type": "uint256"
+      }
+    ],
+    "name": "previewWithdraw",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "scaledBurned",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "withdrawnAmount",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "proxiableUUID",
+    "outputs": [
+      {
+        "internalType": "bytes32",
+        "name": "",
+        "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "payer",
+        "type": "address"
+      }
+    ],
+    "name": "repay",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "repaidAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledBurned",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledDebtAfter",
+            "type": "uint256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint40",
+                "name": "spokeTimestamp",
+                "type": "uint40"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditRate",
+                "type": "uint128"
+              }
+            ],
+            "internalType": "struct DataTypes.IndexSnapshot",
+            "name": "snap",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct DataTypes.RepayResult",
+        "name": "result",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "interestPaid",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "principalPaid",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "scaledBurned",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "payer",
+        "type": "address"
+      }
+    ],
+    "name": "repayCredit",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint40",
+            "name": "spokeTimestamp",
+            "type": "uint40"
+          },
+          {
+            "internalType": "uint128",
+            "name": "liquidityIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "borrowIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "creditIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "liquidityRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "borrowRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "creditRate",
+            "type": "uint128"
+          }
+        ],
+        "internalType": "struct DataTypes.IndexSnapshot",
+        "name": "snapshot",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "interestPaid",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "principalPaid",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "scaledBurned",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "repayCreditFromEscrow",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint40",
+            "name": "spokeTimestamp",
+            "type": "uint40"
+          },
+          {
+            "internalType": "uint128",
+            "name": "liquidityIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "borrowIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "creditIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "liquidityRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "borrowRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "creditRate",
+            "type": "uint128"
+          }
+        ],
+        "internalType": "struct DataTypes.IndexSnapshot",
+        "name": "snapshot",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint128",
+            "name": "baseRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "slope1",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "slope2",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "optimalUtilization",
+            "type": "uint128"
+          }
+        ],
+        "internalType": "struct DataTypes.RateModelConfig",
+        "name": "rateModel",
+        "type": "tuple"
+      }
+    ],
+    "name": "setCreditRateModel",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "drainCeiling",
+        "type": "uint256"
+      }
+    ],
+    "name": "setDrainCeiling",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "enabled",
+        "type": "bool"
+      }
+    ],
+    "name": "setFlashLoanEnabled",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "premiumBps",
+        "type": "uint16"
+      }
+    ],
+    "name": "setFlashLoanPremiumBps",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "guardian_",
+        "type": "address"
+      }
+    ],
+    "name": "setGuardian",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "mapped",
+        "type": "bool"
+      }
+    ],
+    "name": "setHubMapped",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "maxOutflowPerWindow",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint48",
+        "name": "windowDuration",
+        "type": "uint48"
+      }
+    ],
+    "name": "setOutflowLimit",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "uint16",
+        "name": "reserveFactorBps",
+        "type": "uint16"
+      }
+    ],
+    "name": "setReserveFactor",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint128",
+            "name": "baseRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "slope1",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "slope2",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "optimalUtilization",
+            "type": "uint128"
+          }
+        ],
+        "internalType": "struct DataTypes.RateModelConfig",
+        "name": "rateModel",
+        "type": "tuple"
+      }
+    ],
+    "name": "setReserveRateModel",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "components": [
+          {
+            "internalType": "bool",
+            "name": "active",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "paused",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "frozen",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "borrowingEnabled",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct DataTypes.ReserveStatus",
+        "name": "status",
+        "type": "tuple"
+      }
+    ],
+    "name": "setReserveStatus",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "spoke_",
+        "type": "address"
+      }
+    ],
+    "name": "setSpoke",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "cap",
+        "type": "uint256"
+      }
+    ],
+    "name": "setSupplyCap",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "spoke",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "payer",
+        "type": "address"
+      }
+    ],
+    "name": "supply",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "suppliedAmount",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      }
+    ],
+    "name": "supplyCap",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "cap",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "supplyFromEscrow",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint40",
+            "name": "spokeTimestamp",
+            "type": "uint40"
+          },
+          {
+            "internalType": "uint128",
+            "name": "liquidityIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "borrowIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "creditIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "liquidityRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "borrowRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "creditRate",
+            "type": "uint128"
+          }
+        ],
+        "internalType": "struct DataTypes.IndexSnapshot",
+        "name": "snapshot",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "tokenFactory",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "UPGRADE_INTERFACE_VERSION",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newImplementation",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes",
+        "name": "data",
+        "type": "bytes"
+      }
+    ],
+    "name": "upgradeToAndCall",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "maxScaledAmount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      }
+    ],
+    "name": "withdraw",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "withdrawnAmount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledBurned",
+            "type": "uint256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint40",
+                "name": "spokeTimestamp",
+                "type": "uint40"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditRate",
+                "type": "uint128"
+              }
+            ],
+            "internalType": "struct DataTypes.IndexSnapshot",
+            "name": "snap",
+            "type": "tuple"
+          }
+        ],
+        "internalType": "struct DataTypes.WithdrawResult",
+        "name": "result",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      }
+    ],
+    "name": "withdrawTreasury",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "withdrawnAmount",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
