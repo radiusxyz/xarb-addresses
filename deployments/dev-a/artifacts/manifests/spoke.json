@@ -71,7 +71,7 @@
       "src/interfaces/IVaultEvents.sol": "0x26c5ffd35909a3d425d28bba622e571265d5f3361fbf03606bdd1bbb0a640b83",
       "src/libraries/CreditPaymentMath.sol": "0x4b43ee06de7e2c296b8502cad2da5c62fa6b36e41b02703371fa2ad6114e04e0",
       "src/libraries/DataTypes.sol": "0x72c7c1e2d7e283a3e1bcbb14df905f98f191d5688bfe8cf272368dc62a1df9f6",
-      "src/libraries/Errors.sol": "0xa23d6f794a0915bb2ad9134ef0aace4d4d90ac9d596e6ce9b4306286c58c1f9d",
+      "src/libraries/Errors.sol": "0xe49e005105e266c12004a19109b9ffa870fb77ad59bb7323cac1727a5bec5ea0",
       "src/libraries/LiquidationAttestationLib.sol": "0x4b3c9d102d18e7a75da71dc0e017e9c1c2251ad809e4d926a7357161742c490a",
       "src/libraries/LiquidationMath.sol": "0x45c18089b43dca64903e833e75c5e523605e81ca3073ac66893e103ba1c3de26",
       "src/libraries/MathUtils.sol": "0x46c2de3f72c46a60bf1fd6f46892a57673951fae1cc4b90adb2068afa5dbfbd3",

@@ -1,5 +1,5 @@
 {
-  "abiSha256": "0x49ae4b29af48a5c12267f6acef23da358f4788f194d31b2425c636d97962d682",
+  "abiSha256": "0x44ab0177e582626a46173412851012bdd388d89365c705f3440b4e33142c906c",
   "build": {
     "compilerVersion": "0.8.26+commit.8a97fa7a",
     "dependencyRevisions": {
@@ -35,15 +35,15 @@
       "src/diamond/facets/DiamondLoupeFacet.sol": "0xca99e6b81d8d36bac55d2962f4523bb21e1f4eb906c89adf9f7e9ad5e76b5155",
       "src/diamond/interfaces/IDiamondCut.sol": "0x8672216d842e10a2a29e63de17f555bfd4236f8a00f195c9513b6db1c15281fd",
       "src/diamond/interfaces/IDiamondLoupe.sol": "0xdc06669c68483f8f384d4b6c6db1a6f0f915cf6cf23683084483cd5c11e19f4e",
-      "src/hub/HubConstants.sol": "0xbd3145612b3d4491587f48b53abbfd9709ef7c6b5b1e67ccc84de14cd594a0b2",
+      "src/hub/HubConstants.sol": "0x867bef08b3fb0ab2a88e79e0561857172436f29efbf80e16659458bd72673735",
       "src/hub/HubFacetBase.sol": "0x704daa5d4ef41f322c1884115e626c1b20ec2caa1da78bba2fd47f647b62f666",
       "src/hub/HubInit.sol": "0xd71444629bf5c1f090614eaf715804d4cb70a79abc3c558ff55b948c9b945487",
       "src/hub/HubRequestGateway.sol": "0x860e9020a45ba156e50685170e0f32119d3671dd7fe1340e9906837cf7d346e6",
-      "src/hub/HubStorageBase.sol": "0xd1545e3763e74d1ff8483fc238800e65cf71172659eeafd5dbc4d18fcc4858a3",
-      "src/hub/HubStorageLib.sol": "0x5fcc01d3912be3522fb2d1014a3efe7786427b3d17700864854816b5d1818518",
-      "src/hub/HubStorageViews.sol": "0xda3330a0bf271d39cabaa8ccf123ce530d28f75b4f8ed007cd59029fa5105d84",
+      "src/hub/HubStorageBase.sol": "0x0ea6b0529da94c3f8b5f7dcd14b13f0bb80d8b6ddddf5b9ea0bcbcd2148b9e5f",
+      "src/hub/HubStorageLib.sol": "0x50dc85df596c9770f06922561f121586cbd4392fed7dfa7b9ca13ba2bd24e5e5",
+      "src/hub/HubStorageViews.sol": "0xfcaa4dfc77991030b713c082d0f90a2f3b0f910330381a9e9d5b7ee5e0421de8",
       "src/hub/facets/HubCommitmentFacet.sol": "0x65434461a1d06f08f1c04fef4c1f50c7e59e1e1919143b35404acb4827094164",
-      "src/hub/facets/HubConfigFacet.sol": "0xee57e0bb41f6953b92b3920af4042fb2874b7857fd2430334d842a52ee4679d3",
+      "src/hub/facets/HubConfigFacet.sol": "0xf0449ffb07086ff752bb70c9cd5a7791f96bee90421f931fc608800ff45396eb",
       "src/hub/facets/HubLiquidationFacet.sol": "0x59e91cfe3ba12c7ec5b69df6d182c3363950692b948f1ca9f522342bec45d44c",
       "src/hub/facets/HubRiskFacet.sol": "0x1533513de5b1bd351ae156b636b8afee5db55226f4470073fb016836f80780ed",
       "src/hub/facets/HubRiskViewFacet.sol": "0x2b656888ecb7e3d3e6e4ae143d0e87f0be469b5a3bd2adef0f81aeab104ef910",
@@ -51,21 +51,22 @@
       "src/hub/facets/HubStateViewFacet.sol": "0x4247425afb530e83b8693d2414ea550c50be69f7b4872f1b6be5c39a4132807a",
       "src/hub/logic/HubAccountLogic.sol": "0x82efce4b5d24e0eacc3653369849489216f8c28f94a367e314ed0175da770c25",
       "src/hub/logic/HubCommitmentLogic.sol": "0x4bc90fdca2c381dcfcdbc07aa4a2a3593599d6fe80cf58a0721030bb5e41ab4f",
-      "src/hub/logic/HubConfigurationLogic.sol": "0x332cbf4c80e21829032c40bd31d8c12536c994ca607ec4d16e9c815c45298622",
-      "src/hub/logic/HubLiquidationApplyLogic.sol": "0x3b2665946f3cd056e319deddd8aed4851d41fa743d4d40c3d10c45b00a0e7474",
+      "src/hub/logic/HubConfigurationLogic.sol": "0x3cbb02cfa175d6362a03dec041ab8c96ef23da2af8cbccfbd639682c7e2cbb17",
+      "src/hub/logic/HubLiquidationApplyLogic.sol": "0x31b8097e0c9a223ef64a2395b14694f648c2d3e5d9a31d1782756f283821f0a4",
       "src/hub/logic/HubLiquidationIntakeLogic.sol": "0xe1da89cdac5f3bb871655f855c560cae9249775eef31546bca835fb82f5aec87",
       "src/hub/logic/HubLiquidationRequestLogic.sol": "0xd53ca3d02879c06f0059ff5cb62af4b357977b917c08ccdf62605a0cad9353fc",
       "src/hub/logic/HubOperationsLogic.sol": "0x22ea661313253af90c4beef0d13a426b7e0ef4e936ea42200011862d48d8758c",
       "src/hub/logic/HubRiskLogic.sol": "0x263e204dea4cfb328f8f6e148afacb8c0a846302298350f5b9526b4aff6c66f4",
       "src/hub/logic/HubSettlementLogic.sol": "0x645da610f5636492b7f3d4fd32f99c6398a241b8bf520592c35adfc26ca3a21c",
       "src/hub/logic/HubViewLogic.sol": "0x4d070f8e97421021f820eb5497cdfce1206116ac1a8452bd9d04178cb6355dc8",
-      "src/hub/logic/OracleLib.sol": "0xf4ca643715291eccc69f0b044995095b0be96e8475ddd7509d38ef10ef6dd179",
+      "src/hub/logic/OracleLib.sol": "0x23f72d8c5376ffbcea26ebc445e619af88c79e4d3b592ff31cfbf19368851d53",
       "src/interfaces/IHub.sol": "0x2815bad4b22ec908aaf6e3ed161b4470571e8a79a6a1562fa262dc41603ceda5",
-      "src/interfaces/IHubEvents.sol": "0x71b72043aa65c6f887d909a0fbd2571b9f8662e593d043eda0bcfb72df11e4c7",
-      "src/interfaces/IOracle.sol": "0x89340030af3caa91a7ef16bc4ba6e0258558191733032205e4144a1b6973cf6a",
+      "src/interfaces/IHubEvents.sol": "0x76fa917d2aacb0572328fdfbbc39687d418b6381c8846acc7cf073ff3ebd270b",
+      "src/interfaces/IHubLiquidation.sol": "0x7cce9992717a8842e51c8c170f5906248ca9b4eba44288fd93a6452dc6f5b461",
+      "src/interfaces/IOracle.sol": "0x308f55b3de28e1b7a5c7dc17df32d3a86300992f3fe4a7879d67bb772ac6e321",
       "src/interfaces/IValidatorRegistry.sol": "0x901d6b4b70a3aac88023d65730975c89e4cdd19ba9e8218ff7a0332b355f5552",
       "src/libraries/DataTypes.sol": "0x72c7c1e2d7e283a3e1bcbb14df905f98f191d5688bfe8cf272368dc62a1df9f6",
-      "src/libraries/Errors.sol": "0xa23d6f794a0915bb2ad9134ef0aace4d4d90ac9d596e6ce9b4306286c58c1f9d",
+      "src/libraries/Errors.sol": "0xe49e005105e266c12004a19109b9ffa870fb77ad59bb7323cac1727a5bec5ea0",
       "src/libraries/LiquidationAttestationLib.sol": "0x4b3c9d102d18e7a75da71dc0e017e9c1c2251ad809e4d926a7357161742c490a",
       "src/libraries/LiquidationMath.sol": "0x45c18089b43dca64903e833e75c5e523605e81ca3073ac66893e103ba1c3de26",
       "src/libraries/MathUtils.sol": "0x46c2de3f72c46a60bf1fd6f46892a57673951fae1cc4b90adb2068afa5dbfbd3",
@@ -524,8 +525,8 @@
           "signature": "setExpiryGrace(uint48)"
         },
         {
-          "selector": "0xb85d2c61",
-          "signature": "setOracleHeartbeat(uint16,uint48)"
+          "selector": "0x7adbf973",
+          "signature": "setOracle(address)"
         },
         {
           "selector": "0x417976b7",
@@ -562,7 +563,7 @@
       ],
       "maskedRanges": [],
       "name": "HubConfigFacet",
-      "runtimeCodeHashUnlinked": "0x527c5ebe323380d1a0815a0fede034bbb48a4a4da253021c7e5ab8a7a8d5bc72"
+      "runtimeCodeHashUnlinked": "0xc2fd367a0212a7f372754a236cb4dc57239650d59a02755cba39a268052998dd"
     },
     {
       "artifact": "src/hub/facets/HubStateViewFacet.sol:HubStateViewFacet",
@@ -574,10 +575,6 @@
         {
           "selector": "0xeafe7a74",
           "signature": "assetCount()"
-        },
-        {
-          "selector": "0x7f11e123",
-          "signature": "oracleHeartbeat(uint16)"
         },
         {
           "selector": "0x82789184",
@@ -682,7 +679,7 @@
       ],
       "maskedRanges": [],
       "name": "HubStateViewFacet",
-      "runtimeCodeHashUnlinked": "0x959af714264da19cdb04b090ba85498f69ccebbcc986c032925d8348b04749d3"
+      "runtimeCodeHashUnlinked": "0xb6c607d890807899b0d2c7595547c727f716889232e9fb1252a8689f1c6752aa"
     },
     {
       "artifact": "src/hub/facets/HubRiskViewFacet.sol:HubRiskViewFacet",
@@ -787,7 +784,7 @@
         }
       ],
       "name": "HubRiskViewFacet",
-      "runtimeCodeHashUnlinked": "0x1582f12eda9cbda1f9fd767606fc5701241d908c15a607ea6518c28dadd2570c"
+      "runtimeCodeHashUnlinked": "0x18fbedcec80a763002966e2802730316c0f726248089f629a94ce3680f6f25b5"
     }
   ],
   "initializer": {
@@ -876,13 +873,13 @@
       "constructorArgsBytes": 64
     }
   ],
-  "selectorCount": 118,
+  "selectorCount": 117,
   "sizeArtifacts": [
     {
       "artifact": "src/diamond/Diamond.sol:Diamond",
       "artifactBytecodeSha256": "62e68c96c13f003c7565421eb55b2fe77dfeb2a9ec64f8b1d18e1f14230dc513",
       "artifactCreationBytecodeSha256": "06a2d115d14f76a0a9fea797e34848953ebd78d52f9c2fec70291cefa33551b9",
-      "constructorArgsBytes": 5632,
+      "constructorArgsBytes": 5600,
       "enforceMargin": true,
       "initcodeBytes": 4003,
       "maskedRanges": [],
@@ -892,15 +889,15 @@
     },
     {
       "artifact": "src/hub/HubInit.sol:HubInit",
-      "artifactBytecodeSha256": "6b27dc447d66c1700311e8bfdc0355c6a22397f567b69da85324a6687cdb6133",
-      "artifactCreationBytecodeSha256": "64e40c73fc49702382e2ea7feb9bf0682fa493f8d25f2f12d7408f562900700b",
+      "artifactBytecodeSha256": "2b249fbe2bcf5a12993f788451bbb37468586a8691b558d465ad2878748fb080",
+      "artifactCreationBytecodeSha256": "5f32dcdd71109e3e7948fcd511431065a8c44a85da9cb27fe11e83c7657d6c5f",
       "constructorArgsBytes": 0,
       "enforceMargin": true,
       "initcodeBytes": 3053,
       "maskedRanges": [],
       "minimumRuntimeMargin": 2048,
       "runtimeBytes": 2840,
-      "runtimeCodeHashUnlinked": "0xb9acb312e6eaf6624adb3ff08001eea3751bc8bb0a1d306739307f41c895ddf4"
+      "runtimeCodeHashUnlinked": "0x8e6c8014e08d8bf84ca866b0d5fb401d0574b9b32fec6874d47365296dea33b0"
     },
     {
       "artifact": "src/diamond/facets/DiamondCutFacet.sol:DiamondCutFacet",
@@ -1140,35 +1137,35 @@
     },
     {
       "artifact": "src/hub/facets/HubConfigFacet.sol:HubConfigFacet",
-      "artifactBytecodeSha256": "8e99ea49abf88b4f6b980e3a4d42c58119f8d76c25b8e41cab0042cde8ccb2e7",
-      "artifactCreationBytecodeSha256": "0310a96452f342e371fe8e10c474a6ef2a847e872624fdd4b7e38c2766f0aaf9",
+      "artifactBytecodeSha256": "64cadf41c5501bc6d2c1edd8d01d67e5d935feffd23ae1b9105a8431d6a93e72",
+      "artifactCreationBytecodeSha256": "f64d06a8e95ab87b8de9671bbe7d0cee35446161ce51d5470c122c84ebcc0a90",
       "constructorArgsBytes": 0,
       "enforceMargin": true,
-      "initcodeBytes": 5789,
+      "initcodeBytes": 5936,
       "maskedRanges": [],
       "minimumRuntimeMargin": 2048,
-      "runtimeBytes": 5763,
-      "runtimeCodeHashUnlinked": "0x527c5ebe323380d1a0815a0fede034bbb48a4a4da253021c7e5ab8a7a8d5bc72"
+      "runtimeBytes": 5910,
+      "runtimeCodeHashUnlinked": "0xc2fd367a0212a7f372754a236cb4dc57239650d59a02755cba39a268052998dd"
     },
     {
       "artifact": "src/hub/facets/HubStateViewFacet.sol:HubStateViewFacet",
-      "artifactBytecodeSha256": "fbce62d6e9f3408501f664f6d36712b3fa18859feadf222351806ca459035a9b",
-      "artifactCreationBytecodeSha256": "89a20e504981618ea605f171ea8be1ef84dc0b13f9f732bcf62df68304e3f7b0",
+      "artifactBytecodeSha256": "af6cf91fe55fef96256f4aa520eac4e037fea9b5d2254c0e0c2fbf33ae038ed1",
+      "artifactCreationBytecodeSha256": "dbdd74b6d1481582d2a59bb3c2a92ed02fc6dc85b2968f938c6c524572f69437",
       "constructorArgsBytes": 0,
       "enforceMargin": true,
-      "initcodeBytes": 6165,
+      "initcodeBytes": 6011,
       "maskedRanges": [],
       "minimumRuntimeMargin": 2048,
-      "runtimeBytes": 6139,
-      "runtimeCodeHashUnlinked": "0x959af714264da19cdb04b090ba85498f69ccebbcc986c032925d8348b04749d3"
+      "runtimeBytes": 5985,
+      "runtimeCodeHashUnlinked": "0xb6c607d890807899b0d2c7595547c727f716889232e9fb1252a8689f1c6752aa"
     },
     {
       "artifact": "src/hub/facets/HubRiskViewFacet.sol:HubRiskViewFacet",
-      "artifactBytecodeSha256": "2ea0ff1cc65dbf920edbff0db69246076349a4020fbaeb6e202f01d860401319",
-      "artifactCreationBytecodeSha256": "0ab42efbc9cda24480392e78fd78b7f53258c664a9e3b0fb0719acae7c028d84",
+      "artifactBytecodeSha256": "7396e9faf730fb3f51861f473be71802d565a9c155c5a844ca2b5f6433715038",
+      "artifactCreationBytecodeSha256": "639d17edd5e60feacb74e954382c6ec58f199f65c058397015dd43847637b981",
       "constructorArgsBytes": 0,
       "enforceMargin": true,
-      "initcodeBytes": 11267,
+      "initcodeBytes": 10986,
       "maskedRanges": [
         {
           "length": 20,
@@ -1180,28 +1177,28 @@
         }
       ],
       "minimumRuntimeMargin": 2048,
-      "runtimeBytes": 11241,
-      "runtimeCodeHashUnlinked": "0x1582f12eda9cbda1f9fd767606fc5701241d908c15a607ea6518c28dadd2570c"
+      "runtimeBytes": 10960,
+      "runtimeCodeHashUnlinked": "0x18fbedcec80a763002966e2802730316c0f726248089f629a94ce3680f6f25b5"
     },
     {
       "artifact": "src/hub/logic/HubAccountLogic.sol:HubAccountLogic",
-      "artifactBytecodeSha256": "1a9383cbe0401a3d1673d921c07f7b2604943ee6d3a5867725259c1f2d93b5a3",
-      "artifactCreationBytecodeSha256": "e3b83bd4ee7f56553d9ef8685c85a33376845104932384d6d8790d1b25a00e14",
+      "artifactBytecodeSha256": "279ae2417b41b4d20cc7f20923e1dd31bf5b0d1221b196baa3c9145955c1b3af",
+      "artifactCreationBytecodeSha256": "5b891ed1a4f9bea25984080ad2c50c89f952e43792652df3a83690e5d4939caa",
       "constructorArgsBytes": 0,
       "enforceMargin": true,
-      "initcodeBytes": 4480,
+      "initcodeBytes": 4226,
       "maskedRanges": [],
       "minimumRuntimeMargin": 2048,
-      "runtimeBytes": 4450,
-      "runtimeCodeHashUnlinked": "0xdfe9c7b380b964742a16fadb19a133e1866f4848dd7cdbbf6f836b912e1c8e76"
+      "runtimeBytes": 4196,
+      "runtimeCodeHashUnlinked": "0xb3cf2b60da126f1eb4425e065b62612dddceb2837312bb2c2fe38837363cbe32"
     },
     {
       "artifact": "src/hub/logic/HubCommitmentLogic.sol:HubCommitmentLogic",
-      "artifactBytecodeSha256": "567390f2bb442c7060b08386074ba5733304a4254305695d64279ccda041ebdc",
-      "artifactCreationBytecodeSha256": "8fcdc680098e1043ad1434013b67e4768be4ec813e79b017d702168ed00c0df2",
+      "artifactBytecodeSha256": "2a33002a98e36473bcb2eec2561d21a79617f00d20752664bad757d77fa86a36",
+      "artifactCreationBytecodeSha256": "989d2fbf070e32660dfddab235607acbd4bd47662d97698301efb8f8da5fff61",
       "constructorArgsBytes": 0,
       "enforceMargin": true,
-      "initcodeBytes": 14769,
+      "initcodeBytes": 14519,
       "maskedRanges": [
         {
           "length": 32,
@@ -1209,16 +1206,16 @@
         }
       ],
       "minimumRuntimeMargin": 2048,
-      "runtimeBytes": 14737,
-      "runtimeCodeHashUnlinked": "0xfb27e6fe31d96403f581c5b152cc60bc20df3d132d6b95b81b6bbca86f9e11da"
+      "runtimeBytes": 14487,
+      "runtimeCodeHashUnlinked": "0xe904dd5110ca5838cc18bff46a5051c80c62c81bcc05d6839193aeeda01c2202"
     },
     {
       "artifact": "src/hub/logic/HubLiquidationApplyLogic.sol:HubLiquidationApplyLogic",
-      "artifactBytecodeSha256": "d38ea64760a09a5063b00a4d0c05d57af7e94ce955e0eef26a4a5dcdf149c0b5",
-      "artifactCreationBytecodeSha256": "261cd731c8b103ffba7cb554080d44468c2f7f02627f182a642808d4f7c92113",
+      "artifactBytecodeSha256": "27adbd6f0dab0f941d3471a6e4c23a9008097c4bc1e13d9c885d11441af504bc",
+      "artifactCreationBytecodeSha256": "c0cedb278ab3de662c53fc9665927ba1b558bc549a4b7db143543c6d24375497",
       "constructorArgsBytes": 0,
       "enforceMargin": true,
-      "initcodeBytes": 13893,
+      "initcodeBytes": 13819,
       "maskedRanges": [
         {
           "length": 32,
@@ -1226,17 +1223,17 @@
         },
         {
           "length": 20,
-          "start": 6250
+          "start": 6475
         }
       ],
       "minimumRuntimeMargin": 2048,
-      "runtimeBytes": 13861,
-      "runtimeCodeHashUnlinked": "0xc9e60829185d6bd13885919768ca55509384aa14b94b4d75ace7c356f692b2dc"
+      "runtimeBytes": 13787,
+      "runtimeCodeHashUnlinked": "0x82e1ede455408258e2b3a3f4e641611a248bac31ebde0052cb1e43798f0e004e"
     },
     {
       "artifact": "src/hub/logic/HubLiquidationIntakeLogic.sol:HubLiquidationIntakeLogic",
-      "artifactBytecodeSha256": "089e273c60d0182a772060fa6cd317a7eb5bcd0a59105601458b0c97bc89a5ce",
-      "artifactCreationBytecodeSha256": "b2c26f449a1de7d699d6b011baf9fe0bc7d04af37908bf3ea3dc44a8db194456",
+      "artifactBytecodeSha256": "32c0a90d89b34871920a327a3a1ad3eb645953e8563369d22171d523583efd3d",
+      "artifactCreationBytecodeSha256": "f8d2565007fcfae5e53877e278b42e3aa53b78d85286526d18b37de60fdf76a0",
       "constructorArgsBytes": 0,
       "enforceMargin": true,
       "initcodeBytes": 11202,
@@ -1260,15 +1257,15 @@
       ],
       "minimumRuntimeMargin": 2048,
       "runtimeBytes": 11170,
-      "runtimeCodeHashUnlinked": "0xad9156930584e02507234ddfe1b1952036bb31401006a0581e18f1afebbd7e22"
+      "runtimeCodeHashUnlinked": "0xbd4349bf4d133d20e0cfb35b1bf0afa8b5a9f5655322e4f5ddb7f71cbac2b745"
     },
     {
       "artifact": "src/hub/logic/HubLiquidationRequestLogic.sol:HubLiquidationRequestLogic",
-      "artifactBytecodeSha256": "2510afb2b830ed2b6f0e1a25da13a19410cbedf521106317142fbd4cdc7f546f",
-      "artifactCreationBytecodeSha256": "7e2966cc22a5eee7d1678c86b8b13f56974d191a4a845e361aee2efb4afe2082",
+      "artifactBytecodeSha256": "72bf21b8447afe5813cd2a75173156c6397511bf21e8c90d7d425b252999f8f2",
+      "artifactCreationBytecodeSha256": "f79b7808ba3f195f625db2c97d578a8f340f60a15ace7a0b3c52131fd42a10c3",
       "constructorArgsBytes": 0,
       "enforceMargin": true,
-      "initcodeBytes": 14445,
+      "initcodeBytes": 14164,
       "maskedRanges": [
         {
           "length": 32,
@@ -1276,16 +1273,16 @@
         }
       ],
       "minimumRuntimeMargin": 2048,
-      "runtimeBytes": 14413,
-      "runtimeCodeHashUnlinked": "0x6846b675a0c30937a7f6d5e16e6d97a2e173a7e2a29e3537a7a3df78c1ad8bfe"
+      "runtimeBytes": 14132,
+      "runtimeCodeHashUnlinked": "0x75ec016d6e97aae7b40c49d589bbd5301ba0e62731928ee21cd41a6013f83a54"
     },
     {
       "artifact": "src/hub/logic/HubRiskLogic.sol:HubRiskLogic",
-      "artifactBytecodeSha256": "7ec96d5c7ba4ef563491f33a83200d0195488953c7ae2b5bbfc7eacbb0f7b513",
-      "artifactCreationBytecodeSha256": "02ac7f21e97e0e37c37c7fa877327089a957fb5fd29f8ce307a823b96da893a6",
+      "artifactBytecodeSha256": "ada582337e66fdd6c6be71df92efb2674b913d102f8fd3c93acccafcfb0db7d9",
+      "artifactCreationBytecodeSha256": "e568a692ec1c2091421735894550a031afb8ba0949ce2936d5a2a1032f0fe734",
       "constructorArgsBytes": 0,
       "enforceMargin": true,
-      "initcodeBytes": 10539,
+      "initcodeBytes": 10289,
       "maskedRanges": [
         {
           "length": 32,
@@ -1293,13 +1290,13 @@
         }
       ],
       "minimumRuntimeMargin": 2048,
-      "runtimeBytes": 10507,
-      "runtimeCodeHashUnlinked": "0x7cd6b51c6ccdbae1eae3be04c626ffb76144ebe7300a62aa200c3d84b4fef5ce"
+      "runtimeBytes": 10257,
+      "runtimeCodeHashUnlinked": "0x8ebeaa963c7a961ae02c97907925aa9da62420711ea08b2582828d021586116e"
     },
     {
       "artifact": "src/hub/logic/HubSettlementLogic.sol:HubSettlementLogic",
-      "artifactBytecodeSha256": "a28cca2473ddd6d1a5ed03cc778adb7c1c1e434b7d30b69ccb19a05060f6eb6d",
-      "artifactCreationBytecodeSha256": "9e5f1b6a36d7a3d8bbbfc3ab5942fcef71653601bfd67e64bf0c8ff326d0c058",
+      "artifactBytecodeSha256": "186f4cb499d0053c00e4907638d9f5a846e4d4a204b78709b82ed0f0f1637cfe",
+      "artifactCreationBytecodeSha256": "d81d5c81cd8904f397924302ca5a37a23287b4532756cc432cc1beec7e365e89",
       "constructorArgsBytes": 0,
       "enforceMargin": true,
       "initcodeBytes": 10394,
@@ -1315,7 +1312,7 @@
       ],
       "minimumRuntimeMargin": 2048,
       "runtimeBytes": 10362,
-      "runtimeCodeHashUnlinked": "0x8461562c80bf453a2df9257b98baf5070251c9b8f083f5939614a2e9962f239f"
+      "runtimeCodeHashUnlinked": "0x537cf52f1de176a4b369f326702d5cf95de9b87cf869748148702b69d70238b1"
     },
     {
       "artifact": "src/hub/HubRequestGateway.sol:HubRequestGateway",
