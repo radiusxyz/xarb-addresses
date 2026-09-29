@@ -257,6 +257,22 @@
     "type": "error"
   },
   {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "available",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "required",
+        "type": "uint256"
+      }
+    ],
+    "name": "InsufficientFinalizationGas",
+    "type": "error"
+  },
+  {
     "inputs": [],
     "name": "InvalidAddress",
     "type": "error"
@@ -453,17 +469,6 @@
       }
     ],
     "name": "NotLiquidatable",
-    "type": "error"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint16",
-        "name": "assetId",
-        "type": "uint16"
-      }
-    ],
-    "name": "OracleHeartbeatNotConfigured",
     "type": "error"
   },
   {
@@ -698,27 +703,6 @@
       }
     ],
     "name": "SourceSpokeMismatch",
-    "type": "error"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint16",
-        "name": "assetId",
-        "type": "uint16"
-      },
-      {
-        "internalType": "uint256",
-        "name": "updatedAt",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint48",
-        "name": "heartbeat",
-        "type": "uint48"
-      }
-    ],
-    "name": "StaleOraclePrice",
     "type": "error"
   },
   {
@@ -2098,25 +2082,6 @@
       }
     ],
     "name": "MessageProcessedOverridden",
-    "type": "event"
-  },
-  {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "uint16",
-        "name": "assetId",
-        "type": "uint16"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint48",
-        "name": "heartbeat",
-        "type": "uint48"
-      }
-    ],
-    "name": "OracleHeartbeatUpdated",
     "type": "event"
   },
   {
@@ -4431,25 +4396,6 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint16",
-        "name": "assetId",
-        "type": "uint16"
-      }
-    ],
-    "name": "oracleHeartbeat",
-    "outputs": [
-      {
-        "internalType": "uint48",
-        "name": "heartbeat",
-        "type": "uint48"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
     "inputs": [],
     "name": "pause",
     "outputs": [],
@@ -5054,17 +5000,12 @@
   {
     "inputs": [
       {
-        "internalType": "uint16",
-        "name": "assetId",
-        "type": "uint16"
-      },
-      {
-        "internalType": "uint48",
-        "name": "heartbeat",
-        "type": "uint48"
+        "internalType": "address",
+        "name": "oracleAddress",
+        "type": "address"
       }
     ],
-    "name": "setOracleHeartbeat",
+    "name": "setOracle",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

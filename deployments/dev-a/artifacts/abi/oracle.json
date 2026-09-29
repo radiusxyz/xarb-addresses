@@ -11,23 +11,68 @@
     "type": "constructor"
   },
   {
-    "inputs": [],
-    "name": "InvalidAddress",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "source",
+        "type": "address"
+      }
+    ],
+    "name": "InvalidSource",
     "type": "error"
   },
   {
     "inputs": [],
-    "name": "InvalidAmount",
+    "name": "InvalidSourceArrays",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnableInvalidOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "OwnableUnauthorizedAccount",
     "type": "error"
   },
   {
     "inputs": [],
-    "name": "InvalidAsset",
+    "name": "OwnershipRenunciationDisabled",
     "type": "error"
   },
   {
-    "inputs": [],
-    "name": "Unauthorized",
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      }
+    ],
+    "name": "SourceNotConfigured",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      }
+    ],
+    "name": "ZeroSourcePrice",
     "type": "error"
   },
   {
@@ -35,12 +80,18 @@
     "inputs": [
       {
         "indexed": true,
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      },
+      {
+        "indexed": true,
         "internalType": "address",
-        "name": "owner",
+        "name": "previousSource",
         "type": "address"
       }
     ],
-    "name": "OwnerUpdated",
+    "name": "AssetSourceRemoved",
     "type": "event"
   },
   {
@@ -53,20 +104,65 @@
         "type": "uint16"
       },
       {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "price",
-        "type": "uint256"
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousSource",
+        "type": "address"
       },
       {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "timestamp",
-        "type": "uint256"
+        "indexed": true,
+        "internalType": "address",
+        "name": "newSource",
+        "type": "address"
       }
     ],
-    "name": "PriceUpdated",
+    "name": "AssetSourceUpdated",
     "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferStarted",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "acceptOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
   },
   {
     "inputs": [
@@ -82,11 +178,25 @@
         "internalType": "uint256",
         "name": "price",
         "type": "uint256"
-      },
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
       {
-        "internalType": "uint256",
-        "name": "timestamp",
-        "type": "uint256"
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
+      }
+    ],
+    "name": "getSourceOfAsset",
+    "outputs": [
+      {
+        "internalType": "contract IPriceSource",
+        "name": "source",
+        "type": "address"
       }
     ],
     "stateMutability": "view",
@@ -106,19 +216,13 @@
     "type": "function"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint16",
-        "name": "assetId",
-        "type": "uint16"
-      }
-    ],
-    "name": "prices",
+    "inputs": [],
+    "name": "pendingOwner",
     "outputs": [
       {
-        "internalType": "uint256",
-        "name": "price",
-        "type": "uint256"
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
     "stateMutability": "view",
@@ -127,14 +231,21 @@
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "newOwner",
-        "type": "address"
+        "internalType": "uint16",
+        "name": "assetId",
+        "type": "uint16"
       }
     ],
-    "name": "setOwner",
+    "name": "removeAssetSource",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -145,12 +256,12 @@
         "type": "uint16"
       },
       {
-        "internalType": "uint256",
-        "name": "price",
-        "type": "uint256"
+        "internalType": "address",
+        "name": "source",
+        "type": "address"
       }
     ],
-    "name": "setPrice",
+    "name": "setAssetSource",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -163,12 +274,12 @@
         "type": "uint16[]"
       },
       {
-        "internalType": "uint256[]",
-        "name": "priceValues",
-        "type": "uint256[]"
+        "internalType": "address[]",
+        "name": "sources",
+        "type": "address[]"
       }
     ],
-    "name": "setPrices",
+    "name": "setAssetSources",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -176,20 +287,14 @@
   {
     "inputs": [
       {
-        "internalType": "uint16",
-        "name": "assetId",
-        "type": "uint16"
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
       }
     ],
-    "name": "updatedAt",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "timestamp",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   }
 ]
