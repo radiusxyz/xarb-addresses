@@ -6,8 +6,12 @@ Beyond the JSON schema this checks what the schema cannot express:
   - every chain_id is allowed for that environment (environments.yaml)
   - chain name / native_symbol / explorer_url match environments.yaml
   - when artifacts are declared: every artifact exists under the environment directory and
-    its digest matches (sha256 for JSON copies, keccak256 for manifests), and
-    nothing sits under artifacts/ undeclared
+    its digest matches (sha256 for JSON copies, keccak256 for manifests), nothing sits
+    under artifacts/ undeclared, and each diamond ABI's sha256 equals the abiSha256 its
+    manifest pins
+  - spoke tokens: unique addresses and symbols, no zero address
+  - spoke faucet: requires tokens, every drip names a token symbol exactly once,
+    no zero address, and no faucet at all in production
   - when routes.yaml sits next to config.yaml: it carries the two route lists
     xarb-operations-infra reads, with the same ids on both sides, every route
     joining the hub and one of the spokes, propagator routes naming the
@@ -98,6 +102,48 @@ def check_environment(data: dict, directory: str, environments: dict) -> list[st
     return errors
 
 
+ZERO_ADDRESS = "0x" + "0" * 40
+
+
+def check_tokens(data: dict) -> list[str]:
+    errors = []
+    for index, spoke in enumerate(data.get("spokes", [])):
+        label = f"spokes/{index}"
+        tokens = spoke.get("tokens")
+        faucet = spoke.get("faucet")
+        symbols: set[str] = set()
+        addresses: set[str] = set()
+        for position, token in enumerate(tokens or []):
+            where = f"{label}/tokens/{position}"
+            address = token["address"].lower()
+            if address == ZERO_ADDRESS:
+                errors.append(f"{where}: zero address")
+            if address in addresses:
+                errors.append(f"{where}: duplicate address {token['address']}")
+            if token["symbol"] in symbols:
+                errors.append(f"{where}: duplicate symbol {token['symbol']}")
+            addresses.add(address)
+            symbols.add(token["symbol"])
+        if faucet is None:
+            continue
+        where = f"{label}/faucet"
+        if data.get("environment") == "production":
+            errors.append(f"{where}: faucets are not published for production")
+        if not tokens:
+            errors.append(f"{where}: needs the spoke's tokens list to resolve drips")
+        for key in ("address", "owner", "operator"):
+            if faucet[key].lower() == ZERO_ADDRESS:
+                errors.append(f"{where}/{key}: zero address")
+        dripped: set[str] = set()
+        for position, drip in enumerate(faucet["drips"]):
+            if drip["token"] not in symbols:
+                errors.append(f"{where}/drips/{position}: {drip['token']} is not a token of this spoke")
+            if drip["token"] in dripped:
+                errors.append(f"{where}/drips/{position}: {drip['token']} dripped twice")
+            dripped.add(drip["token"])
+    return errors
+
+
 ROUTE_TYPEHASH = "Route(uint32 sourceChainId,address sourceContract,uint32 destinationChainId,address destinationContract)"
 
 
@@ -180,6 +226,41 @@ def check_routes(data: dict, env_dir: Path) -> list[str]:
     return errors
 
 
+def flatten_artifacts(artifacts: dict) -> list[tuple[str, dict]]:
+    """Name/entry pairs, descending one level into the abi map."""
+    flat = []
+    for name, entry in artifacts.items():
+        if "path" in entry:
+            flat.append((name, entry))
+        else:
+            flat.extend((f"{name}/{key}", value) for key, value in entry.items())
+    return flat
+
+
+def check_abi_matches_manifest(data: dict, env_dir: Path) -> list[str]:
+    """A diamond's published ABI must be the one its manifest pinned.
+
+    The manifest records abiSha256 over the same bytes the ABI file holds, so a
+    mismatch means the two were produced from different builds and whoever
+    consumes the ABI would be talking to a contract the manifest does not
+    describe.
+    """
+    errors = []
+    artifacts = data.get("artifacts", {})
+    abis = artifacts.get("abi", {})
+    for target in ("hub", "spoke"):
+        abi, manifest = abis.get(target), artifacts.get(f"{target}_manifest")
+        if not abi or not manifest:
+            continue
+        manifest_path = env_dir / manifest["path"]
+        if not manifest_path.is_file():
+            continue
+        pinned = json.loads(manifest_path.read_text()).get("abiSha256", "")
+        if pinned.removeprefix("0x") != abi["sha256"]:
+            errors.append(f"artifacts/abi/{target}: sha256 {abi['sha256']} is not the {pinned} its manifest pins")
+    return errors
+
+
 def check_artifacts(data: dict, env_dir: Path) -> list[str]:
     errors = []
     if "artifacts" not in data:
@@ -187,7 +268,9 @@ def check_artifacts(data: dict, env_dir: Path) -> list[str]:
         if artifacts_dir.is_dir() and any(artifacts_dir.rglob("*")):
             return ["artifacts/ exists on disk but config.yaml declares no artifacts"]
         return errors
-    for name, artifact in data.get("artifacts", {}).items():
+    declared_paths = set()
+    for name, artifact in flatten_artifacts(data["artifacts"]):
+        declared_paths.add(artifact["path"])
         path = env_dir / artifact["path"]
         if not path.is_file():
             errors.append(f"artifacts/{name}: {artifact['path']} does not exist")
@@ -205,10 +288,10 @@ def check_artifacts(data: dict, env_dir: Path) -> list[str]:
                 errors.append(f"artifacts/{name}: keccak256 mismatch (file 0x{actual})")
     artifacts_dir = env_dir / "artifacts"
     on_disk = sorted(str(p.relative_to(env_dir)) for p in artifacts_dir.rglob("*") if p.is_file()) if artifacts_dir.is_dir() else []
-    declared = {a["path"] for a in data.get("artifacts", {}).values()}
     for extra in on_disk:
-        if extra not in declared:
+        if extra not in declared_paths:
             errors.append(f"artifacts: {extra} is on disk but not declared in config.yaml")
+    errors += check_abi_matches_manifest(data, env_dir)
     return errors
 
 
@@ -232,6 +315,7 @@ def main(argv: list[str]) -> int:
         ]
         if not errors:
             errors += check_environment(data, config.parent.name, environments)
+            errors += check_tokens(data)
             errors += check_artifacts(data, config.parent)
             errors += check_routes(data, config.parent)
         if errors:

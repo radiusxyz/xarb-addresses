@@ -1,11 +1,11 @@
-schema_version: 1
+schema_version: 3
 environment: dev
-updated_at: "2026-09-21"
+updated_at: "2026-09-29"
 
 protocol:
   name: xarb
-  release: "3cb578f"
-  contracts_commit: 3cb578fa22121581a83c857eb7b0fff6e96cb37a
+  release: "eb5b67b"
+  contracts_commit: eb5b67b0cd2cbb14143bc10673192d7516fc055c
 
 artifacts:
   event_registry:
@@ -13,10 +13,50 @@ artifacts:
     sha256: "cbb7dc7e731e1b4bfe8095d071a930cfc3ccde334a1d2e1375f16e33c60740e4"
   hub_manifest:
     path: artifacts/manifests/hub.json
-    keccak256: "0x047f9d989aa579bed1540b6ffbd8a70eacbe710a691d5a8c5d396aa7138f8ff9"
+    keccak256: "0xfb842f5ecc659d55ddff043b73febed75bf4414fe5ba9d63e6cc823e683a055f"
   spoke_manifest:
     path: artifacts/manifests/spoke.json
-    keccak256: "0x23100ceb4e5668b26eb2ebe1a90a5929b362872c65be2713cef113893f9935bc"
+    keccak256: "0xa9be325274876da9255e70998e6ce14520aae36ecb2116b928ef7e31b617fc14"
+  abi:
+    hub:
+      path: artifacts/abi/hub.json
+      sha256: "49ae4b29af48a5c12267f6acef23da358f4788f194d31b2425c636d97962d682"
+    spoke:
+      path: artifacts/abi/spoke.json
+      sha256: "b3303e9ae904337cae84fcd4e4fe01d4c6d9679bc4018046402bba47c7ef0bd9"
+    batch_inbox:
+      path: artifacts/abi/batch_inbox.json
+      sha256: "e6446f1142bae4591d9cf7b69a888e1c596cc6761a29434b0cee6fbd72881379"
+    credit_debt_token:
+      path: artifacts/abi/credit_debt_token.json
+      sha256: "43494474fb40942751ea2f44717fb4582f7ecab67760742f2bf678a939b81293"
+    escrow_vault:
+      path: artifacts/abi/escrow_vault.json
+      sha256: "0d70a476b0b87173c86a6182b832b79aef4ba8527451b4780f15f14ab0ac64ba"
+    faucet_dispenser:
+      path: artifacts/abi/faucet_dispenser.json
+      sha256: "31bccd49cf29b778de0763c52220a5a6e4df897134cc5b10d446ee7168529602"
+    lending_pool:
+      path: artifacts/abi/lending_pool.json
+      sha256: "07e7f2e579df6e2bf5827d1604cafd6cf43f2c554cc9d32b0c2f8afbfe68205b"
+    oracle:
+      path: artifacts/abi/oracle.json
+      sha256: "f0e454376eeaa739ae2efc1e924022c73704ba29e83be195439c698dd23e7ccb"
+    r_token:
+      path: artifacts/abi/r_token.json
+      sha256: "43494474fb40942751ea2f44717fb4582f7ecab67760742f2bf678a939b81293"
+    request_forwarder:
+      path: artifacts/abi/request_forwarder.json
+      sha256: "2036d19e48dfdf2a36724d68efc559c367d4962b39bae8ecab35ce2e1dac162a"
+    request_gateway:
+      path: artifacts/abi/request_gateway.json
+      sha256: "3b234b9ccd85fa5d478d76e1d7359eb100e2cc874fb2c69dcc377ed8886488ad"
+    validator_registry:
+      path: artifacts/abi/validator_registry.json
+      sha256: "230c4a458e18fe6be88152eae4e971dedc534452640918d8753819bc01541da0"
+    variable_debt_token:
+      path: artifacts/abi/variable_debt_token.json
+      sha256: "43494474fb40942751ea2f44717fb4582f7ecab67760742f2bf678a939b81293"
 
 hub:
   chain_id: 84532
@@ -57,5 +97,27 @@ spokes:
         address: "0xfe806F1312453F7c6A5C7e73595620e6DbEE5448"
       validator_registry:
         address: "0xFD65EB821400698f3c929aa15b8c7F3E3B77a5d5"
+    tokens:
+      - symbol: "WBTC"
+        address: "0x148739c74Da23cA1288b12fb9Dd97833308e9440"
+        decimals: 18
+      - symbol: "USDT"
+        address: "0xA4c00f41b0b27A9720419836028D9B8c5d8222a5"
+        decimals: 18
+      - symbol: "WPOL"
+        address: "0x43Ac4A59C1Cb9B4c48219AFe183a561c327D43b8"
+        decimals: 18
+    faucet:
+      address: "0xB229B8a8508c283e1eF6130aa0A0899d836c6618"
+      owner: "0xFD4444796E2E662231b6333F28670e4B9Fe3A0F0"
+      operator: "0x67643FD0a1eD17F520b2d4BE0c52247798F4b005"
+      native_amount: "1000000000000000"
+      drips:
+        - token: "WBTC"
+          amount: "10000000000000000"
+        - token: "USDT"
+          amount: "1000000000000000000000"
+        - token: "WPOL"
+          amount: "1000000000000000000000"
     substreams:
       start_block: 47094665
