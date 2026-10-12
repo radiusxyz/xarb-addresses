@@ -125,6 +125,17 @@
     "type": "error"
   },
   {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "receiver",
+        "type": "address"
+      }
+    ],
+    "name": "InvalidReceiver",
+    "type": "error"
+  },
+  {
     "inputs": [],
     "name": "NoDebtToRepay",
     "type": "error"
@@ -132,6 +143,22 @@
   {
     "inputs": [],
     "name": "NotInitializing",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "premium",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "returned",
+        "type": "uint256"
+      }
+    ],
+    "name": "PremiumNotPaid",
     "type": "error"
   },
   {
@@ -842,6 +869,50 @@
     "inputs": [
       {
         "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "receiver",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "bytes",
+        "name": "params",
+        "type": "bytes"
+      }
+    ],
+    "name": "advanceStrategy",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "returned",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "premium",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
         "name": "newOwner",
         "type": "address"
       }
@@ -1026,6 +1097,590 @@
       }
     ],
     "name": "executeDirectRepayLiquidation",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "actualDebtRepaid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledPaymentBurned",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledDebtBurned",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "interestPaid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "principalPaid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "grossCollateralSeized",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "netCollateralReceived",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "protocolFeeCollateral",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledCollateralToLiquidator",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledCollateralToTreasury",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "borrowerScaledDebtAfter",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "borrowerScaledCollateralAfter",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "liquidatorScaledPaymentAfter",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "liquidatorScaledCollateralAfter",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "treasuryScaledCollateralAfter",
+            "type": "uint256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint40",
+                "name": "spokeTimestamp",
+                "type": "uint40"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditRate",
+                "type": "uint128"
+              }
+            ],
+            "internalType": "struct DataTypes.IndexSnapshot",
+            "name": "debtSnapshot",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint40",
+                "name": "spokeTimestamp",
+                "type": "uint40"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditRate",
+                "type": "uint128"
+              }
+            ],
+            "internalType": "struct DataTypes.IndexSnapshot",
+            "name": "collateralSnapshot",
+            "type": "tuple"
+          },
+          {
+            "internalType": "uint256",
+            "name": "debtTotalScaledSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "debtTotalScaledDebt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "debtTotalScaledCreditDebt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "debtTotalCreditPrincipal",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "collateralTotalScaledSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "collateralTotalScaledDebt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "collateralTotalScaledCreditDebt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "collateralTotalCreditPrincipal",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct DataTypes.PoolLiquidationResult",
+        "name": "result",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "enum DataTypes.LiquidationDebtType",
+            "name": "debtType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "debtAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "collateralAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "borrower",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "liquidator",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "treasury",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "nominalDebtToRepay",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledPaymentToBurn",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledDebtToBurn",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "creditInterestPaid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "creditPrincipalPaid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "grossScaledCollateral",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "liquidatorScaledCollateral",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "treasuryScaledCollateral",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct DataTypes.PoolLiquidationParams",
+        "name": "params",
+        "type": "tuple"
+      }
+    ],
+    "name": "executeLiquidationCollateralLeg",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "actualDebtRepaid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledPaymentBurned",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledDebtBurned",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "interestPaid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "principalPaid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "grossCollateralSeized",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "netCollateralReceived",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "protocolFeeCollateral",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledCollateralToLiquidator",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledCollateralToTreasury",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "borrowerScaledDebtAfter",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "borrowerScaledCollateralAfter",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "liquidatorScaledPaymentAfter",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "liquidatorScaledCollateralAfter",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "treasuryScaledCollateralAfter",
+            "type": "uint256"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint40",
+                "name": "spokeTimestamp",
+                "type": "uint40"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditRate",
+                "type": "uint128"
+              }
+            ],
+            "internalType": "struct DataTypes.IndexSnapshot",
+            "name": "debtSnapshot",
+            "type": "tuple"
+          },
+          {
+            "components": [
+              {
+                "internalType": "uint40",
+                "name": "spokeTimestamp",
+                "type": "uint40"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditIndex",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "liquidityRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "borrowRate",
+                "type": "uint128"
+              },
+              {
+                "internalType": "uint128",
+                "name": "creditRate",
+                "type": "uint128"
+              }
+            ],
+            "internalType": "struct DataTypes.IndexSnapshot",
+            "name": "collateralSnapshot",
+            "type": "tuple"
+          },
+          {
+            "internalType": "uint256",
+            "name": "debtTotalScaledSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "debtTotalScaledDebt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "debtTotalScaledCreditDebt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "debtTotalCreditPrincipal",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "collateralTotalScaledSupply",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "collateralTotalScaledDebt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "collateralTotalScaledCreditDebt",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "collateralTotalCreditPrincipal",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct DataTypes.PoolLiquidationResult",
+        "name": "result",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "enum DataTypes.LiquidationDebtType",
+            "name": "debtType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "debtAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "collateralAsset",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "borrower",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "liquidator",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "treasury",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "nominalDebtToRepay",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledPaymentToBurn",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledDebtToBurn",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "creditInterestPaid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "creditPrincipalPaid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "grossScaledCollateral",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "liquidatorScaledCollateral",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "treasuryScaledCollateral",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct DataTypes.PoolLiquidationParams",
+        "name": "params",
+        "type": "tuple"
+      }
+    ],
+    "name": "executeLiquidationDebtLeg",
     "outputs": [
       {
         "components": [
@@ -2442,6 +3097,119 @@
     ],
     "name": "setSupplyCap",
     "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "principal",
+        "type": "uint256"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "creditIndex",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "payment",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "interestPaid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "principalPaid",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "interestOwed",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledBurned",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct DataTypes.CreditPayment",
+        "name": "payment",
+        "type": "tuple"
+      },
+      {
+        "internalType": "uint256",
+        "name": "refund",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "vault",
+        "type": "address"
+      }
+    ],
+    "name": "settleStrategy",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint40",
+            "name": "spokeTimestamp",
+            "type": "uint40"
+          },
+          {
+            "internalType": "uint128",
+            "name": "liquidityIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "borrowIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "creditIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "liquidityRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "borrowRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "creditRate",
+            "type": "uint128"
+          }
+        ],
+        "internalType": "struct DataTypes.IndexSnapshot",
+        "name": "snapshot",
+        "type": "tuple"
+      }
+    ],
     "stateMutability": "nonpayable",
     "type": "function"
   },
