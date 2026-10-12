@@ -43,19 +43,8 @@
     "type": "error"
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "principal",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "requestedCap",
-        "type": "uint256"
-      }
-    ],
-    "name": "CapBelowPrincipal",
+    "inputs": [],
+    "name": "BorrowNotEnabled",
     "type": "error"
   },
   {
@@ -109,17 +98,6 @@
   {
     "inputs": [
       {
-        "internalType": "uint48",
-        "name": "validUntil",
-        "type": "uint48"
-      }
-    ],
-    "name": "CreditAllocationStale",
-    "type": "error"
-  },
-  {
-    "inputs": [
-      {
         "internalType": "address",
         "name": "user",
         "type": "address"
@@ -139,8 +117,51 @@
     "type": "error"
   },
   {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "ceiling",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "requestedPrincipal",
+        "type": "uint256"
+      }
+    ],
+    "name": "DrainCeilingExceeded",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      }
+    ],
+    "name": "DuplicateToken",
+    "type": "error"
+  },
+  {
     "inputs": [],
     "name": "EmptySelectorList",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      }
+    ],
+    "name": "EscrowTokenNotConfigured",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "EscrowVaultInUse",
     "type": "error"
   },
   {
@@ -152,6 +173,38 @@
       }
     ],
     "name": "FacetHasNoCode",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "FlashLoanCallbackFailed",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      }
+    ],
+    "name": "FlashLoanDisabled",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "expectedBalance",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "actualBalance",
+        "type": "uint256"
+      }
+    ],
+    "name": "FlashLoanNotRepaid",
     "type": "error"
   },
   {
@@ -222,6 +275,11 @@
     "type": "error"
   },
   {
+    "inputs": [],
+    "name": "InvalidLtv",
+    "type": "error"
+  },
+  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -275,6 +333,17 @@
     "type": "error"
   },
   {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "receiver",
+        "type": "address"
+      }
+    ],
+    "name": "InvalidReceiver",
+    "type": "error"
+  },
+  {
     "inputs": [],
     "name": "InvalidSignature",
     "type": "error"
@@ -312,6 +381,22 @@
     "type": "error"
   },
   {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "debt",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "limit",
+        "type": "uint256"
+      }
+    ],
+    "name": "LimitExceeded",
+    "type": "error"
+  },
+  {
     "inputs": [],
     "name": "LiquidationDust",
     "type": "error"
@@ -325,22 +410,6 @@
       }
     ],
     "name": "LiquidationLocked",
-    "type": "error"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "minimum",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "actual",
-        "type": "uint256"
-      }
-    ],
-    "name": "LiquidationSlippage",
     "type": "error"
   },
   {
@@ -399,6 +468,22 @@
       }
     ],
     "name": "OutflowLimitNotConfigured",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "premium",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "returned",
+        "type": "uint256"
+      }
+    ],
+    "name": "PremiumNotPaid",
     "type": "error"
   },
   {
@@ -525,6 +610,11 @@
     "type": "error"
   },
   {
+    "inputs": [],
+    "name": "SequencerDown",
+    "type": "error"
+  },
+  {
     "inputs": [
       {
         "internalType": "address",
@@ -564,6 +654,22 @@
   {
     "inputs": [],
     "name": "SystemPaused",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "count",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "max",
+        "type": "uint256"
+      }
+    ],
+    "name": "TooManyEscrowTokens",
     "type": "error"
   },
   {
@@ -768,12 +874,6 @@
         "internalType": "uint256",
         "name": "newCap",
         "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint48",
-        "name": "validUntil",
-        "type": "uint48"
       },
       {
         "indexed": true,
@@ -1762,6 +1862,23 @@
             "internalType": "struct DataTypes.CreditInvalidationResult[]",
             "name": "creditInvalidations",
             "type": "tuple[]"
+          },
+          {
+            "components": [
+              {
+                "internalType": "address",
+                "name": "token",
+                "type": "address"
+              },
+              {
+                "internalType": "uint256",
+                "name": "amount",
+                "type": "uint256"
+              }
+            ],
+            "internalType": "struct DataTypes.EscrowBalance[]",
+            "name": "escrowAfter",
+            "type": "tuple[]"
           }
         ],
         "indexed": false,
@@ -1858,6 +1975,12 @@
         "type": "address"
       },
       {
+        "indexed": true,
+        "internalType": "address",
+        "name": "debtAsset",
+        "type": "address"
+      },
+      {
         "indexed": false,
         "internalType": "uint256",
         "name": "amount",
@@ -1943,6 +2066,24 @@
         "internalType": "struct DataTypes.IndexSnapshot",
         "name": "snap",
         "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "token",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct DataTypes.EscrowBalance[]",
+        "name": "balances",
+        "type": "tuple[]"
       }
     ],
     "name": "EscrowSupplied",
@@ -1973,11 +2114,227 @@
       {
         "indexed": true,
         "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "priceSource",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "ltv",
+        "type": "uint16"
+      }
+    ],
+    "name": "EscrowTokenUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "principal",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "interestPaid",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "principalPaid",
+        "type": "uint256"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint32",
+            "name": "sourceChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "address",
+            "name": "sourceSpoke",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "eventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "reserveEventNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bytes32",
+            "name": "messageId",
+            "type": "bytes32"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct DataTypes.SettlementContext",
+        "name": "ctx",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint40",
+            "name": "spokeTimestamp",
+            "type": "uint40"
+          },
+          {
+            "internalType": "uint128",
+            "name": "liquidityIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "borrowIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "creditIndex",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "liquidityRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "borrowRate",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "creditRate",
+            "type": "uint128"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct DataTypes.IndexSnapshot",
+        "name": "snap",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "principal",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "scaledPrincipal",
+            "type": "uint256"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct DataTypes.CreditLineSnapshot",
+        "name": "lineAfter",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "token",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct DataTypes.EscrowBalance[]",
+        "name": "balances",
+        "type": "tuple[]"
+      }
+    ],
+    "name": "EscrowUpdateInitiated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
         "name": "escrowVault",
         "type": "address"
       }
     ],
     "name": "EscrowVaultUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "receiver",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "initiator",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "premium",
+        "type": "uint256"
+      }
+    ],
+    "name": "FlashLoan",
     "type": "event"
   },
   {
@@ -2243,6 +2600,19 @@
       }
     ],
     "name": "LiquidationStateApplied",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "max",
+        "type": "uint8"
+      }
+    ],
+    "name": "MaxEscrowTokensUpdated",
     "type": "event"
   },
   {
@@ -2542,6 +2912,25 @@
       }
     ],
     "name": "RoleRevoked",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "feed",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint48",
+        "name": "gracePeriod",
+        "type": "uint48"
+      }
+    ],
+    "name": "SequencerFeedUpdated",
     "type": "event"
   },
   {
@@ -3082,7 +3471,12 @@
           },
           {
             "internalType": "uint32",
-            "name": "selectedChainId",
+            "name": "debtChainId",
+            "type": "uint32"
+          },
+          {
+            "internalType": "uint32",
+            "name": "collateralChainId",
             "type": "uint32"
           },
           {
@@ -3101,9 +3495,9 @@
             "type": "uint8"
           },
           {
-            "internalType": "bool",
-            "name": "executeValue",
-            "type": "bool"
+            "internalType": "enum DataTypes.LiquidationAction",
+            "name": "action",
+            "type": "uint8"
           },
           {
             "internalType": "uint48",
@@ -3132,12 +3526,7 @@
           },
           {
             "internalType": "uint256",
-            "name": "maxDebtToCover",
-            "type": "uint256"
-          },
-          {
-            "internalType": "uint256",
-            "name": "minCollateralToReceive",
+            "name": "maxScaledDebt",
             "type": "uint256"
           },
           {
@@ -3158,6 +3547,26 @@
           {
             "internalType": "uint256",
             "name": "collateralAssetUnit",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "collateralLiquidityIndex",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "grossScaledCollateral",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "liquidatorScaledCollateral",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "treasuryScaledCollateral",
             "type": "uint256"
           },
           {
@@ -3209,6 +3618,16 @@
             "internalType": "address[]",
             "name": "creditAssets",
             "type": "address[]"
+          },
+          {
+            "internalType": "enum DataTypes.LiquidationCollateralType",
+            "name": "collateralType",
+            "type": "uint8"
+          },
+          {
+            "internalType": "address",
+            "name": "escrowAsset",
+            "type": "address"
           }
         ],
         "internalType": "struct DataTypes.LiquidationInstruction",
@@ -3310,6 +3729,11 @@
           {
             "internalType": "uint256",
             "name": "actionNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "terminalActionNonce",
             "type": "uint256"
           },
           {
@@ -3422,6 +3846,11 @@
           {
             "internalType": "uint256",
             "name": "actionNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "terminalActionNonce",
             "type": "uint256"
           },
           {
@@ -3732,6 +4161,29 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "depositToEscrow",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "components": [
           {
             "internalType": "address",
@@ -3873,6 +4325,56 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "receiver",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address[]",
+            "name": "inputTokens",
+            "type": "address[]"
+          },
+          {
+            "internalType": "uint256[]",
+            "name": "inputAmounts",
+            "type": "uint256[]"
+          },
+          {
+            "internalType": "address[]",
+            "name": "outputTokens",
+            "type": "address[]"
+          },
+          {
+            "internalType": "bytes",
+            "name": "params",
+            "type": "bytes"
+          }
+        ],
+        "internalType": "struct DataTypes.StrategyRequest",
+        "name": "request",
+        "type": "tuple"
+      }
+    ],
+    "name": "executeStrategy",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -4096,6 +4598,35 @@
   {
     "inputs": [
       {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      }
+    ],
+    "name": "getBorrowingLimit",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "debt",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "limit",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "components": [
           {
             "internalType": "bytes32",
@@ -4172,11 +4703,6 @@
             "internalType": "uint256",
             "name": "newCap",
             "type": "uint256"
-          },
-          {
-            "internalType": "uint48",
-            "name": "validUntil",
-            "type": "uint48"
           },
           {
             "internalType": "uint256",
@@ -4265,11 +4791,6 @@
             "internalType": "uint256",
             "name": "scaledPrincipal",
             "type": "uint256"
-          },
-          {
-            "internalType": "uint48",
-            "name": "validUntil",
-            "type": "uint48"
           }
         ],
         "internalType": "struct DataTypes.CreditLine",
@@ -4299,6 +4820,78 @@
         "internalType": "uint256",
         "name": "totalOwed",
         "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      }
+    ],
+    "name": "getEscrowBalances",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "token",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "amount",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct DataTypes.EscrowBalance[]",
+        "name": "balances",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      }
+    ],
+    "name": "getEscrowToken",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "priceSource",
+            "type": "address"
+          },
+          {
+            "internalType": "uint16",
+            "name": "ltv",
+            "type": "uint16"
+          },
+          {
+            "internalType": "uint8",
+            "name": "decimals",
+            "type": "uint8"
+          }
+        ],
+        "internalType": "struct DataTypes.EscrowTokenConfig",
+        "name": "config",
+        "type": "tuple"
       }
     ],
     "stateMutability": "view",
@@ -4798,11 +5391,6 @@
             "type": "uint256"
           },
           {
-            "internalType": "uint48",
-            "name": "validUntil",
-            "type": "uint48"
-          },
-          {
             "internalType": "uint256",
             "name": "capNonce",
             "type": "uint256"
@@ -5010,6 +5598,29 @@
     "inputs": [
       {
         "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "priceSource",
+        "type": "address"
+      },
+      {
+        "internalType": "uint16",
+        "name": "ltv",
+        "type": "uint16"
+      }
+    ],
+    "name": "setEscrowToken",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
         "name": "vault",
         "type": "address"
       }
@@ -5046,6 +5657,37 @@
       }
     ],
     "name": "setHubIdentity",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint8",
+        "name": "max",
+        "type": "uint8"
+      }
+    ],
+    "name": "setMaxEscrowTokens",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "feed",
+        "type": "address"
+      },
+      {
+        "internalType": "uint48",
+        "name": "gracePeriod",
+        "type": "uint48"
+      }
+    ],
+    "name": "setSequencerFeed",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -5094,6 +5736,11 @@
       {
         "internalType": "address",
         "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "token",
         "type": "address"
       },
       {
@@ -5183,6 +5830,34 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "token",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "to",
+        "type": "address"
+      }
+    ],
+    "name": "withdrawFromEscrow",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {

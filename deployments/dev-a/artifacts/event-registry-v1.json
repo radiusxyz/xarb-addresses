@@ -1,7 +1,7 @@
 {
   "formatVersion": 1,
   "protocolVersion": 1,
-  "eventCount": 19,
+  "eventCount": 20,
   "events": [
     {
       "name": "DepositInitiated",
@@ -66,8 +66,8 @@
     {
       "name": "CapRaiseApplied",
       "sourceRole": "SPOKE",
-      "signature": "CapRaiseApplied(address,address,uint256,uint48,bytes32,uint256,(uint32,address,address,uint256,uint256,bytes32))",
-      "topic0": "0x1d1b165545696676e63073608091bd244a133341ab2d5928a9546d100178bbc1",
+      "signature": "CapRaiseApplied(address,address,uint256,bytes32,uint256,(uint32,address,address,uint256,uint256,bytes32))",
+      "topic0": "0x0789bc3465dad594acfd372027b88a8f82b9b6632d7d348d34833f59197c2250",
       "classification": "BATCH",
       "actionKind": 7,
       "destination": "FIXED_HUB",
@@ -86,10 +86,20 @@
     {
       "name": "EscrowSupplied",
       "sourceRole": "SPOKE",
-      "signature": "EscrowSupplied(address,address,uint256,(uint32,address,address,uint256,uint256,bytes32),(uint40,uint128,uint128,uint128,uint128,uint128,uint128))",
-      "topic0": "0x8812c3069112a69546393b5f8427efc9f686d6a29063b330a8bf85a4854d434d",
+      "signature": "EscrowSupplied(address,address,address,uint256,(uint32,address,address,uint256,uint256,bytes32),(uint40,uint128,uint128,uint128,uint128,uint128,uint128),(address,uint256)[])",
+      "topic0": "0x02c8fb807886cfc3fd7c73c9898615ffb06825d61f066f6eb15f23e7bbc54c17",
       "classification": "BATCH",
       "actionKind": 9,
+      "destination": "FIXED_HUB",
+      "lane": "STRICT_USER_RESERVE"
+    },
+    {
+      "name": "EscrowUpdateInitiated",
+      "sourceRole": "SPOKE",
+      "signature": "EscrowUpdateInitiated(address,address,uint256,uint256,uint256,(uint32,address,address,uint256,uint256,bytes32),(uint40,uint128,uint128,uint128,uint128,uint128,uint128),(uint256,uint256),(address,uint256)[])",
+      "topic0": "0xfa3cd1acb3b3c26dc76a07c290f594f53c81128621a50a191be4f1e974dc4ec5",
+      "classification": "BATCH",
+      "actionKind": 16,
       "destination": "FIXED_HUB",
       "lane": "STRICT_USER_RESERVE"
     },
@@ -166,8 +176,8 @@
     {
       "name": "DirectRepayLiquidationExecuted",
       "sourceRole": "SPOKE",
-      "signature": "DirectRepayLiquidationExecuted(bytes32,address,address,(bytes32,address,address,address,uint32,address,address,uint8,uint64,uint256,uint256,uint256,uint256,(uint256,uint256),(uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,(uint40,uint128,uint128,uint128,uint128,uint128,uint128),(uint40,uint128,uint128,uint128,uint128,uint128,uint128),uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256),(address,uint256,uint256,uint256,uint256)[]))",
-      "topic0": "0x036489f5fea78512a03ebae16c0b50be7c1503a4e8d8bf393c4dd4bddd0eda5d",
+      "signature": "DirectRepayLiquidationExecuted(bytes32,address,address,(bytes32,address,address,address,uint32,address,address,uint8,uint64,uint256,uint256,uint256,uint256,(uint256,uint256),(uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,(uint40,uint128,uint128,uint128,uint128,uint128,uint128),(uint40,uint128,uint128,uint128,uint128,uint128,uint128),uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256),(address,uint256,uint256,uint256,uint256)[],(address,uint256)[]))",
+      "topic0": "0x5e5b31217d1010a0a11cf7c6e5be06d7523efad5aa02e4a104b03a6b8c65af77",
       "classification": "DIRECT_LIQUIDATION",
       "actionKind": 0,
       "destination": "FIXED_HUB",
