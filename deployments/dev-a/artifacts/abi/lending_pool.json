@@ -370,7 +370,7 @@
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "drainCeiling",
+        "name": "reserveCreditPrincipalCap",
         "type": "uint256"
       }
     ],
@@ -1952,6 +1952,25 @@
         "type": "address"
       }
     ],
+    "name": "getCreditDebtIndex",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "creditIndex",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      }
+    ],
     "name": "getIndexSnapshot",
     "outputs": [
       {
@@ -2176,7 +2195,7 @@
           },
           {
             "internalType": "uint256",
-            "name": "drainCeiling",
+            "name": "reserveCreditPrincipalCap",
             "type": "uint256"
           },
           {
@@ -2439,7 +2458,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "drainCeiling",
+        "name": "reserveCreditPrincipalCap",
         "type": "uint256"
       }
     ],
@@ -2836,6 +2855,24 @@
         "type": "address"
       },
       {
+        "internalType": "uint256",
+        "name": "reserveCreditPrincipalCap",
+        "type": "uint256"
+      }
+    ],
+    "name": "setCreditPrincipalCap",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
         "components": [
           {
             "internalType": "uint128",
@@ -2877,7 +2914,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "drainCeiling",
+        "name": "reserveCreditPrincipalCap",
         "type": "uint256"
       }
     ],

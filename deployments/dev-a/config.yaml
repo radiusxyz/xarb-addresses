@@ -1,11 +1,11 @@
 schema_version: 3
 environment: dev
-updated_at: "2026-10-12"
+updated_at: "2026-10-14"
 
 protocol:
   name: xarb
-  release: "00dfa56"
-  contracts_commit: 00dfa568ca0a50db6c7c6f98be1813afa6462227
+  release: "7fec5a3"
+  contracts_commit: 7fec5a3a050d9c6868fd705c5e52eeb7e0afd384
 
 artifacts:
   event_registry:
@@ -13,17 +13,17 @@ artifacts:
     sha256: "3732da519ce7838efb693bcc07211bcc508b3aa44a846449f39f4c0a6ca2eb8f"
   hub_manifest:
     path: artifacts/manifests/hub.json
-    keccak256: "0xaf7ede2655452a6851b69c5719d2cf36da0c15130b3af466e923d04bda17b08d"
+    keccak256: "0xfb6afb746ba42ff53256e67e52d6fe4b2c7b2ded8147a3b72c7e00a3d0753086"
   spoke_manifest:
     path: artifacts/manifests/spoke.json
-    keccak256: "0x33d00c678689f442cf36401711ae93481ced2fcc014240b5825ba45991f6a115"
+    keccak256: "0x4d2adabd996466c17364352bd88e48bbbb7676faa1016a220794f39ba7085772"
   abi:
     hub:
       path: artifacts/abi/hub.json
-      sha256: "e5f9875a70c2bb89072b3321ebcde74695a89d5774e72aa15841c8b66260f546"
+      sha256: "8ae74791d5795875c7fc342693994597c1023ba5f2523fdc8a31133fc1068039"
     spoke:
       path: artifacts/abi/spoke.json
-      sha256: "b7271d764c118ef111ed2f8b4ef3ef042313db7f3588ca07db093f2c1d881d37"
+      sha256: "6fa0de00f66a8357e8dafa41aa76964825dbea045f89c94326ed0a7995024f9c"
     batch_inbox:
       path: artifacts/abi/batch_inbox.json
       sha256: "e6446f1142bae4591d9cf7b69a888e1c596cc6761a29434b0cee6fbd72881379"
@@ -38,7 +38,7 @@ artifacts:
       sha256: "31bccd49cf29b778de0763c52220a5a6e4df897134cc5b10d446ee7168529602"
     lending_pool:
       path: artifacts/abi/lending_pool.json
-      sha256: "fa485e77f2bd4aa44f5bd89046f69ac25027c4990bab03b863c39b7b7c9da800"
+      sha256: "379e225a31fb6672642725539aeedbe97253cdd1ed4c86b4e154929bb128b9ca"
     mock_oracle:
       path: artifacts/abi/mock_oracle.json
       sha256: "b4c1a02d49e21c241eace0f2567966b4f47afdacc138e7be1e46fad3167b0c67"
@@ -56,7 +56,7 @@ artifacts:
       sha256: "2036d19e48dfdf2a36724d68efc559c367d4962b39bae8ecab35ce2e1dac162a"
     request_gateway:
       path: artifacts/abi/request_gateway.json
-      sha256: "3b234b9ccd85fa5d478d76e1d7359eb100e2cc874fb2c69dcc377ed8886488ad"
+      sha256: "030201680b2ead3aa98e727b127da2e4da89f59251b582e47bc58489b3ecb88a"
     validator_registry:
       path: artifacts/abi/validator_registry.json
       sha256: "230c4a458e18fe6be88152eae4e971dedc534452640918d8753819bc01541da0"
@@ -72,19 +72,19 @@ hub:
   explorer_url: https://sepolia.basescan.org
   contracts:
     batch_inbox:
-      address: "0x56C1CB342e7043Ade4d8E3588d9A4E7E9EFE7980"
+      address: "0xa5B2DEf9e43C3e8c482F71C94ad88f5bb97B72A3"
     hub:
-      address: "0x343131CFdB41a8CB968d88D5c41e54cDcA52DB5b"
+      address: "0xD0c4b98b6A43de2fAb7Ce591eFfFeF8CA447E4E0"
     oracle:
-      address: "0x98B74Be12bE7834D0d7826770975c91aE50156bA"
+      address: "0xA9C317dFB9533839847fB894F3d0eE38a00b5134"
     request_forwarder:
-      address: "0x76c98a2f060253701ff0EcEa26a3067EfF58Ab11"
+      address: "0xdC016154B883d8B5a0e380fF13b1123cd6F949b3"
     request_gateway:
-      address: "0x0040E80373afD055C1F16a0965393A9c21eDA28c"
+      address: "0xFCeF4795e1162b93d7fA3Ae3D6201965a1959cEA"
     validator_registry:
-      address: "0x3Cb4fE6DC157Ef1103b8C583c6d7367B8185B604"
+      address: "0x8E7cc82a5b668f34Ee9D068937e16794adAeFa43"
   substreams:
-    start_block: 48011622
+    start_block: 48091176
 
 spokes:
   - chain_id: 84532
@@ -94,24 +94,24 @@ spokes:
     explorer_url: https://sepolia.basescan.org
     contracts:
       batch_inbox:
-        address: "0xB37604c52CDC09e1a395fBcF79f66294aa50C5a3"
+        address: "0x0c13f060C83831B9324A05eDadDCBbF280697F33"
       escrow_vault:
-        address: "0xe4261b997DE9679114130bf89ADA6670b10EE9E7"
+        address: "0xA3D7561D060e62Bc02D934812956E88d573b27A6"
       lending_pool:
-        address: "0xfA8bf2Cd56E74507dbf77bc065Ce21eF3Fb05C4C"
+        address: "0xdd211cCB0bBA39EB531f83A3AACE8C1D84237B7F"
       spoke:
-        address: "0x88e61d4C29F838581aDA51DCf1A4Bc3A5c39b871"
+        address: "0x9ca8bDac5b4fE1B3285f44516E2E7F74AaD80D0A"
       validator_registry:
-        address: "0x3Cb4fE6DC157Ef1103b8C583c6d7367B8185B604"
+        address: "0x8E7cc82a5b668f34Ee9D068937e16794adAeFa43"
     tokens:
       - symbol: "WBTC"
-        address: "0x3441A727C9862645A89B8Df0f07b8434a687C60D"
+        address: "0xD4A7C8Aae9417362807DC07c06c13a284521098E"
         decimals: 18
       - symbol: "USDT"
-        address: "0x6f2a830f2eE352D8D698b9968eae8C5F9F50acb9"
+        address: "0xc7f6DD95F1Ff293B2B7AE52A9C1Fe6CE0750Ae62"
         decimals: 18
       - symbol: "WPOL"
-        address: "0x6865A93fa402E93a288D0eE956EB1926e91720Bd"
+        address: "0x64f2C29F418798f8879A57D41C5080444C3CF1A0"
         decimals: 18
     faucet:
       address: "0xB229B8a8508c283e1eF6130aa0A0899d836c6618"
@@ -126,4 +126,4 @@ spokes:
         - token: "WPOL"
           amount: "1000000000000000000000"
     substreams:
-      start_block: 48011737
+      start_block: 48091292

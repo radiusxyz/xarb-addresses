@@ -1,32 +1,32 @@
 # Routes derived from the BatchInbox ledgers and verified on chain by the publish tool.
 # xarb-operations-infra reads this file in place of the vault route variables when present.
 xarb_indexer_routes:
-  - id: "0xc272f0d77f97794ccad5fef207388b5c4a9830cfd35362b74e6fe29f6448b972"
+  - id: "0xc771b28fc5aba83c9c14a72f24fe3e22e04f50baa02bf1efabc9642f06b70027"
     source_chain_id: 84532
-    source_contract: "0x88e61d4c29f838581ada51dcf1a4bc3a5c39b871"
+    source_contract: "0x9ca8bdac5b4fe1b3285f44516e2e7f74aad80d0a"
     destination_chain_id: 84532
-    destination_contract: "0x343131cfdb41a8cb968d88d5c41e54cdca52db5b"
-  - id: "0x8dd7d82b95feeb307af5605c0396b780e93f99a6c5b7044d0604f716c4b17dc7"
+    destination_contract: "0xd0c4b98b6a43de2fab7ce591efffef8ca447e4e0"
+  - id: "0xb77c18ed587e2daf57508b71c0ad8bbc4c9a3461e18c0a2c8b1ed5e629fc2229"
     source_chain_id: 84532
-    source_contract: "0x343131cfdb41a8cb968d88d5c41e54cdca52db5b"
+    source_contract: "0xd0c4b98b6a43de2fab7ce591efffef8ca447e4e0"
     destination_chain_id: 84532
-    destination_contract: "0x88e61d4c29f838581ada51dcf1a4bc3a5c39b871"
+    destination_contract: "0x9ca8bdac5b4fe1b3285f44516e2e7f74aad80d0a"
 xarb_propagator_routes:
-  - id: "0xc272f0d77f97794ccad5fef207388b5c4a9830cfd35362b74e6fe29f6448b972"
-    name: 84532-88e61d4c-to-84532-343131cf
+  - id: "0xc771b28fc5aba83c9c14a72f24fe3e22e04f50baa02bf1efabc9642f06b70027"
+    name: 84532-9ca8bdac-to-84532-d0c4b98b
     source_chain_id: 84532
-    source_contract: "0x88e61d4c29f838581ada51dcf1a4bc3a5c39b871"
+    source_contract: "0x9ca8bdac5b4fe1b3285f44516e2e7f74aad80d0a"
     destination_chain_id: 84532
-    destination_contract: "0x343131cfdb41a8cb968d88d5c41e54cdca52db5b"
-    inbox: "0x56c1cb342e7043ade4d8e3588d9a4e7e9efe7980"
-    genesis_block: 48011775
+    destination_contract: "0xd0c4b98b6a43de2fab7ce591efffef8ca447e4e0"
+    inbox: "0xa5b2def9e43c3e8c482f71c94ad88f5bb97b72a3"
+    genesis_block: 48091329
     enabled: true
-  - id: "0x8dd7d82b95feeb307af5605c0396b780e93f99a6c5b7044d0604f716c4b17dc7"
-    name: 84532-343131cf-to-84532-88e61d4c
+  - id: "0xb77c18ed587e2daf57508b71c0ad8bbc4c9a3461e18c0a2c8b1ed5e629fc2229"
+    name: 84532-d0c4b98b-to-84532-9ca8bdac
     source_chain_id: 84532
-    source_contract: "0x343131cfdb41a8cb968d88d5c41e54cdca52db5b"
+    source_contract: "0xd0c4b98b6a43de2fab7ce591efffef8ca447e4e0"
     destination_chain_id: 84532
-    destination_contract: "0x88e61d4c29f838581ada51dcf1a4bc3a5c39b871"
-    inbox: "0xb37604c52cdc09e1a395fbcf79f66294aa50c5a3"
-    genesis_block: 48011774
+    destination_contract: "0x9ca8bdac5b4fe1b3285f44516e2e7f74aad80d0a"
+    inbox: "0x0c13f060c83831b9324a05edaddcbbf280697f33"
+    genesis_block: 48091329
     enabled: true
