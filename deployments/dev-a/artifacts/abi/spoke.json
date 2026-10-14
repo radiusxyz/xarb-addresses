@@ -1172,7 +1172,7 @@
           },
           {
             "internalType": "uint256",
-            "name": "scaledPrincipal",
+            "name": "scaledCreditDebt",
             "type": "uint256"
           }
         ],
@@ -1302,7 +1302,7 @@
           },
           {
             "internalType": "uint256",
-            "name": "scaledPrincipal",
+            "name": "scaledCreditDebt",
             "type": "uint256"
           }
         ],
@@ -1617,7 +1617,7 @@
               },
               {
                 "internalType": "uint256",
-                "name": "scaledPrincipal",
+                "name": "scaledCreditDebt",
                 "type": "uint256"
               }
             ],
@@ -1850,7 +1850,7 @@
               },
               {
                 "internalType": "uint256",
-                "name": "scaledPrincipal",
+                "name": "scaledCreditDebt",
                 "type": "uint256"
               },
               {
@@ -2256,7 +2256,7 @@
           },
           {
             "internalType": "uint256",
-            "name": "scaledPrincipal",
+            "name": "scaledCreditDebt",
             "type": "uint256"
           }
         ],
@@ -2579,7 +2579,7 @@
               },
               {
                 "internalType": "uint256",
-                "name": "scaledPrincipal",
+                "name": "scaledCreditDebt",
                 "type": "uint256"
               },
               {
@@ -3384,6 +3384,61 @@
       }
     ],
     "name": "applyCommitmentRevocation",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bytes32",
+            "name": "commitmentId",
+            "type": "bytes32"
+          },
+          {
+            "internalType": "address",
+            "name": "user",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "asset",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "newCap",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "capNonce",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint64",
+            "name": "permitGeneration",
+            "type": "uint64"
+          },
+          {
+            "internalType": "uint256",
+            "name": "deadline",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct DataTypes.CapPermit",
+        "name": "permit",
+        "type": "tuple"
+      },
+      {
+        "internalType": "bytes",
+        "name": "signature",
+        "type": "bytes"
+      }
+    ],
+    "name": "applyCreditAllocationWithPermit",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -4343,7 +4398,7 @@
           },
           {
             "internalType": "uint256",
-            "name": "amount",
+            "name": "advanceAmount",
             "type": "uint256"
           },
           {
@@ -4604,6 +4659,30 @@
       },
       {
         "internalType": "address",
+        "name": "debtAsset",
+        "type": "address"
+      }
+    ],
+    "name": "getAllocationPrincipalHeadroom",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "headroom",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
         "name": "asset",
         "type": "address"
       }
@@ -4745,6 +4824,30 @@
       },
       {
         "internalType": "address",
+        "name": "debtAsset",
+        "type": "address"
+      }
+    ],
+    "name": "getCreditDebt",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "debt",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
         "name": "asset",
         "type": "address"
       }
@@ -4779,7 +4882,7 @@
         "components": [
           {
             "internalType": "uint256",
-            "name": "cap",
+            "name": "creditAllocation",
             "type": "uint256"
           },
           {
@@ -4789,7 +4892,7 @@
           },
           {
             "internalType": "uint256",
-            "name": "scaledPrincipal",
+            "name": "scaledCreditDebt",
             "type": "uint256"
           }
         ],
@@ -5053,6 +5156,35 @@
         "internalType": "bytes32",
         "name": "",
         "type": "bytes32"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "debtAsset",
+        "type": "address"
+      }
+    ],
+    "name": "getStrategyDebtLimit",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "debt",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "limit",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -5417,6 +5549,24 @@
       }
     ],
     "name": "raiseCreditCapWithPermit",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "asset",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "newAllocation",
+        "type": "uint256"
+      }
+    ],
+    "name": "reduceCreditAllocation",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

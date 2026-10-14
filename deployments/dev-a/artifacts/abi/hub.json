@@ -179,7 +179,7 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "delegatedPctBps",
+        "name": "allocationPctBps",
         "type": "uint256"
       }
     ],
@@ -426,6 +426,27 @@
       }
     ],
     "name": "LiquidationSlippage",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "ltv",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "collateralFactor",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "commitmentBufferWad",
+        "type": "uint256"
+      }
+    ],
+    "name": "LtvExceedsCommitmentLimit",
     "type": "error"
   },
   {
@@ -982,7 +1003,7 @@
       {
         "indexed": false,
         "internalType": "uint16",
-        "name": "delegatedPctBps",
+        "name": "allocationPctBps",
         "type": "uint16"
       },
       {
@@ -1291,7 +1312,7 @@
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "scaledPrincipal",
+        "name": "scaledCreditDebt",
         "type": "uint256"
       }
     ],
@@ -1328,13 +1349,13 @@
       {
         "indexed": false,
         "internalType": "uint256",
-        "name": "capPrincipal",
+        "name": "creditAllocation",
         "type": "uint256"
       },
       {
         "indexed": false,
         "internalType": "uint16",
-        "name": "delegatedPctBps",
+        "name": "allocationPctBps",
         "type": "uint16"
       }
     ],
@@ -2874,6 +2895,68 @@
     "type": "function"
   },
   {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "borrowCoverageRatio",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "ratio",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "borrowPower",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "borrowPowerUsd",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "exposureUsd",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "borrowPowerRatio",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "ratio",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [],
     "name": "cancelDefaultAdminTransfer",
     "outputs": [],
@@ -3042,22 +3125,22 @@
         "components": [
           {
             "internalType": "uint256",
-            "name": "capPrincipal",
+            "name": "creditAllocation",
             "type": "uint256"
           },
           {
             "internalType": "uint16",
-            "name": "delegatedPctBps",
+            "name": "allocationPctBps",
             "type": "uint16"
           },
           {
             "internalType": "uint256",
-            "name": "principalKnown",
+            "name": "mirroredCreditPrincipal",
             "type": "uint256"
           },
           {
             "internalType": "uint256",
-            "name": "scaledPrincipalKnown",
+            "name": "mirroredScaledCreditDebt",
             "type": "uint256"
           },
           {
@@ -3067,12 +3150,12 @@
           },
           {
             "internalType": "uint256",
-            "name": "pendingCapPrincipal",
+            "name": "pendingCreditAllocation",
             "type": "uint256"
           },
           {
             "internalType": "uint16",
-            "name": "pendingDelegatedPctBps",
+            "name": "pendingAllocationPctBps",
             "type": "uint16"
           }
         ],
@@ -3725,6 +3808,30 @@
         "internalType": "address",
         "name": "user",
         "type": "address"
+      }
+    ],
+    "name": "getBorrowCapacity",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "borrowLimitUsd",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "riskExposureUsd",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
       },
       {
         "internalType": "uint16",
@@ -4045,6 +4152,25 @@
         "internalType": "bool",
         "name": "settled",
         "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "liquidationHealthFactor",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "factor",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -4704,7 +4830,7 @@
       },
       {
         "internalType": "uint16",
-        "name": "delegatedPctBps",
+        "name": "allocationPctBps",
         "type": "uint16"
       },
       {
@@ -4722,7 +4848,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "capPrincipal",
+        "name": "creditAllocation",
         "type": "uint256"
       }
     ],
@@ -5006,6 +5132,25 @@
     "name": "revokeRole",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      }
+    ],
+    "name": "riskHealthFactor",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "factor",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -5666,7 +5811,7 @@
               },
               {
                 "internalType": "uint256",
-                "name": "scaledPrincipal",
+                "name": "scaledCreditDebt",
                 "type": "uint256"
               }
             ],
@@ -5797,7 +5942,7 @@
               },
               {
                 "internalType": "uint256",
-                "name": "scaledPrincipal",
+                "name": "scaledCreditDebt",
                 "type": "uint256"
               }
             ],
@@ -6173,7 +6318,7 @@
               },
               {
                 "internalType": "uint256",
-                "name": "scaledPrincipal",
+                "name": "scaledCreditDebt",
                 "type": "uint256"
               }
             ],
@@ -6726,7 +6871,7 @@
               },
               {
                 "internalType": "uint256",
-                "name": "scaledPrincipal",
+                "name": "scaledCreditDebt",
                 "type": "uint256"
               }
             ],
@@ -6959,7 +7104,7 @@
               },
               {
                 "internalType": "uint256",
-                "name": "scaledPrincipal",
+                "name": "scaledCreditDebt",
                 "type": "uint256"
               },
               {
@@ -7115,7 +7260,7 @@
               },
               {
                 "internalType": "uint256",
-                "name": "scaledPrincipal",
+                "name": "scaledCreditDebt",
                 "type": "uint256"
               },
               {
@@ -7476,7 +7621,7 @@
     "outputs": [
       {
         "internalType": "uint16",
-        "name": "delegatedPctBps",
+        "name": "allocationPctBps",
         "type": "uint16"
       }
     ],

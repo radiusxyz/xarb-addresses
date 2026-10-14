@@ -105,7 +105,7 @@
       },
       {
         "internalType": "uint16",
-        "name": "delegatedPctBps",
+        "name": "allocationPctBps",
         "type": "uint16"
       },
       {
@@ -123,7 +123,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "capPrincipal",
+        "name": "creditAllocation",
         "type": "uint256"
       }
     ],
