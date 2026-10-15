@@ -1,11 +1,11 @@
 schema_version: 3
 environment: dev
-updated_at: "2026-10-14"
+updated_at: "2026-10-15"
 
 protocol:
   name: xarb
-  release: "7fec5a3"
-  contracts_commit: 7fec5a3a050d9c6868fd705c5e52eeb7e0afd384
+  release: "1a9b434"
+  contracts_commit: 1a9b434e37811675c5a27a989097dbb7d542294d
 
 artifacts:
   event_registry:
@@ -16,14 +16,14 @@ artifacts:
     keccak256: "0xfb6afb746ba42ff53256e67e52d6fe4b2c7b2ded8147a3b72c7e00a3d0753086"
   spoke_manifest:
     path: artifacts/manifests/spoke.json
-    keccak256: "0x4d2adabd996466c17364352bd88e48bbbb7676faa1016a220794f39ba7085772"
+    keccak256: "0x25cdb6005388134c92cffe0bdbfc7fc9c7865ffe55595d4dec2f5285e79029a3"
   abi:
     hub:
       path: artifacts/abi/hub.json
       sha256: "8ae74791d5795875c7fc342693994597c1023ba5f2523fdc8a31133fc1068039"
     spoke:
       path: artifacts/abi/spoke.json
-      sha256: "6fa0de00f66a8357e8dafa41aa76964825dbea045f89c94326ed0a7995024f9c"
+      sha256: "c8a6479dee4331f7a0e7d501b173d3604bcfb6aaa9f621e9b2abf42e1a328107"
     batch_inbox:
       path: artifacts/abi/batch_inbox.json
       sha256: "e6446f1142bae4591d9cf7b69a888e1c596cc6761a29434b0cee6fbd72881379"
@@ -32,13 +32,13 @@ artifacts:
       sha256: "43494474fb40942751ea2f44717fb4582f7ecab67760742f2bf678a939b81293"
     escrow_vault:
       path: artifacts/abi/escrow_vault.json
-      sha256: "aa30264fbf70bed4f8b38d82f605ea1c1ade207405de3a909610caa648aeb76a"
+      sha256: "f9e4cab7c1ea3dfa3e4e7b3742f659656b53c5a07b569b5d6113cb0514ba71b8"
     faucet_dispenser:
       path: artifacts/abi/faucet_dispenser.json
       sha256: "31bccd49cf29b778de0763c52220a5a6e4df897134cc5b10d446ee7168529602"
     lending_pool:
       path: artifacts/abi/lending_pool.json
-      sha256: "379e225a31fb6672642725539aeedbe97253cdd1ed4c86b4e154929bb128b9ca"
+      sha256: "ee71cce86c4e1ce9abc4ceabff999bdc06e5d112dfb0a79b2892e56836760dd6"
     mock_oracle:
       path: artifacts/abi/mock_oracle.json
       sha256: "b4c1a02d49e21c241eace0f2567966b4f47afdacc138e7be1e46fad3167b0c67"
@@ -72,19 +72,19 @@ hub:
   explorer_url: https://sepolia.basescan.org
   contracts:
     batch_inbox:
-      address: "0xa5B2DEf9e43C3e8c482F71C94ad88f5bb97B72A3"
+      address: "0x488BbAFE9B65cB74a91483Fc78a146bEd30F16Be"
     hub:
-      address: "0xD0c4b98b6A43de2fAb7Ce591eFfFeF8CA447E4E0"
+      address: "0xc720b5Bb33A678c4Ef352929eD9cF2C892816caE"
     oracle:
-      address: "0xA9C317dFB9533839847fB894F3d0eE38a00b5134"
+      address: "0x5920d5B74bb94E96fb732eb411ffE386cf8D7a6a"
     request_forwarder:
-      address: "0xdC016154B883d8B5a0e380fF13b1123cd6F949b3"
+      address: "0x29d7dEa19c6317a3e6AD7aAc840f28eff7C04378"
     request_gateway:
-      address: "0xFCeF4795e1162b93d7fA3Ae3D6201965a1959cEA"
+      address: "0x8C1ca10D1822de4e18c4BdCE33357c2042Ae011d"
     validator_registry:
-      address: "0x8E7cc82a5b668f34Ee9D068937e16794adAeFa43"
+      address: "0xA87C56d3111B570AFFCcC054061dfa82BA71aea8"
   substreams:
-    start_block: 48091176
+    start_block: 48135271
 
 spokes:
   - chain_id: 84532
@@ -94,27 +94,27 @@ spokes:
     explorer_url: https://sepolia.basescan.org
     contracts:
       batch_inbox:
-        address: "0x0c13f060C83831B9324A05eDadDCBbF280697F33"
+        address: "0xb27335008a674899096f1546D640c20B0E6170d2"
       escrow_vault:
-        address: "0xA3D7561D060e62Bc02D934812956E88d573b27A6"
+        address: "0x2CBf6cD89EB452Ebca5a98f860AE8924F71576Fa"
       lending_pool:
-        address: "0xdd211cCB0bBA39EB531f83A3AACE8C1D84237B7F"
+        address: "0x23Cdf5923A0F8928C68B6516ceD29049c6B03674"
       spoke:
-        address: "0x9ca8bDac5b4fE1B3285f44516E2E7F74AaD80D0A"
+        address: "0xb885d631CAD20ca63D6338b01d7dfa89ab77Ea49"
       validator_registry:
-        address: "0x8E7cc82a5b668f34Ee9D068937e16794adAeFa43"
+        address: "0xA87C56d3111B570AFFCcC054061dfa82BA71aea8"
     tokens:
       - symbol: "WBTC"
-        address: "0xD4A7C8Aae9417362807DC07c06c13a284521098E"
+        address: "0x1F0a0fd404950ED5414b00F8548621c5bEa5A9E5"
         decimals: 18
       - symbol: "USDT"
-        address: "0xc7f6DD95F1Ff293B2B7AE52A9C1Fe6CE0750Ae62"
+        address: "0xa7aee1eef20A06EFBaFed6d523f79DBFE20AFeFc"
         decimals: 18
       - symbol: "WPOL"
-        address: "0x64f2C29F418798f8879A57D41C5080444C3CF1A0"
+        address: "0x21864F522208144EDE87053d68139025d75ffa44"
         decimals: 18
     faucet:
-      address: "0xB229B8a8508c283e1eF6130aa0A0899d836c6618"
+      address: "0x5aA50e1CEdcb966071F58Cb1eE22Ad083e738F9C"
       owner: "0xFD4444796E2E662231b6333F28670e4B9Fe3A0F0"
       operator: "0x67643FD0a1eD17F520b2d4BE0c52247798F4b005"
       native_amount: "100000000000000"
@@ -126,4 +126,4 @@ spokes:
         - token: "WPOL"
           amount: "1000000000000000000000"
     substreams:
-      start_block: 48091292
+      start_block: 48135402
