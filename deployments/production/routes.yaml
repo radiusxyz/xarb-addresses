@@ -1,0 +1,32 @@
+# Routes derived from the BatchInbox ledgers and verified on chain by the publish tool.
+# xarb-operations-infra reads this file in place of the vault route variables when present.
+xarb_indexer_routes:
+  - id: "0x288a2281f3672d3672067f9936c90c03fa91e8a4e9d0254a78b16dffed5747a7"
+    source_chain_id: 8453
+    source_contract: "0x4a4d08ca0de7217e8ecf0f2d7fc507575d675165"
+    destination_chain_id: 8453
+    destination_contract: "0x0f83697479f36d0cba549e8998f41b6425e9acf3"
+  - id: "0x8d3f9942462740b7351b0c2ca869119f6a63ac846db34d99cd093f488880d813"
+    source_chain_id: 8453
+    source_contract: "0x0f83697479f36d0cba549e8998f41b6425e9acf3"
+    destination_chain_id: 8453
+    destination_contract: "0x4a4d08ca0de7217e8ecf0f2d7fc507575d675165"
+xarb_propagator_routes:
+  - id: "0x288a2281f3672d3672067f9936c90c03fa91e8a4e9d0254a78b16dffed5747a7"
+    name: 8453-4a4d08ca-to-8453-0f836974
+    source_chain_id: 8453
+    source_contract: "0x4a4d08ca0de7217e8ecf0f2d7fc507575d675165"
+    destination_chain_id: 8453
+    destination_contract: "0x0f83697479f36d0cba549e8998f41b6425e9acf3"
+    inbox: "0x1b8f3df3447f879c221bd3a66a59f20312510306"
+    genesis_block: 52621589
+    enabled: true
+  - id: "0x8d3f9942462740b7351b0c2ca869119f6a63ac846db34d99cd093f488880d813"
+    name: 8453-0f836974-to-8453-4a4d08ca
+    source_chain_id: 8453
+    source_contract: "0x0f83697479f36d0cba549e8998f41b6425e9acf3"
+    destination_chain_id: 8453
+    destination_contract: "0x4a4d08ca0de7217e8ecf0f2d7fc507575d675165"
+    inbox: "0xfc0c0342218088dd65a95c0c5b3be5bc45c2e2e3"
+    genesis_block: 52621589
+    enabled: true

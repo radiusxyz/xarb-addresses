@@ -1,10 +1,68 @@
 schema_version: 3
 environment: production
-updated_at: "2026-09-10"
+updated_at: "2026-10-15"
 
 protocol:
   name: xarb
-  release: v0.1.0
+  release: "1a9b434"
+  contracts_commit: 1a9b434e37811675c5a27a989097dbb7d542294d
+
+artifacts:
+  event_registry:
+    path: artifacts/event-registry-v1.json
+    sha256: "3732da519ce7838efb693bcc07211bcc508b3aa44a846449f39f4c0a6ca2eb8f"
+  hub_manifest:
+    path: artifacts/manifests/hub.json
+    keccak256: "0xfb6afb746ba42ff53256e67e52d6fe4b2c7b2ded8147a3b72c7e00a3d0753086"
+  spoke_manifest:
+    path: artifacts/manifests/spoke.json
+    keccak256: "0x25cdb6005388134c92cffe0bdbfc7fc9c7865ffe55595d4dec2f5285e79029a3"
+  abi:
+    hub:
+      path: artifacts/abi/hub.json
+      sha256: "8ae74791d5795875c7fc342693994597c1023ba5f2523fdc8a31133fc1068039"
+    spoke:
+      path: artifacts/abi/spoke.json
+      sha256: "c8a6479dee4331f7a0e7d501b173d3604bcfb6aaa9f621e9b2abf42e1a328107"
+    batch_inbox:
+      path: artifacts/abi/batch_inbox.json
+      sha256: "e6446f1142bae4591d9cf7b69a888e1c596cc6761a29434b0cee6fbd72881379"
+    credit_debt_token:
+      path: artifacts/abi/credit_debt_token.json
+      sha256: "43494474fb40942751ea2f44717fb4582f7ecab67760742f2bf678a939b81293"
+    escrow_vault:
+      path: artifacts/abi/escrow_vault.json
+      sha256: "f9e4cab7c1ea3dfa3e4e7b3742f659656b53c5a07b569b5d6113cb0514ba71b8"
+    faucet_dispenser:
+      path: artifacts/abi/faucet_dispenser.json
+      sha256: "31bccd49cf29b778de0763c52220a5a6e4df897134cc5b10d446ee7168529602"
+    lending_pool:
+      path: artifacts/abi/lending_pool.json
+      sha256: "ee71cce86c4e1ce9abc4ceabff999bdc06e5d112dfb0a79b2892e56836760dd6"
+    mock_oracle:
+      path: artifacts/abi/mock_oracle.json
+      sha256: "b4c1a02d49e21c241eace0f2567966b4f47afdacc138e7be1e46fad3167b0c67"
+    oracle:
+      path: artifacts/abi/oracle.json
+      sha256: "e4a6b09c22a8e2811218a9d1af1df8067503b5ae25201019663b39ba2b9a75b3"
+    oracle_adapter:
+      path: artifacts/abi/oracle_adapter.json
+      sha256: "cc91c8a52ee34b40e4d184e0f13ad501f62ac1c33bd31728d4716423474d3c6c"
+    r_token:
+      path: artifacts/abi/r_token.json
+      sha256: "43494474fb40942751ea2f44717fb4582f7ecab67760742f2bf678a939b81293"
+    request_forwarder:
+      path: artifacts/abi/request_forwarder.json
+      sha256: "2036d19e48dfdf2a36724d68efc559c367d4962b39bae8ecab35ce2e1dac162a"
+    request_gateway:
+      path: artifacts/abi/request_gateway.json
+      sha256: "030201680b2ead3aa98e727b127da2e4da89f59251b582e47bc58489b3ecb88a"
+    validator_registry:
+      path: artifacts/abi/validator_registry.json
+      sha256: "230c4a458e18fe6be88152eae4e971dedc534452640918d8753819bc01541da0"
+    variable_debt_token:
+      path: artifacts/abi/variable_debt_token.json
+      sha256: "43494474fb40942751ea2f44717fb4582f7ecab67760742f2bf678a939b81293"
 
 hub:
   chain_id: 8453
@@ -14,17 +72,19 @@ hub:
   explorer_url: https://basescan.org
   contracts:
     batch_inbox:
-      address: "0xD7fa29687d4Dd053bcF861Ca2cadB0E1A048103B"
+      address: "0x1b8f3Df3447f879c221bd3a66A59f20312510306"
     hub:
-      address: "0x2FBd29c27AAC75b4c86824D1Ff8b29565b08707A"
+      address: "0x0F83697479f36d0cba549E8998f41b6425E9aCF3"
     oracle:
-      address: "0xa9626865224E4348a878b38fA6E807E675d0213a"
+      address: "0x046F285f1360195955F16cAc2911b30AdBd0DfC4"
     request_forwarder:
-      address: "0x875E6F882273768043bc41b9489695bC4fB8c533"
+      address: "0x345fC928E764427B7D7257098DA9aE5d09F7c152"
     request_gateway:
-      address: "0xfdB6e4717b76018D0358aE52356938a88E7B6670"
+      address: "0x6e180eb90C1057812e4553F929b7153846b5b622"
     validator_registry:
-      address: "0xAaCc8Fea41494f59415f53FE0Cc5E0C84274Bc53"
+      address: "0x17927f590af4bC1AC668983d375412C0A0A975e2"
+  substreams:
+    start_block: 52621338
 
 spokes:
   - chain_id: 8453
@@ -34,12 +94,24 @@ spokes:
     explorer_url: https://basescan.org
     contracts:
       batch_inbox:
-        address: "0xe9B696f8E385752F690A7E2154710F717429EBCa"
+        address: "0xFC0c0342218088Dd65a95C0c5b3bE5BC45C2e2e3"
       escrow_vault:
-        address: "0x53a05603171273C97A37FcAB1eBCEB2ACA5F4d76"
+        address: "0x5cd97679f8A196cfE759A13C9f349AcD4d0e222B"
       lending_pool:
-        address: "0xcE01Fc3162A43526937AAc980003f2631eB96B11"
+        address: "0xdbca9Be27f4CfC42931A8c54A4649dfe7619B300"
       spoke:
-        address: "0x2FD9eB500F3e543E0B6DfdF307Dd93eF4868f486"
+        address: "0x4a4d08ca0de7217E8ECf0F2D7Fc507575d675165"
+      validator_registry:
+        address: "0x17927f590af4bC1AC668983d375412C0A0A975e2"
+    tokens:
+      - symbol: "USDC"
+        address: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+        decimals: 6
+      - symbol: "USDT"
+        address: "0xfde4C96c8593536E31F229EA8f37b2ADa2699bb2"
+        decimals: 6
+      - symbol: "WETH"
+        address: "0x4200000000000000000000000000000000000006"
+        decimals: 18
     substreams:
-      start_block: 51118814
+      start_block: 52621506
