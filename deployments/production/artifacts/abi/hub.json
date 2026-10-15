@@ -308,6 +308,11 @@
     "type": "error"
   },
   {
+    "inputs": [],
+    "name": "InvalidInitialization",
+    "type": "error"
+  },
+  {
     "inputs": [
       {
         "internalType": "address",
@@ -468,6 +473,11 @@
   {
     "inputs": [],
     "name": "NoDebtToRepay",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NotInitializing",
     "type": "error"
   },
   {
@@ -1898,6 +1908,19 @@
       }
     ],
     "name": "ExpiryGraceUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "version",
+        "type": "uint64"
+      }
+    ],
+    "name": "Initialized",
     "type": "event"
   },
   {
