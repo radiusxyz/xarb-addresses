@@ -1,0 +1,1534 @@
+{
+  "abiSha256": "0x8ae74791d5795875c7fc342693994597c1023ba5f2523fdc8a31133fc1068039",
+  "build": {
+    "compilerVersion": "0.8.26+commit.8a97fa7a",
+    "dependencyRevisions": {
+      "lib/forge-std": "0844d7e1fc5e60d77b68e469bff60265f236c398",
+      "lib/openzeppelin-contracts": "5fd1781b1454fd1ef8e722282f86f9293cacf256",
+      "lib/openzeppelin-contracts-upgradeable": "7bf4727aacdbfaa0f36cbd664654d0c9e1dc52bf"
+    },
+    "evmVersion": "cancun",
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "settingsSha256": "03a4fd935d7b2424b6808e345bcb6abcaac0248b6f4cdad8b67c8b183f2057cf",
+    "sourceHashes": {
+      "lib/openzeppelin-contracts-upgradeable/contracts/proxy/utils/Initializable.sol": "0x30d125b8417684dbfea3e8d57284b353a86b22077237b4aaf098c0b54b153e16",
+      "lib/openzeppelin-contracts/contracts/access/IAccessControl.sol": "0xbff9f59c84e5337689161ce7641c0ef8e872d6a7536fbc1f5133f128887aba3c",
+      "lib/openzeppelin-contracts/contracts/metatx/ERC2771Context.sol": "0x9695d220b99dcf62910533bdf5d40d4cf6a4e04d5b106b6803a80586486dc7f7",
+      "lib/openzeppelin-contracts/contracts/proxy/utils/Initializable.sol": "0xdb4d24ee2c087c391d587cd17adfe5b3f9d93b3110b1388c2ab6c7c0ad1dcd05",
+      "lib/openzeppelin-contracts/contracts/utils/Context.sol": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+      "lib/openzeppelin-contracts/contracts/utils/Panic.sol": "0xf7fe324703a64fc51702311dc51562d5cb1497734f074e4f483bfb6717572d7a",
+      "lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol": "0xa516cbf1c7d15d3517c2d668601ce016c54395bf5171918a14e2686977465f53",
+      "lib/openzeppelin-contracts/contracts/utils/StorageSlot.sol": "0xcf74f855663ce2ae00ed8352666b7935f6cddea2932fdf2c3ecd30a9b1cd0e97",
+      "lib/openzeppelin-contracts/contracts/utils/cryptography/ECDSA.sol": "0xbeb5cad8aaabe0d35d2ec1a8414d91e81e5a8ca679add4cf57e2f33476861f40",
+      "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol": "0x8891738ffe910f0cf2da09566928589bf5d63f4524dd734fd9cedbac3274dd5c",
+      "lib/openzeppelin-contracts/contracts/utils/math/Math.sol": "0x59973a93b1f983f94e10529f46ca46544a9fec2b5f56fb1390bbe9e0dc79f857",
+      "lib/openzeppelin-contracts/contracts/utils/math/SafeCast.sol": "0xc8cae21c9ae4a46e5162ff9bf5b351d6fa6a6eba72d515f3bc1bdfeda7fdf083",
+      "src/access/Roles.sol": "0xecd87ffb87f1b67fc4bc15afb40f381eef61d84bb55b7165c55dbf4089303414",
+      "src/diamond/Diamond.sol": "0xda29cdac75fdb44e07fb571b823f5a4caf43a57c2e6d901fc1a7195a943fa72c",
+      "src/diamond/LibAccess.sol": "0x77330d3716203684d1b79ccf1832813ad62cc6e7540cdc892a2d3093eadb9f5b",
+      "src/diamond/LibDiamond.sol": "0x5fdc41e3f16ce881c76ad522c085e8d8876cd18ddf6b3b31559ab82b14fcda48",
+      "src/diamond/facets/AccessFacet.sol": "0x73768ce9bf419c8c6bcacaf73ed98106905d03cb4e7744284e55778d62c79541",
+      "src/diamond/facets/DiamondCutFacet.sol": "0xf2529f215f4f0fd7cd0977dc2f4f9f130caf0d4a571fdab8a3585b74c050fcbd",
+      "src/diamond/facets/DiamondLoupeFacet.sol": "0xca99e6b81d8d36bac55d2962f4523bb21e1f4eb906c89adf9f7e9ad5e76b5155",
+      "src/diamond/interfaces/IDiamondCut.sol": "0x8672216d842e10a2a29e63de17f555bfd4236f8a00f195c9513b6db1c15281fd",
+      "src/diamond/interfaces/IDiamondLoupe.sol": "0xdc06669c68483f8f384d4b6c6db1a6f0f915cf6cf23683084483cd5c11e19f4e",
+      "src/hub/HubConstants.sol": "0x5733b3a28462a061e9d4bdaa0f6dd0d0e6340acc2a9ed1a0a5a96de2f6591d09",
+      "src/hub/HubFacetBase.sol": "0x704daa5d4ef41f322c1884115e626c1b20ec2caa1da78bba2fd47f647b62f666",
+      "src/hub/HubInit.sol": "0xd71444629bf5c1f090614eaf715804d4cb70a79abc3c558ff55b948c9b945487",
+      "src/hub/HubRequestGateway.sol": "0x96baf52f30206bad458898613d79ad875975ab017aeaf55ae6bed31df2d50e11",
+      "src/hub/HubStorageBase.sol": "0x5b2f41a4ef29e45376b3dffab5ca6a53118037e65866113e75cf8798603c0322",
+      "src/hub/HubStorageLib.sol": "0xc34174427b1be8d5e02f3c171ccf3314fd1d7d4578ca4a3dda8c0e49e545109b",
+      "src/hub/HubStorageViews.sol": "0xbb5d27057ab8736621b3636d36a408e9b27eeb53b8ce8ab8df000515daa6677d",
+      "src/hub/facets/HubCommitmentFacet.sol": "0x91beaebbb33714eeaf0c3ff8bd63e9d760dafff6d1514fd64b23d9ce90daaa8c",
+      "src/hub/facets/HubConfigFacet.sol": "0xda164b380ee759eb83d7fd30129549c84fd5a72aecc430553638cf22cb81d250",
+      "src/hub/facets/HubLiquidationFacet.sol": "0x7a769eaa1877287c46b5f03757af4b61ad2acb8bf517900f0d3718c35599d6c2",
+      "src/hub/facets/HubRiskFacet.sol": "0x1533513de5b1bd351ae156b636b8afee5db55226f4470073fb016836f80780ed",
+      "src/hub/facets/HubRiskViewFacet.sol": "0x1a71434c1616208478c9fcabb02f4d0c189e627d28d22ccbb74cd2afd9df950c",
+      "src/hub/facets/HubSettlementFacet.sol": "0xc66ac4af8724cda14f8c818c0c14c38a55e426c51e6031681216ccb1af15db0c",
+      "src/hub/facets/HubStateViewFacet.sol": "0xacd5f547fdba51441c0e0641a1a9603f9eabcceb4929e277ea8dedf4c04b21e1",
+      "src/hub/logic/HubAccountLogic.sol": "0xced9b32a7b77e50de0063f55c65f0b9cf415aa749e24f6d3ee184e64d102ffae",
+      "src/hub/logic/HubCommitmentLogic.sol": "0x74d2a4716200803d14636995228c5e603225355fbba7bac84ca2afcbe30a1d18",
+      "src/hub/logic/HubConfigurationLogic.sol": "0x73c29261733579c0027084e83832dd41934fca67576ed039600d9da7fb956a40",
+      "src/hub/logic/HubLiquidationApplyLogic.sol": "0xaa23355bff5a5e5e3bbf34ed55a0d82774f026c0323ca36ac2a5e516e1fba2b7",
+      "src/hub/logic/HubLiquidationIntakeLogic.sol": "0xb1ead61216ef2298b8f8f7909e81a7bea79e48a0396dbf2f3b5c96fb21cedb5d",
+      "src/hub/logic/HubLiquidationRequestLogic.sol": "0x1b2817f827d2d9b08dcba689d31caa6c2818c6cb6762f33aea3c5a3a5877edfd",
+      "src/hub/logic/HubLiquidationViewLogic.sol": "0x94d3f07a6d9d6f8ae6264649a0188d0022fb0a4fe1563a4ade69fdaf13894365",
+      "src/hub/logic/HubOperationsLogic.sol": "0x22ea661313253af90c4beef0d13a426b7e0ef4e936ea42200011862d48d8758c",
+      "src/hub/logic/HubRiskLogic.sol": "0x0e10b8ac8b62cbf0b2537af5a989cfc02786daf143a6607feeea4315addb756f",
+      "src/hub/logic/HubSettlementLogic.sol": "0xdc15900cdafd33db7b0b44534d837ff20aaad4ea369f2f8db9fff406b99103fd",
+      "src/hub/logic/HubViewLogic.sol": "0xbce6b56291f5277bec916d3b2a9570f7b02c7e851a352bfedc87ab1465becd64",
+      "src/hub/logic/OracleLib.sol": "0xeb2c77de2776b78ca78ee48844247ee9d82631749c022efc369da1a3a7b6af7e",
+      "src/interfaces/IHub.sol": "0x8d6ddc601b9cef109d64d30e8661b7a90c255cd25381f3d8f841612ac6e5cbd6",
+      "src/interfaces/IHubEvents.sol": "0xc6c4778f9debc5fcc37945e7a3078cf98638e9dea3b27bc49e83ebd169761879",
+      "src/interfaces/IHubLiquidation.sol": "0xf22b4df76cea3f4e690f80f845f16fb6de2653cc33c3aff780ffe753a3d7928c",
+      "src/interfaces/IOracle.sol": "0x308f55b3de28e1b7a5c7dc17df32d3a86300992f3fe4a7879d67bb772ac6e321",
+      "src/interfaces/IValidatorRegistry.sol": "0x901d6b4b70a3aac88023d65730975c89e4cdd19ba9e8218ff7a0332b355f5552",
+      "src/libraries/DataTypes.sol": "0xb5340bc8ee018a805aa3400ee698567f9a6fb9e16eda89b41a9ec27914e1220a",
+      "src/libraries/Errors.sol": "0x3e0a2ed59a17584367e959e6d9eb30bea87ed7bacdf174bbf32bfc6459444cf2",
+      "src/libraries/LiquidationAttestationLib.sol": "0x4b3c9d102d18e7a75da71dc0e017e9c1c2251ad809e4d926a7357161742c490a",
+      "src/libraries/LiquidationMath.sol": "0x062c95795b4ff0daed8efe7bd9c3ba177f64f86bda3a2131bcb78f8f3d909562",
+      "src/libraries/MathUtils.sol": "0x46c2de3f72c46a60bf1fd6f46892a57673951fae1cc4b90adb2068afa5dbfbd3",
+      "src/libraries/ReserveConfiguration.sol": "0x6fc796f699bbf14f9c7e15d4ded791af3b8f52369dc802956d7eb72cb4dd30ac",
+      "src/libraries/WadRayMath.sol": "0x884296cfd0ec024066a457f7b868d2f606454cad960e1f75c365ba729bf102a9"
+    },
+    "viaIR": true
+  },
+  "diamond": "src/diamond/Diamond.sol:Diamond",
+  "facets": [
+    {
+      "artifact": "src/diamond/facets/DiamondCutFacet.sol:DiamondCutFacet",
+      "functions": [
+        {
+          "selector": "0x1f931c1c",
+          "signature": "diamondCut((address,uint8,bytes4[])[],address,bytes)"
+        }
+      ],
+      "maskedRanges": [],
+      "name": "DiamondCutFacet",
+      "runtimeCodeHashUnlinked": "0x5a8683030969920595085ba4db40e0dc5fd1333c848bcfb9f446c3e0b27337c9"
+    },
+    {
+      "artifact": "src/diamond/facets/DiamondLoupeFacet.sol:DiamondLoupeFacet",
+      "functions": [
+        {
+          "selector": "0x7a0ed627",
+          "signature": "facets()"
+        },
+        {
+          "selector": "0xadfca15e",
+          "signature": "facetFunctionSelectors(address)"
+        },
+        {
+          "selector": "0x52ef6b2c",
+          "signature": "facetAddresses()"
+        },
+        {
+          "selector": "0xcdffacc6",
+          "signature": "facetAddress(bytes4)"
+        },
+        {
+          "selector": "0x01ffc9a7",
+          "signature": "supportsInterface(bytes4)"
+        }
+      ],
+      "maskedRanges": [],
+      "name": "DiamondLoupeFacet",
+      "runtimeCodeHashUnlinked": "0xb3869e1c1fd1e8f003d656f281570383d735bca272a6162fde50eae68201e629"
+    },
+    {
+      "artifact": "src/diamond/facets/AccessFacet.sol:AccessFacet",
+      "functions": [
+        {
+          "selector": "0xa217fddf",
+          "signature": "DEFAULT_ADMIN_ROLE()"
+        },
+        {
+          "selector": "0x2f2ff15d",
+          "signature": "grantRole(bytes32,address)"
+        },
+        {
+          "selector": "0xd547741f",
+          "signature": "revokeRole(bytes32,address)"
+        },
+        {
+          "selector": "0x36568abe",
+          "signature": "renounceRole(bytes32,address)"
+        },
+        {
+          "selector": "0x91d14854",
+          "signature": "hasRole(bytes32,address)"
+        },
+        {
+          "selector": "0x248a9ca3",
+          "signature": "getRoleAdmin(bytes32)"
+        },
+        {
+          "selector": "0x634e93da",
+          "signature": "beginDefaultAdminTransfer(address)"
+        },
+        {
+          "selector": "0xd602b9fd",
+          "signature": "cancelDefaultAdminTransfer()"
+        },
+        {
+          "selector": "0xcefc1429",
+          "signature": "acceptDefaultAdminTransfer()"
+        },
+        {
+          "selector": "0x84ef8ffc",
+          "signature": "defaultAdmin()"
+        },
+        {
+          "selector": "0xcf6eefb7",
+          "signature": "pendingDefaultAdmin()"
+        }
+      ],
+      "maskedRanges": [],
+      "name": "AccessFacet",
+      "runtimeCodeHashUnlinked": "0x9b1dcfb410e760d7abc34484469f31ad4210bcbc070134c5b56e8677f72d27a7"
+    },
+    {
+      "artifact": "src/hub/facets/HubSettlementFacet.sol:HubSettlementFacet",
+      "functions": [
+        {
+          "selector": "0x09f1214d",
+          "signature": "settleDeposit((uint32,address,address,uint256,uint256,bytes32),(address,address,uint256,(uint40,uint128,uint128,uint128,uint128,uint128,uint128)))"
+        },
+        {
+          "selector": "0x9bc4dff3",
+          "signature": "settleBorrow((uint32,address,address,uint256,uint256,bytes32),(bytes32,address,address,uint256,(uint40,uint128,uint128,uint128,uint128,uint128,uint128)))"
+        },
+        {
+          "selector": "0xe3e3a355",
+          "signature": "settleRepay((uint32,address,address,uint256,uint256,bytes32),(address,address,uint256,uint256,uint256,(uint40,uint128,uint128,uint128,uint128,uint128,uint128)))"
+        },
+        {
+          "selector": "0x61d76e3d",
+          "signature": "settleWithdraw((uint32,address,address,uint256,uint256,bytes32),(bytes32,address,address,uint256,uint256,(uint40,uint128,uint128,uint128,uint128,uint128,uint128)))"
+        },
+        {
+          "selector": "0xc851bc11",
+          "signature": "settleCreditDraw((uint32,address,address,uint256,uint256,bytes32),(address,address,uint256,(uint40,uint128,uint128,uint128,uint128,uint128,uint128),(uint256,uint256)))"
+        },
+        {
+          "selector": "0xef884f96",
+          "signature": "settleEscrowUpdate((uint32,address,address,uint256,uint256,bytes32),(address,address,uint256,uint256,uint256,(uint40,uint128,uint128,uint128,uint128,uint128,uint128),(uint256,uint256),(address,uint256)[]))"
+        },
+        {
+          "selector": "0x9cd55a6c",
+          "signature": "settleCreditRepay((uint32,address,address,uint256,uint256,bytes32),(address,address,uint256,uint256,(uint40,uint128,uint128,uint128,uint128,uint128,uint128),(uint256,uint256)))"
+        },
+        {
+          "selector": "0x3e0f17c3",
+          "signature": "settleCapRaise((uint32,address,address,uint256,uint256,bytes32),(bytes32,address,address,uint256))"
+        },
+        {
+          "selector": "0x6d14c19d",
+          "signature": "settleCapReduce((uint32,address,address,uint256,uint256,bytes32),(address,address,uint256))"
+        },
+        {
+          "selector": "0x9e61d811",
+          "signature": "settleEscrowSupply((uint32,address,address,uint256,uint256,bytes32),(address,address,uint256,(uint40,uint128,uint128,uint128,uint128,uint128,uint128),address,(address,uint256)[]))"
+        },
+        {
+          "selector": "0x828d0ca3",
+          "signature": "settleSpokeFreeze((uint32,address,address,uint256,uint256,bytes32),(address,uint256,uint64,uint256,uint256,uint64))"
+        },
+        {
+          "selector": "0xb29fd2d2",
+          "signature": "settleSpokeUnfreeze((uint32,address,address,uint256,uint256,bytes32),(address,uint64))"
+        },
+        {
+          "selector": "0x5be16dd3",
+          "signature": "settleCommitmentRevocation((uint32,address,address,uint256,uint256,bytes32),(bytes32,address,uint8,uint256))"
+        }
+      ],
+      "maskedRanges": [
+        {
+          "length": 20,
+          "start": 284
+        },
+        {
+          "length": 20,
+          "start": 661
+        },
+        {
+          "length": 20,
+          "start": 922
+        },
+        {
+          "length": 20,
+          "start": 1192
+        },
+        {
+          "length": 20,
+          "start": 1441
+        },
+        {
+          "length": 20,
+          "start": 1753
+        },
+        {
+          "length": 20,
+          "start": 2027
+        },
+        {
+          "length": 20,
+          "start": 2267
+        },
+        {
+          "length": 20,
+          "start": 2549
+        },
+        {
+          "length": 20,
+          "start": 2761
+        },
+        {
+          "length": 20,
+          "start": 3006
+        },
+        {
+          "length": 20,
+          "start": 3234
+        },
+        {
+          "length": 20,
+          "start": 3484
+        }
+      ],
+      "name": "HubSettlementFacet",
+      "runtimeCodeHashUnlinked": "0xa967ebca7b4a661b615a4a5d599a35f7d7299eb0b73a96cbc46ba4681d53dde7"
+    },
+    {
+      "artifact": "src/hub/facets/HubCommitmentFacet.sol:HubCommitmentFacet",
+      "functions": [
+        {
+          "selector": "0x6f1a2b1c",
+          "signature": "recordPendingBorrow(address,uint16,uint256,uint32,uint48)"
+        },
+        {
+          "selector": "0x1675c9bb",
+          "signature": "recordPendingWithdraw(address,uint16,uint256,uint32,uint48)"
+        },
+        {
+          "selector": "0xc8bd1626",
+          "signature": "recordPendingCreditCapRaise(address,uint16,uint32,uint16,uint48)"
+        },
+        {
+          "selector": "0xc7b2cbbb",
+          "signature": "expireCommitment(bytes32)"
+        },
+        {
+          "selector": "0xbac13740",
+          "signature": "failCommitment(bytes32)"
+        }
+      ],
+      "maskedRanges": [
+        {
+          "length": 20,
+          "start": 280
+        },
+        {
+          "length": 20,
+          "start": 442
+        },
+        {
+          "length": 20,
+          "start": 720
+        },
+        {
+          "length": 20,
+          "start": 977
+        },
+        {
+          "length": 20,
+          "start": 1155
+        }
+      ],
+      "name": "HubCommitmentFacet",
+      "runtimeCodeHashUnlinked": "0x83f9a86086a0a7e28154fb58caa8239d21902012372e10318d6cb723d59b8851"
+    },
+    {
+      "artifact": "src/hub/facets/HubRiskFacet.sol:HubRiskFacet",
+      "functions": [
+        {
+          "selector": "0x8d1fdf2f",
+          "signature": "freeze(address)"
+        },
+        {
+          "selector": "0x21434593",
+          "signature": "authorizeUnfreeze(address)"
+        },
+        {
+          "selector": "0x812170d1",
+          "signature": "refreshUnfreeze(address)"
+        },
+        {
+          "selector": "0x752f4b45",
+          "signature": "retryUnfreeze(address,uint32)"
+        },
+        {
+          "selector": "0xcd72572e",
+          "signature": "requestUnfreezeResync()"
+        },
+        {
+          "selector": "0x89d3adbe",
+          "signature": "pruneRiskChain(address,uint32)"
+        },
+        {
+          "selector": "0xfe108a29",
+          "signature": "setRiskThresholds(uint256,uint256,uint48)"
+        },
+        {
+          "selector": "0xa17a1e53",
+          "signature": "freezeEligibility(address)"
+        },
+        {
+          "selector": "0xa45a9279",
+          "signature": "unfreezeEligibility(address)"
+        },
+        {
+          "selector": "0xff044862",
+          "signature": "pendingUnfreezeChains(address)"
+        }
+      ],
+      "maskedRanges": [
+        {
+          "length": 20,
+          "start": 195
+        },
+        {
+          "length": 20,
+          "start": 653
+        },
+        {
+          "length": 20,
+          "start": 873
+        },
+        {
+          "length": 20,
+          "start": 1012
+        },
+        {
+          "length": 20,
+          "start": 1363
+        },
+        {
+          "length": 20,
+          "start": 1595
+        },
+        {
+          "length": 20,
+          "start": 1819
+        },
+        {
+          "length": 20,
+          "start": 1987
+        },
+        {
+          "length": 20,
+          "start": 2073
+        },
+        {
+          "length": 20,
+          "start": 2180
+        }
+      ],
+      "name": "HubRiskFacet",
+      "runtimeCodeHashUnlinked": "0x7ec570613a46ece53e9425b670e3473eca9ee1a1403d574d2748c15e6847b711"
+    },
+    {
+      "artifact": "src/hub/facets/HubLiquidationFacet.sol:HubLiquidationFacet",
+      "functions": [
+        {
+          "selector": "0x9ae37ce4",
+          "signature": "requestDirectRepayLiquidation(address,uint32,uint32,uint16,uint16,uint8,uint256,uint256,uint48)"
+        },
+        {
+          "selector": "0x5b6d5ae8",
+          "signature": "requestEscrowLiquidation(address,uint32,uint16,uint8,uint16,uint16,uint256,uint256,uint48)"
+        },
+        {
+          "selector": "0xcc6fe2ab",
+          "signature": "submitDirectRepayLiquidationResult((uint8,uint256,address,uint256,uint256,address,bytes32,bytes32,uint256,uint256),(bytes32,address,address,address,uint32,address,address,uint8,uint64,uint256,uint256,uint256,uint256,(uint256,uint256),(uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,(uint40,uint128,uint128,uint128,uint128,uint128,uint128),(uint40,uint128,uint128,uint128,uint128,uint128,uint128),uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256),(address,uint256,uint256,uint256,uint256)[],(address,uint256)[]),bytes)"
+        },
+        {
+          "selector": "0x89e7b92c",
+          "signature": "submitSkippedDirectRepayLiquidationResult((uint8,uint256,address,uint256,uint256,address,bytes32,bytes32,uint256,uint256),(bytes32,address,address,uint32,uint8,uint64),bytes)"
+        },
+        {
+          "selector": "0x4dfa30a0",
+          "signature": "submitLiquidationStateAck((uint8,uint256,address,uint256,uint256,address,bytes32,bytes32,uint256,uint256),(bytes32,address,uint32,uint64,uint64,uint256,(address,uint256,uint256,uint256,uint256)[]),bytes)"
+        },
+        {
+          "selector": "0x9dc240de",
+          "signature": "applyReceivedLiquidationResult(bytes32)"
+        },
+        {
+          "selector": "0x4c0ac5df",
+          "signature": "cancelUnexecutedLiquidation(bytes32)"
+        },
+        {
+          "selector": "0x545a9fea",
+          "signature": "abandonLiquidationCollateralLeg(bytes32)"
+        },
+        {
+          "selector": "0x9130dce1",
+          "signature": "finalizeRecoveredLiquidation(bytes32)"
+        },
+        {
+          "selector": "0xec5f13a3",
+          "signature": "setLiquidationParameters((uint16,uint16,uint48,uint256,uint256,uint256,uint256,uint256,uint256))"
+        },
+        {
+          "selector": "0x0ecc3279",
+          "signature": "setCrossChainLiquidationEnabled(bool)"
+        },
+        {
+          "selector": "0x868a6055",
+          "signature": "setLiquidationValidatorRegistry(address)"
+        },
+        {
+          "selector": "0xc0064c14",
+          "signature": "getLiquidationAttestationDigest((uint8,uint256,address,uint256,uint256,address,bytes32,bytes32,uint256,uint256))"
+        }
+      ],
+      "maskedRanges": [
+        {
+          "length": 20,
+          "start": 199
+        },
+        {
+          "length": 20,
+          "start": 578
+        },
+        {
+          "length": 20,
+          "start": 1638
+        },
+        {
+          "length": 20,
+          "start": 1787
+        },
+        {
+          "length": 20,
+          "start": 2173
+        },
+        {
+          "length": 20,
+          "start": 2419
+        },
+        {
+          "length": 20,
+          "start": 2703
+        },
+        {
+          "length": 20,
+          "start": 3101
+        },
+        {
+          "length": 20,
+          "start": 3537
+        },
+        {
+          "length": 20,
+          "start": 3635
+        },
+        {
+          "length": 20,
+          "start": 3878
+        },
+        {
+          "length": 20,
+          "start": 4195
+        },
+        {
+          "length": 20,
+          "start": 4344
+        }
+      ],
+      "name": "HubLiquidationFacet",
+      "runtimeCodeHashUnlinked": "0x62098966b391a65a6fca605735fb76a111d913d55e3482697efac0c46967265c"
+    },
+    {
+      "artifact": "src/hub/facets/HubConfigFacet.sol:HubConfigFacet",
+      "functions": [
+        {
+          "selector": "0x582fd617",
+          "signature": "registerAsset(uint256)"
+        },
+        {
+          "selector": "0xeda7d99a",
+          "signature": "configureChainAsset(uint16,uint32,address,address,uint128,(uint40,uint128,uint128,uint128,uint128,uint128,uint128))"
+        },
+        {
+          "selector": "0x42559c56",
+          "signature": "setConfiguration(uint16,uint256)"
+        },
+        {
+          "selector": "0xc7361335",
+          "signature": "setSnapshotTiming(uint48,uint48)"
+        },
+        {
+          "selector": "0xc49896a7",
+          "signature": "setExpiryGrace(uint48)"
+        },
+        {
+          "selector": "0x7adbf973",
+          "signature": "setOracle(address)"
+        },
+        {
+          "selector": "0x8456cb59",
+          "signature": "pause()"
+        },
+        {
+          "selector": "0x3f4ba83a",
+          "signature": "unpause()"
+        },
+        {
+          "selector": "0xd9d67936",
+          "signature": "setAccountLocked(address,bool)"
+        },
+        {
+          "selector": "0xacf2dde4",
+          "signature": "setChainHalted(uint32,bool)"
+        },
+        {
+          "selector": "0x171d3b09",
+          "signature": "adminSetLastEventNonce(uint32,address,uint256)"
+        },
+        {
+          "selector": "0xbb18fa6e",
+          "signature": "adminSetLastReserveEventNonce(uint32,uint16,uint256)"
+        },
+        {
+          "selector": "0x7919cd6c",
+          "signature": "adminSetMessageProcessed(bytes32,bool)"
+        }
+      ],
+      "maskedRanges": [],
+      "name": "HubConfigFacet",
+      "runtimeCodeHashUnlinked": "0xdd5e0c9fb9b900afc318572d8fbedd2ffd555b983a0d8b9d98a1682d27b94a1e"
+    },
+    {
+      "artifact": "src/hub/facets/HubStateViewFacet.sol:HubStateViewFacet",
+      "functions": [
+        {
+          "selector": "0x7dc0d1d0",
+          "signature": "oracle()"
+        },
+        {
+          "selector": "0xeafe7a74",
+          "signature": "assetCount()"
+        },
+        {
+          "selector": "0x82789184",
+          "signature": "commitmentHealthBufferWad()"
+        },
+        {
+          "selector": "0x383b74ca",
+          "signature": "freezeHealthThresholdWad()"
+        },
+        {
+          "selector": "0x646ba878",
+          "signature": "unfreezeAuthorizationTtl()"
+        },
+        {
+          "selector": "0x807296c5",
+          "signature": "canonicalAssetByChainToken(uint32,address)"
+        },
+        {
+          "selector": "0x1754e2e7",
+          "signature": "chainTokenByAsset(uint16,uint32)"
+        },
+        {
+          "selector": "0xbb317e61",
+          "signature": "isChainMapped(uint16,uint32)"
+        },
+        {
+          "selector": "0x98c79f8f",
+          "signature": "lastEventNonce(uint32,address)"
+        },
+        {
+          "selector": "0x87cf9f2a",
+          "signature": "processedMessage(bytes32)"
+        },
+        {
+          "selector": "0x839df945",
+          "signature": "commitments(bytes32)"
+        },
+        {
+          "selector": "0x0056d575",
+          "signature": "userCommitmentNonce(address)"
+        },
+        {
+          "selector": "0xb78c0736",
+          "signature": "userDelegatedPctBpsTotal(address)"
+        },
+        {
+          "selector": "0xe2d9d80a",
+          "signature": "expiryGrace()"
+        },
+        {
+          "selector": "0x5c975abb",
+          "signature": "paused()"
+        },
+        {
+          "selector": "0x500b9426",
+          "signature": "accountLocked(address)"
+        },
+        {
+          "selector": "0xa012f1c2",
+          "signature": "chainHalted(uint32)"
+        },
+        {
+          "selector": "0xeed83e5d",
+          "signature": "activeLiquidation(address)"
+        },
+        {
+          "selector": "0x1916ec21",
+          "signature": "liquidationChainStatus(bytes32,uint32)"
+        },
+        {
+          "selector": "0x708a826f",
+          "signature": "liquidationInstruction(bytes32,uint32)"
+        },
+        {
+          "selector": "0x59bac74f",
+          "signature": "liquidationParameters()"
+        },
+        {
+          "selector": "0x66cb5824",
+          "signature": "liquidationRequiredChains(bytes32)"
+        },
+        {
+          "selector": "0x7869d221",
+          "signature": "liquidationReservations(bytes32)"
+        },
+        {
+          "selector": "0x6885678a",
+          "signature": "liquidationValidatorRegistry()"
+        },
+        {
+          "selector": "0xbc1c85df",
+          "signature": "liquidations(bytes32)"
+        },
+        {
+          "selector": "0xc4080558",
+          "signature": "getEscrowBalances(address,uint16,uint32)"
+        }
+      ],
+      "maskedRanges": [],
+      "name": "HubStateViewFacet",
+      "runtimeCodeHashUnlinked": "0x038fdf2ca72ca6e46be54ff4810ab6d37840966b5e2f9016b51ebf0dbbfb7f9e"
+    },
+    {
+      "artifact": "src/hub/facets/HubRiskViewFacet.sol:HubRiskViewFacet",
+      "functions": [
+        {
+          "selector": "0x112df46c",
+          "signature": "assetConfiguration(uint16)"
+        },
+        {
+          "selector": "0x5cc331f5",
+          "signature": "chainAssetState(uint16,uint32)"
+        },
+        {
+          "selector": "0x45f46908",
+          "signature": "chainCreditLine(address,uint16,uint32)"
+        },
+        {
+          "selector": "0xc299a52a",
+          "signature": "chainPosition(address,uint16,uint32)"
+        },
+        {
+          "selector": "0x269d0278",
+          "signature": "configuredSpoke(uint32)"
+        },
+        {
+          "selector": "0xf22ba6c2",
+          "signature": "freezeState(address)"
+        },
+        {
+          "selector": "0x82b3f5fe",
+          "signature": "lastReserveEventNonce(uint32,uint16)"
+        },
+        {
+          "selector": "0xaa324b03",
+          "signature": "policyConfiguration()"
+        },
+        {
+          "selector": "0x46493b49",
+          "signature": "resolveAssetId(uint32,address)"
+        },
+        {
+          "selector": "0x259901da",
+          "signature": "unfreezeStatus(address,uint32)"
+        },
+        {
+          "selector": "0x1d56c9ab",
+          "signature": "userActiveChains(address)"
+        },
+        {
+          "selector": "0x2d27742e",
+          "signature": "userRiskChains(address)"
+        },
+        {
+          "selector": "0x875450c7",
+          "signature": "verifyCommitment(bytes32,address,address,uint256,uint32)"
+        },
+        {
+          "selector": "0x2dc9e414",
+          "signature": "supplyBalance(address,uint16)"
+        },
+        {
+          "selector": "0xdfb1d8ae",
+          "signature": "supplyBalanceOnChain(address,uint16,uint32)"
+        },
+        {
+          "selector": "0x26ec9184",
+          "signature": "debtBalance(address,uint16)"
+        },
+        {
+          "selector": "0x26d219d8",
+          "signature": "debtBalanceOnChain(address,uint16,uint32)"
+        },
+        {
+          "selector": "0x6ad9f9df",
+          "signature": "healthFactor(address)"
+        },
+        {
+          "selector": "0x683ed69b",
+          "signature": "riskHF(address)"
+        },
+        {
+          "selector": "0x93011307",
+          "signature": "liqHF(address)"
+        },
+        {
+          "selector": "0xcf86a388",
+          "signature": "borrowPowerRatio(address)"
+        },
+        {
+          "selector": "0x01e3ab11",
+          "signature": "borrowPower(address)"
+        },
+        {
+          "selector": "0x3820ff02",
+          "signature": "liquidationOptions(address,address,uint8)"
+        },
+        {
+          "selector": "0xe5839836",
+          "signature": "isFrozen(address)"
+        },
+        {
+          "selector": "0x670723cf",
+          "signature": "maxWithdrawEligibility(address,uint16,uint32)"
+        },
+        {
+          "selector": "0x539a8610",
+          "signature": "riskHealthFactor(address)"
+        },
+        {
+          "selector": "0x83771099",
+          "signature": "liquidationHealthFactor(address)"
+        },
+        {
+          "selector": "0x836877d0",
+          "signature": "borrowCoverageRatio(address)"
+        },
+        {
+          "selector": "0x6e0e5aa7",
+          "signature": "getBorrowCapacity(address)"
+        }
+      ],
+      "maskedRanges": [
+        {
+          "length": 20,
+          "start": 593
+        },
+        {
+          "length": 20,
+          "start": 2116
+        },
+        {
+          "length": 20,
+          "start": 2281
+        },
+        {
+          "length": 20,
+          "start": 3106
+        }
+      ],
+      "name": "HubRiskViewFacet",
+      "runtimeCodeHashUnlinked": "0x455ea760f7a76a5d57d08fff024df669f214aa30b2558ae5f68c59e80ea2a2a8"
+    }
+  ],
+  "initializer": {
+    "artifact": "src/hub/HubInit.sol:HubInit",
+    "calldataBytes": 68,
+    "function": "initialize(address,address)"
+  },
+  "interfaces": {
+    "IAccessControl": "0x7965db0b",
+    "IDiamondCut": "0x1f931c1c",
+    "IDiamondLoupe": "0x48e2b093",
+    "IERC165": "0x01ffc9a7"
+  },
+  "libraries": [
+    {
+      "artifact": "src/hub/logic/HubAccountLogic.sol:HubAccountLogic",
+      "linkedBy": [
+        "src/hub/facets/HubRiskViewFacet.sol:HubRiskViewFacet",
+        "src/hub/logic/HubLiquidationApplyLogic.sol:HubLiquidationApplyLogic",
+        "src/hub/logic/HubLiquidationRequestLogic.sol:HubLiquidationRequestLogic",
+        "src/hub/logic/HubLiquidationViewLogic.sol:HubLiquidationViewLogic"
+      ],
+      "links": [],
+      "retention": "external"
+    },
+    {
+      "artifact": "src/hub/logic/HubCommitmentLogic.sol:HubCommitmentLogic",
+      "linkedBy": [
+        "src/hub/facets/HubCommitmentFacet.sol:HubCommitmentFacet",
+        "src/hub/facets/HubSettlementFacet.sol:HubSettlementFacet",
+        "src/hub/logic/HubLiquidationApplyLogic.sol:HubLiquidationApplyLogic"
+      ],
+      "links": [],
+      "retention": "external"
+    },
+    {
+      "artifact": "src/hub/logic/HubLiquidationApplyLogic.sol:HubLiquidationApplyLogic",
+      "linkedBy": [
+        "src/hub/facets/HubLiquidationFacet.sol:HubLiquidationFacet",
+        "src/hub/logic/HubLiquidationIntakeLogic.sol:HubLiquidationIntakeLogic",
+        "src/hub/logic/HubSettlementLogic.sol:HubSettlementLogic"
+      ],
+      "links": [
+        "src/hub/logic/HubAccountLogic.sol:HubAccountLogic",
+        "src/hub/logic/HubCommitmentLogic.sol:HubCommitmentLogic"
+      ],
+      "retention": "external"
+    },
+    {
+      "artifact": "src/hub/logic/HubLiquidationIntakeLogic.sol:HubLiquidationIntakeLogic",
+      "linkedBy": [
+        "src/hub/facets/HubLiquidationFacet.sol:HubLiquidationFacet"
+      ],
+      "links": [
+        "src/hub/logic/HubLiquidationApplyLogic.sol:HubLiquidationApplyLogic"
+      ],
+      "retention": "external"
+    },
+    {
+      "artifact": "src/hub/logic/HubLiquidationRequestLogic.sol:HubLiquidationRequestLogic",
+      "linkedBy": [
+        "src/hub/facets/HubLiquidationFacet.sol:HubLiquidationFacet"
+      ],
+      "links": [
+        "src/hub/logic/HubAccountLogic.sol:HubAccountLogic"
+      ],
+      "retention": "external"
+    },
+    {
+      "artifact": "src/hub/logic/HubLiquidationViewLogic.sol:HubLiquidationViewLogic",
+      "linkedBy": [
+        "src/hub/facets/HubRiskViewFacet.sol:HubRiskViewFacet"
+      ],
+      "links": [
+        "src/hub/logic/HubAccountLogic.sol:HubAccountLogic"
+      ],
+      "retention": "external"
+    },
+    {
+      "artifact": "src/hub/logic/HubRiskLogic.sol:HubRiskLogic",
+      "linkedBy": [
+        "src/hub/facets/HubRiskFacet.sol:HubRiskFacet",
+        "src/hub/facets/HubSettlementFacet.sol:HubSettlementFacet"
+      ],
+      "links": [],
+      "retention": "external"
+    },
+    {
+      "artifact": "src/hub/logic/HubSettlementLogic.sol:HubSettlementLogic",
+      "linkedBy": [
+        "src/hub/facets/HubSettlementFacet.sol:HubSettlementFacet"
+      ],
+      "links": [
+        "src/hub/logic/HubLiquidationApplyLogic.sol:HubLiquidationApplyLogic"
+      ],
+      "retention": "external"
+    }
+  ],
+  "releaseArtifacts": [
+    {
+      "artifact": "src/hub/HubRequestGateway.sol:HubRequestGateway",
+      "constructorArgsBytes": 64
+    }
+  ],
+  "selectorCount": 126,
+  "sizeArtifacts": [
+    {
+      "artifact": "src/diamond/Diamond.sol:Diamond",
+      "artifactBytecodeSha256": "62e68c96c13f003c7565421eb55b2fe77dfeb2a9ec64f8b1d18e1f14230dc513",
+      "artifactCreationBytecodeSha256": "06a2d115d14f76a0a9fea797e34848953ebd78d52f9c2fec70291cefa33551b9",
+      "constructorArgsBytes": 5888,
+      "enforceMargin": true,
+      "initcodeBytes": 4003,
+      "maskedRanges": [],
+      "minimumRuntimeMargin": 2048,
+      "runtimeBytes": 172,
+      "runtimeCodeHashUnlinked": "0xe709dfac90169b0fdb170cac3cba686730f0b1e95aa27703c206eb9928fb2290"
+    },
+    {
+      "artifact": "src/hub/HubInit.sol:HubInit",
+      "artifactBytecodeSha256": "15cf8ac93ee78e87a6ef236b6918acd36456531f9b5a399e5c5e40c530e95aad",
+      "artifactCreationBytecodeSha256": "4ff3d2de5c540d43845b7b009f512960f5c747d584c67fe46eed764465a4b131",
+      "constructorArgsBytes": 0,
+      "enforceMargin": true,
+      "initcodeBytes": 3053,
+      "maskedRanges": [],
+      "minimumRuntimeMargin": 2048,
+      "runtimeBytes": 2840,
+      "runtimeCodeHashUnlinked": "0x2c8c58b987e1f19618fef48206f2a79f77e76963de01cd9f4e58262bed32e288"
+    },
+    {
+      "artifact": "src/diamond/facets/DiamondCutFacet.sol:DiamondCutFacet",
+      "artifactBytecodeSha256": "98cf2d3856126e735f84c3ba679bb21e775359b842bc08f41bc2a9aa2cb491c3",
+      "artifactCreationBytecodeSha256": "3508a968fb81337a1aaa6dd3e31daa6c901f9407ee81b8bd5af8104d1dad8d43",
+      "constructorArgsBytes": 0,
+      "enforceMargin": true,
+      "initcodeBytes": 3977,
+      "maskedRanges": [],
+      "minimumRuntimeMargin": 2048,
+      "runtimeBytes": 3915,
+      "runtimeCodeHashUnlinked": "0x5a8683030969920595085ba4db40e0dc5fd1333c848bcfb9f446c3e0b27337c9"
+    },
+    {
+      "artifact": "src/diamond/facets/DiamondLoupeFacet.sol:DiamondLoupeFacet",
+      "artifactBytecodeSha256": "48c61f6d0ab07100416f52135f1dc9b8979ed19f309d0ef982e41f4c0462a1d5",
+      "artifactCreationBytecodeSha256": "ece84412345bf44d753e2d3640eb56d4c5b96b2b985c7794cafe4dc54596e906",
+      "constructorArgsBytes": 0,
+      "enforceMargin": true,
+      "initcodeBytes": 2936,
+      "maskedRanges": [],
+      "minimumRuntimeMargin": 2048,
+      "runtimeBytes": 2910,
+      "runtimeCodeHashUnlinked": "0xb3869e1c1fd1e8f003d656f281570383d735bca272a6162fde50eae68201e629"
+    },
+    {
+      "artifact": "src/diamond/facets/AccessFacet.sol:AccessFacet",
+      "artifactBytecodeSha256": "9412e5174fe99db34a39a1da3f94e05c92e252dfcbc577a3c2ae1d6792903329",
+      "artifactCreationBytecodeSha256": "44b2df29bf1a5cdf76cee85035d16b833b6d38839e5420678fc5375373739ed8",
+      "constructorArgsBytes": 0,
+      "enforceMargin": true,
+      "initcodeBytes": 2015,
+      "maskedRanges": [],
+      "minimumRuntimeMargin": 2048,
+      "runtimeBytes": 1989,
+      "runtimeCodeHashUnlinked": "0x9b1dcfb410e760d7abc34484469f31ad4210bcbc070134c5b56e8677f72d27a7"
+    },
+    {
+      "artifact": "src/hub/facets/HubSettlementFacet.sol:HubSettlementFacet",
+      "artifactBytecodeSha256": "18577dc385ab99f84d512741f8203320cfdb93adb65ba7198283fce869ce437f",
+      "artifactCreationBytecodeSha256": "03ea02f93ac6559808977a7807f276473dff1f95ac3259edb2491f79ccf2b9c1",
+      "constructorArgsBytes": 0,
+      "enforceMargin": true,
+      "initcodeBytes": 5204,
+      "maskedRanges": [
+        {
+          "length": 20,
+          "start": 284
+        },
+        {
+          "length": 20,
+          "start": 661
+        },
+        {
+          "length": 20,
+          "start": 922
+        },
+        {
+          "length": 20,
+          "start": 1192
+        },
+        {
+          "length": 20,
+          "start": 1441
+        },
+        {
+          "length": 20,
+          "start": 1753
+        },
+        {
+          "length": 20,
+          "start": 2027
+        },
+        {
+          "length": 20,
+          "start": 2267
+        },
+        {
+          "length": 20,
+          "start": 2549
+        },
+        {
+          "length": 20,
+          "start": 2761
+        },
+        {
+          "length": 20,
+          "start": 3006
+        },
+        {
+          "length": 20,
+          "start": 3234
+        },
+        {
+          "length": 20,
+          "start": 3484
+        }
+      ],
+      "minimumRuntimeMargin": 2048,
+      "runtimeBytes": 5178,
+      "runtimeCodeHashUnlinked": "0xa967ebca7b4a661b615a4a5d599a35f7d7299eb0b73a96cbc46ba4681d53dde7"
+    },
+    {
+      "artifact": "src/hub/facets/HubCommitmentFacet.sol:HubCommitmentFacet",
+      "artifactBytecodeSha256": "f432853fa5c4edd0bfcf146518715acfbb3b41f0098d9ac8e3b65d83c01e2943",
+      "artifactCreationBytecodeSha256": "d43eaa4141369a7c06c2704cd40faaa3abaf676c31930790b3a45f5cc51a7124",
+      "constructorArgsBytes": 0,
+      "enforceMargin": true,
+      "initcodeBytes": 1817,
+      "maskedRanges": [
+        {
+          "length": 20,
+          "start": 280
+        },
+        {
+          "length": 20,
+          "start": 442
+        },
+        {
+          "length": 20,
+          "start": 720
+        },
+        {
+          "length": 20,
+          "start": 977
+        },
+        {
+          "length": 20,
+          "start": 1155
+        }
+      ],
+      "minimumRuntimeMargin": 2048,
+      "runtimeBytes": 1791,
+      "runtimeCodeHashUnlinked": "0x83f9a86086a0a7e28154fb58caa8239d21902012372e10318d6cb723d59b8851"
+    },
+    {
+      "artifact": "src/hub/facets/HubRiskFacet.sol:HubRiskFacet",
+      "artifactBytecodeSha256": "92bedc61a482920a95b1c6809d22f774af2e9567f5fa85fbfaa9943acee986be",
+      "artifactCreationBytecodeSha256": "0a538fe8d4f19a271248202873bcb62c6980cf7ab43a59d6236ec63222016c75",
+      "constructorArgsBytes": 0,
+      "enforceMargin": true,
+      "initcodeBytes": 2752,
+      "maskedRanges": [
+        {
+          "length": 20,
+          "start": 195
+        },
+        {
+          "length": 20,
+          "start": 653
+        },
+        {
+          "length": 20,
+          "start": 873
+        },
+        {
+          "length": 20,
+          "start": 1012
+        },
+        {
+          "length": 20,
+          "start": 1363
+        },
+        {
+          "length": 20,
+          "start": 1595
+        },
+        {
+          "length": 20,
+          "start": 1819
+        },
+        {
+          "length": 20,
+          "start": 1987
+        },
+        {
+          "length": 20,
+          "start": 2073
+        },
+        {
+          "length": 20,
+          "start": 2180
+        }
+      ],
+      "minimumRuntimeMargin": 2048,
+      "runtimeBytes": 2726,
+      "runtimeCodeHashUnlinked": "0x7ec570613a46ece53e9425b670e3473eca9ee1a1403d574d2748c15e6847b711"
+    },
+    {
+      "artifact": "src/hub/facets/HubLiquidationFacet.sol:HubLiquidationFacet",
+      "artifactBytecodeSha256": "e1f9273c68881d7c0eacd03b433ac05164306debb14915795ce1013bdd080374",
+      "artifactCreationBytecodeSha256": "7b36a0bd347fe11a45212c4f9e940f5fd330689c1cd34e177310803854eceef8",
+      "constructorArgsBytes": 0,
+      "enforceMargin": true,
+      "initcodeBytes": 5907,
+      "maskedRanges": [
+        {
+          "length": 20,
+          "start": 199
+        },
+        {
+          "length": 20,
+          "start": 578
+        },
+        {
+          "length": 20,
+          "start": 1638
+        },
+        {
+          "length": 20,
+          "start": 1787
+        },
+        {
+          "length": 20,
+          "start": 2173
+        },
+        {
+          "length": 20,
+          "start": 2419
+        },
+        {
+          "length": 20,
+          "start": 2703
+        },
+        {
+          "length": 20,
+          "start": 3101
+        },
+        {
+          "length": 20,
+          "start": 3537
+        },
+        {
+          "length": 20,
+          "start": 3635
+        },
+        {
+          "length": 20,
+          "start": 3878
+        },
+        {
+          "length": 20,
+          "start": 4195
+        },
+        {
+          "length": 20,
+          "start": 4344
+        }
+      ],
+      "minimumRuntimeMargin": 2048,
+      "runtimeBytes": 5845,
+      "runtimeCodeHashUnlinked": "0x62098966b391a65a6fca605735fb76a111d913d55e3482697efac0c46967265c"
+    },
+    {
+      "artifact": "src/hub/facets/HubConfigFacet.sol:HubConfigFacet",
+      "artifactBytecodeSha256": "0172e5d47aaa8cf40331b4895a1e7528190f50e18051a1d33f81f8802c1d45fc",
+      "artifactCreationBytecodeSha256": "f59c63f5c93cbc1fc93224a785102e37d6b384f0a697c4a6fc034ac4daa77b40",
+      "constructorArgsBytes": 0,
+      "enforceMargin": true,
+      "initcodeBytes": 5783,
+      "maskedRanges": [],
+      "minimumRuntimeMargin": 2048,
+      "runtimeBytes": 5757,
+      "runtimeCodeHashUnlinked": "0xdd5e0c9fb9b900afc318572d8fbedd2ffd555b983a0d8b9d98a1682d27b94a1e"
+    },
+    {
+      "artifact": "src/hub/facets/HubStateViewFacet.sol:HubStateViewFacet",
+      "artifactBytecodeSha256": "5eb541d242a944bce7b695eebc2e7317dfb6ac7be8e1c388041165e9b7137dc3",
+      "artifactCreationBytecodeSha256": "0090bcf4acb4f81799ad94442c67b834ed0baa4595e65c0e00c6c7730f058da3",
+      "constructorArgsBytes": 0,
+      "enforceMargin": true,
+      "initcodeBytes": 6268,
+      "maskedRanges": [],
+      "minimumRuntimeMargin": 2048,
+      "runtimeBytes": 6242,
+      "runtimeCodeHashUnlinked": "0x038fdf2ca72ca6e46be54ff4810ab6d37840966b5e2f9016b51ebf0dbbfb7f9e"
+    },
+    {
+      "artifact": "src/hub/facets/HubRiskViewFacet.sol:HubRiskViewFacet",
+      "artifactBytecodeSha256": "4e89d0776821baaeed2b76d01d51f59e997ab641e174177532497e555cb4eb32",
+      "artifactCreationBytecodeSha256": "ed3731d46126d5fccc72935c69e907993e37c8e821dd39685b2439ed84c28f5e",
+      "constructorArgsBytes": 0,
+      "enforceMargin": true,
+      "initcodeBytes": 12311,
+      "maskedRanges": [
+        {
+          "length": 20,
+          "start": 593
+        },
+        {
+          "length": 20,
+          "start": 2116
+        },
+        {
+          "length": 20,
+          "start": 2281
+        },
+        {
+          "length": 20,
+          "start": 3106
+        }
+      ],
+      "minimumRuntimeMargin": 2048,
+      "runtimeBytes": 12285,
+      "runtimeCodeHashUnlinked": "0x455ea760f7a76a5d57d08fff024df669f214aa30b2558ae5f68c59e80ea2a2a8"
+    },
+    {
+      "artifact": "src/hub/logic/HubAccountLogic.sol:HubAccountLogic",
+      "artifactBytecodeSha256": "ff1fbe468e0e24fcb042b788c0ae6d470487b361539868671a7fd432ebe2af76",
+      "artifactCreationBytecodeSha256": "4b3b284034fb896687ebfab343e0a4dd1a6e782f4b2ece194af66967dac45ef2",
+      "constructorArgsBytes": 0,
+      "enforceMargin": true,
+      "initcodeBytes": 5959,
+      "maskedRanges": [],
+      "minimumRuntimeMargin": 2048,
+      "runtimeBytes": 5929,
+      "runtimeCodeHashUnlinked": "0xe854479aeb9e923c59c6698854c8f3722bbf232a255563384be46a7a4433ec8a"
+    },
+    {
+      "artifact": "src/hub/logic/HubCommitmentLogic.sol:HubCommitmentLogic",
+      "artifactBytecodeSha256": "81a702ad5f881551a9514d4bd83664ef46522c84a63872f20652fec1d82e98a7",
+      "artifactCreationBytecodeSha256": "1e133be74e87dccf099f58a1dc1a4829d17d8f8d4d8196a4c6259c3d52ce4521",
+      "constructorArgsBytes": 0,
+      "enforceMargin": true,
+      "initcodeBytes": 14646,
+      "maskedRanges": [
+        {
+          "length": 32,
+          "start": 7
+        }
+      ],
+      "minimumRuntimeMargin": 2048,
+      "runtimeBytes": 14614,
+      "runtimeCodeHashUnlinked": "0xf055b0ae1e5177236b142e5454ff087265d8b6dfb4410adc0610b2445a64833c"
+    },
+    {
+      "artifact": "src/hub/logic/HubLiquidationApplyLogic.sol:HubLiquidationApplyLogic",
+      "artifactBytecodeSha256": "7229c36430a89a3a6afc6520ab58423ccbfa75f1463f1d7f4c767603979b41d3",
+      "artifactCreationBytecodeSha256": "cb780c1ca3afa9e216f22b17ad277d15c26916fd0496a3a6ec66a3dbc1b8add7",
+      "constructorArgsBytes": 0,
+      "enforceMargin": true,
+      "initcodeBytes": 21013,
+      "maskedRanges": [
+        {
+          "length": 32,
+          "start": 7
+        },
+        {
+          "length": 20,
+          "start": 7105
+        },
+        {
+          "length": 20,
+          "start": 18660
+        }
+      ],
+      "minimumRuntimeMargin": 2048,
+      "runtimeBytes": 20981,
+      "runtimeCodeHashUnlinked": "0xb673adb4775a6fc2b52a78d43d529adf36b722f3c2acd44ff2b6aad8e917ed5a"
+    },
+    {
+      "artifact": "src/hub/logic/HubLiquidationIntakeLogic.sol:HubLiquidationIntakeLogic",
+      "artifactBytecodeSha256": "822202595e8b81d5204e35d9e93c61c9ceb67000deb0f9e1a20ceb3f906e0388",
+      "artifactCreationBytecodeSha256": "64d525560d2d25574880bff3cdebd0c4fa17dd8806b746abd1e8dbdad51398c4",
+      "constructorArgsBytes": 0,
+      "enforceMargin": true,
+      "initcodeBytes": 13529,
+      "maskedRanges": [
+        {
+          "length": 32,
+          "start": 7
+        },
+        {
+          "length": 20,
+          "start": 1514
+        },
+        {
+          "length": 20,
+          "start": 4729
+        },
+        {
+          "length": 20,
+          "start": 10306
+        }
+      ],
+      "minimumRuntimeMargin": 2048,
+      "runtimeBytes": 13497,
+      "runtimeCodeHashUnlinked": "0xb20f8b22c74b1f735278b565ae2ced8323d17b4a6c96ea2367774521d12726be"
+    },
+    {
+      "artifact": "src/hub/logic/HubLiquidationRequestLogic.sol:HubLiquidationRequestLogic",
+      "artifactBytecodeSha256": "a13adf9c45cc6643a424b0a9fc36162fb564bab071fbef491e564a030bd5a134",
+      "artifactCreationBytecodeSha256": "2e351504d9fdb76a7aa3c111d724099341675fb898a409a2ddfa4f5f917d1ce7",
+      "constructorArgsBytes": 0,
+      "enforceMargin": true,
+      "initcodeBytes": 19795,
+      "maskedRanges": [
+        {
+          "length": 32,
+          "start": 7
+        },
+        {
+          "length": 20,
+          "start": 8492
+        }
+      ],
+      "minimumRuntimeMargin": 2048,
+      "runtimeBytes": 19763,
+      "runtimeCodeHashUnlinked": "0x54777c657c7bbaa1ec342bd088b2b64fd257a94f30df52cd97252e8565e6ce6f"
+    },
+    {
+      "artifact": "src/hub/logic/HubLiquidationViewLogic.sol:HubLiquidationViewLogic",
+      "artifactBytecodeSha256": "7dd88d28c5a084bb9cd8facdda5f5f300dcaa419c471dee35ddd3fa3d1c1e294",
+      "artifactCreationBytecodeSha256": "04e61c5e739be1a6b777199fb0afeeb3d5ddbbd251d0866eea122b0939ecd6ec",
+      "constructorArgsBytes": 0,
+      "enforceMargin": true,
+      "initcodeBytes": 13132,
+      "maskedRanges": [
+        {
+          "length": 20,
+          "start": 820
+        },
+        {
+          "length": 20,
+          "start": 6622
+        }
+      ],
+      "minimumRuntimeMargin": 2048,
+      "runtimeBytes": 13102,
+      "runtimeCodeHashUnlinked": "0x4ca0af810ec4e384e0be7764aafe46416c7b1f3b1ea88513c9a60e190eb69b10"
+    },
+    {
+      "artifact": "src/hub/logic/HubRiskLogic.sol:HubRiskLogic",
+      "artifactBytecodeSha256": "e0e7330b932537d0995075c86e7f5110ef1ecc9e6c74dcce0eda6653c4fa5c12",
+      "artifactCreationBytecodeSha256": "8e13737cfb723ac61eb267e50583b902c5aaf0f3d16f09c93e09ce8fa7cecad9",
+      "constructorArgsBytes": 0,
+      "enforceMargin": true,
+      "initcodeBytes": 11415,
+      "maskedRanges": [
+        {
+          "length": 32,
+          "start": 7
+        }
+      ],
+      "minimumRuntimeMargin": 2048,
+      "runtimeBytes": 11383,
+      "runtimeCodeHashUnlinked": "0x7c6a98034311504caa0a55615ac8f5e354f7b97f076514b018dd647ac3717b30"
+    },
+    {
+      "artifact": "src/hub/logic/HubSettlementLogic.sol:HubSettlementLogic",
+      "artifactBytecodeSha256": "0c8b26b732696017bbefe22a9e7011756536df21bcaf23b198fc60db22ce6eb3",
+      "artifactCreationBytecodeSha256": "6137fb10db5b84434bd26890d16923410b593cacf46de5e16ae56283cd33462c",
+      "constructorArgsBytes": 0,
+      "enforceMargin": true,
+      "initcodeBytes": 12248,
+      "maskedRanges": [
+        {
+          "length": 32,
+          "start": 7
+        },
+        {
+          "length": 20,
+          "start": 5578
+        }
+      ],
+      "minimumRuntimeMargin": 2048,
+      "runtimeBytes": 12216,
+      "runtimeCodeHashUnlinked": "0x595da78560c5e1fd0f4be732f621dbc107e3560b2ff3e2d1e1e51628d7833681"
+    },
+    {
+      "artifact": "src/hub/HubRequestGateway.sol:HubRequestGateway",
+      "artifactBytecodeSha256": "1bb149b0ad04abfb4aa641a73b546d5e3fe803ab8c1d1cdace6ffce923f1fceb",
+      "artifactCreationBytecodeSha256": "6ad6a4e0b846703d06f21d1e02953abdcb1d09cd082f0645ae8f5967d3afa2b0",
+      "constructorArgsBytes": 64,
+      "enforceMargin": true,
+      "initcodeBytes": 1561,
+      "maskedRanges": [
+        {
+          "length": 32,
+          "start": 219
+        },
+        {
+          "length": 32,
+          "start": 507
+        },
+        {
+          "length": 32,
+          "start": 744
+        },
+        {
+          "length": 32,
+          "start": 838
+        },
+        {
+          "length": 32,
+          "start": 906
+        },
+        {
+          "length": 32,
+          "start": 994
+        },
+        {
+          "length": 32,
+          "start": 1232
+        }
+      ],
+      "minimumRuntimeMargin": 2048,
+      "runtimeBytes": 1278,
+      "runtimeCodeHashUnlinked": "0xf2c8cae7692ccb2cf28e219083dc5667ebc1da15f08a9ffb4b697135c161e750"
+    }
+  ],
+  "sizePolicy": {
+    "defaultMinimumRuntimeMargin": 2048,
+    "initcodeLimit": 49152,
+    "overrides": {},
+    "runtimeLimit": 24576
+  },
+  "storageNamespaces": [
+    {
+      "namespace": "xarb.storage.Diamond",
+      "slot": "0x2a5bb879c6f2a423fadc5552185454e2e4a1f97300a7123afb5d48f930e5e400"
+    },
+    {
+      "namespace": "xarb.storage.DiamondInit",
+      "slot": "0xa214d3d57e920b32c6027b8dc5705d2f320d6542cd89bf9a440b166c3edb5000"
+    },
+    {
+      "namespace": "openzeppelin.storage.AccessControl",
+      "slot": "0x02dd7bc7dec4dceedda775e58dd541e08a116c6c53815c0bd028192f7b626800"
+    },
+    {
+      "namespace": "xarb.storage.TwoStepDefaultAdmin",
+      "slot": "0x33ddd1aa3999da29e3231ff743ea210de5fa3b63d846215811f71908766a6c00"
+    },
+    {
+      "namespace": "openzeppelin.storage.Initializable",
+      "slot": "0xf0c57e16840df040f15088dc2f81fe391c3923bec73e23a9662efc9c229c6a00"
+    },
+    {
+      "namespace": "openzeppelin.storage.ReentrancyGuard",
+      "slot": "0x9b779b17422d0df92223018b32b4d1fa46e071723d6817e2486d003becc55f00"
+    },
+    {
+      "namespace": "xarb.storage.Hub",
+      "slot": "0x8e13dd26e8cf2675185986fd833d0ef622f5ac4fe7b2ca96cf95e76cb9a73600"
+    },
+    {
+      "namespace": "xarb.storage.Spoke",
+      "slot": "0x5acc4ad8ad2e76c2e9f832a5d8ec98fe6d4cbcebd9afb68c5781b71e6fc4bb00"
+    },
+    {
+      "namespace": "xarb.storage.EscrowVault",
+      "slot": "0xb13d1854932d1cdaf982177b5fb6cfe4d5a82a6bfbf119cc2d5b92f0fcc43400"
+    }
+  ],
+  "target": "hub"
+}
