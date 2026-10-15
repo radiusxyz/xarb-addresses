@@ -1,5 +1,5 @@
 {
-  "abiSha256": "0x6fa0de00f66a8357e8dafa41aa76964825dbea045f89c94326ed0a7995024f9c",
+  "abiSha256": "0xc8a6479dee4331f7a0e7d501b173d3604bcfb6aaa9f621e9b2abf42e1a328107",
   "build": {
     "compilerVersion": "0.8.26+commit.8a97fa7a",
     "dependencyRevisions": {
@@ -61,18 +61,18 @@
       "src/diamond/interfaces/IDiamondLoupe.sol": "0xdc06669c68483f8f384d4b6c6db1a6f0f915cf6cf23683084483cd5c11e19f4e",
       "src/hub/HubConstants.sol": "0x5733b3a28462a061e9d4bdaa0f6dd0d0e6340acc2a9ed1a0a5a96de2f6591d09",
       "src/interfaces/IAggregatorV3.sol": "0x1a369c53e9e42916d008fbc18c30cac4a62667f67e37a28937f4fdaacb26f8a2",
-      "src/interfaces/IEscrowVault.sol": "0x26e4637f1c5023bd84619cf28ad045067013b821ef3a1ab55db3accafc6f89e8",
+      "src/interfaces/IEscrowVault.sol": "0x73289a7643997bf582805479bdabd26efb22f65fbac180f1e28f8be11955cab5",
       "src/interfaces/IFlashLoanSimpleReceiver.sol": "0x60ffa5499cadf0d5de005ad4ecea68bc01994e501d7ac768a829501611190b09",
       "src/interfaces/IHub.sol": "0x8d6ddc601b9cef109d64d30e8661b7a90c255cd25381f3d8f841612ac6e5cbd6",
-      "src/interfaces/ILendingPool.sol": "0x45ffd9fa571d81bd657aa4e97cf7bb06f18e6217d7c3c1637e6530499efda19d",
-      "src/interfaces/ILendingPoolEvents.sol": "0x80abe9fd7603b762191d845477f4b2f9417bbafb03ef4ef7380143ea1ff69c54",
+      "src/interfaces/ILendingPool.sol": "0xedfcbc0395b30f85ddd4df737b4d2887cd42eb53a4a10f0ab793ce5ee9419196",
+      "src/interfaces/ILendingPoolEvents.sol": "0x65a91bfe8ff98e10881849e7a23c59ea86cc9fcc6892cad0bc11f46f87310e7e",
       "src/interfaces/IPriceSource.sol": "0xfcfa6e661c978d20d6f71cd34d4b4f9fcf54a2db5c2623ffdba514600b456626",
       "src/interfaces/IScaledToken.sol": "0xdbc9e5c747283373ecc02f76fb00da2e7bcb6b8cc3cf44d339ae6494849878ec",
       "src/interfaces/ISpokeEvents.sol": "0xc3f8bf3c4476d51e29d7c7a94dde482c026d8f0600c7ee3888cfe50a02cb9507",
       "src/interfaces/ISpokeTokenFactory.sol": "0xaa5c3472fa3e3bc3079adb1b29befcb69fadbdd7d8e46a2ab99a8b3011a8921e",
       "src/interfaces/IStrategyReceiver.sol": "0x8097e3bb84ef843a25a9e2b835f2ef8aa65c2494cc759779010399eea07aaa33",
       "src/interfaces/IValidatorRegistry.sol": "0x901d6b4b70a3aac88023d65730975c89e4cdd19ba9e8218ff7a0332b355f5552",
-      "src/interfaces/IVaultEvents.sol": "0x9957db27a84d04e047e61bdc3154837eb800ad6971a44d8b6f3cd608b9e5c598",
+      "src/interfaces/IVaultEvents.sol": "0x7253d75bf2d54b7df8576b7d16cc2c40d58cfc61307b2dafc86684b6def3915e",
       "src/libraries/CreditPaymentMath.sol": "0xd5b6efb40dd8fc73aa3d692d45228a9f7257f0f199e578d2e45eddb656fd1572",
       "src/libraries/DataTypes.sol": "0xb5340bc8ee018a805aa3400ee698567f9a6fb9e16eda89b41a9ec27914e1220a",
       "src/libraries/Errors.sol": "0x3e0a2ed59a17584367e959e6d9eb30bea87ed7bacdf174bbf32bfc6459444cf2",
@@ -80,14 +80,14 @@
       "src/libraries/LiquidationMath.sol": "0x062c95795b4ff0daed8efe7bd9c3ba177f64f86bda3a2131bcb78f8f3d909562",
       "src/libraries/MathUtils.sol": "0x46c2de3f72c46a60bf1fd6f46892a57673951fae1cc4b90adb2068afa5dbfbd3",
       "src/libraries/WadRayMath.sol": "0x884296cfd0ec024066a457f7b868d2f606454cad960e1f75c365ba729bf102a9",
-      "src/spoke/EscrowVault.sol": "0x33706d457a076f0e8e45703bf87024df2429c37f1d7e502b8fb383fb875c25e5",
-      "src/spoke/LendingPool.sol": "0x22b0da00ddc5c56dfeb9aa09ffcce6e17baf984a7096ae055a7e5d41cbe8526b",
-      "src/spoke/LendingPoolStorageLib.sol": "0xc0cdd56e37910fbe3995be5f2152a355586587f41ae45397fda30126e3b53e26",
+      "src/spoke/EscrowVault.sol": "0x1a23ec77b57b6bcc4cf2b34d5aa8f53e18bdb24c7e479feac96810e22119cad5",
+      "src/spoke/LendingPool.sol": "0xb5d9a0cee8a25e273233bd8f346b473646add2e7e305be0698849f4b8d4b63bb",
+      "src/spoke/LendingPoolStorageLib.sol": "0xd3c25b823d0b0a474604e61d027721d64c077e5618a7fb776a087a9f58540ce5",
       "src/spoke/SpokeFacetBase.sol": "0x4bf90e0102da7e51c81c69b39ab759ad78cc5868fa6222dbe2691bb6c5442109",
       "src/spoke/SpokeInit.sol": "0x1c529e527519bd97a8a6139c07685e103da24db4ccc9f62f10eaca5aee8fba58",
       "src/spoke/SpokeStorageBase.sol": "0xb57dd9be1df4ac359186e8baf857c026555c22ee11f9b8a93f23bc1854d71c83",
       "src/spoke/SpokeStorageViews.sol": "0xa8455e89cd69cdcdb8b06377612fc6286c8bdb7661282fc4a3fd42d1d773331a",
-      "src/spoke/facets/SpokeAdminFacet.sol": "0x001a8138f0b65c79a67244739a382910b94da611de53469e17de1d8693422014",
+      "src/spoke/facets/SpokeAdminFacet.sol": "0xd7bfc5203f26461cd4e1aa8027e00d44a43ac413d47a8f8aa87c1f0a34bc8676",
       "src/spoke/facets/SpokeEscrowFacet.sol": "0x48d7b2a72858ae2f82b0f7b78f24be763707ee61524f72546e09dfa07aba62d4",
       "src/spoke/facets/SpokeHubLaneFacet.sol": "0x9654574a735cc41d680795f0d743b79c89de5f24cf139eef237f8dcd106745d6",
       "src/spoke/facets/SpokePermitFacet.sol": "0xc5ba8318c59fc688c1cbdbebc15800af6431eec381e4f6159bdcc27dbcebfe81",
@@ -96,9 +96,9 @@
       "src/spoke/facets/SpokeViewFacet.sol": "0x9129fb1d8b4df86f5f1365685be0496a3bda591581d38533b621f52a0aa0cf8b",
       "src/spoke/logic/LendingPoolFlashLoanLogic.sol": "0x8fb8ad6d4ddf8cf9c8374d03e57f288a63ed8b3978dd1c0611d26b5926e91a4b",
       "src/spoke/logic/LendingPoolLiquidationLogic.sol": "0xc761d0e83d7d5ac03a4b9045c1068b677fd5e4574591de0f3aff290f2b628ef8",
-      "src/spoke/logic/LendingPoolRateLogic.sol": "0x3ec54cbc88c52211d11cc04bb63074894066226dd3ee10578f892fe0361f6945",
+      "src/spoke/logic/LendingPoolRateLogic.sol": "0x803780b34aa8b97ba4a4953d99fdd5741a69c92d5f26a4d0452bdc937938c6b9",
       "src/spoke/logic/LendingPoolStrategyLogic.sol": "0x16b82d48f5b6c56fb5b37a5d9724003f676b1b64c21fbaf0dc693eb465a0bb3d",
-      "src/spoke/logic/LendingPoolSupplyLogic.sol": "0x110f997cf173f6871e47d7dc191be25dbd871ce93b680e6209939283cd2c8798",
+      "src/spoke/logic/LendingPoolSupplyLogic.sol": "0x0e193b95854a449c4ed59b944451abb7d8f2cd82a67699e3fa89068c2961314f",
       "src/spoke/logic/LendingPoolWithdrawLogic.sol": "0x3d197ed559de0a6a72f4a9d565b1a49c74e0cf6eb1f975f159e6ef41b2dd49eb",
       "src/spoke/logic/SpokeCommitmentLogic.sol": "0x4d99e0cf1b1ee81a05f3b3731c45d0e0faacefee4d179d8f6a1920b0af6f7103",
       "src/spoke/logic/SpokeCreditLogic.sol": "0x984ae5b9a64c67892d9e12c3b7da3c6ba6c331303ea944803c73a7e1038518f3",
@@ -444,11 +444,19 @@
         {
           "selector": "0x23be7568",
           "signature": "setSequencerFeed(address,uint48)"
+        },
+        {
+          "selector": "0x3455e379",
+          "signature": "adminPhantomDeposit(address,address,uint256)"
+        },
+        {
+          "selector": "0xb784a44e",
+          "signature": "adminPhantomEscrowDeposit(address,address,address,uint256)"
         }
       ],
       "maskedRanges": [],
       "name": "SpokeAdminFacet",
-      "runtimeCodeHashUnlinked": "0x15c31cbdd03a88815e646a42ee88a7573cde143efeefb01991d27dc4829fb391"
+      "runtimeCodeHashUnlinked": "0x39e267dc3a0ede25f8aa0b3b2e027dd342b1e83788dc37d4482207663135fa54"
     },
     {
       "artifact": "src/spoke/facets/SpokeViewFacet.sol:SpokeViewFacet",
@@ -754,7 +762,7 @@
       "artifact": "src/spoke/LendingPool.sol:LendingPool",
       "constructorArgsBytes": 0,
       "enforceMargin": true,
-      "minimumRuntimeMargin": 4096
+      "minimumRuntimeMargin": 4048
     },
     {
       "artifact": "src/spoke/EscrowVault.sol:EscrowVault",
@@ -777,13 +785,13 @@
       "constructorArgsBytes": 512
     }
   ],
-  "selectorCount": 102,
+  "selectorCount": 104,
   "sizeArtifacts": [
     {
       "artifact": "src/diamond/Diamond.sol:Diamond",
       "artifactBytecodeSha256": "62e68c96c13f003c7565421eb55b2fe77dfeb2a9ec64f8b1d18e1f14230dc513",
       "artifactCreationBytecodeSha256": "06a2d115d14f76a0a9fea797e34848953ebd78d52f9c2fec70291cefa33551b9",
-      "constructorArgsBytes": 5184,
+      "constructorArgsBytes": 5248,
       "enforceMargin": true,
       "initcodeBytes": 4003,
       "maskedRanges": [],
@@ -907,15 +915,15 @@
     },
     {
       "artifact": "src/spoke/facets/SpokeAdminFacet.sol:SpokeAdminFacet",
-      "artifactBytecodeSha256": "6601a71846516e220cea26260fac5a68036eba2f10320ad1fa51fd408eaab1a9",
-      "artifactCreationBytecodeSha256": "bfa2947c2d9d388cb3eb2e344bf5cd9052401f1dcef8d3fdf6769d6814871731",
+      "artifactBytecodeSha256": "58def5698f144df6e4e668e5836bfcf975d7bfa77c5c7fc95bd4e47b8e63a29b",
+      "artifactCreationBytecodeSha256": "97401c3fffb94393f170d5b12812d848bce5da4c1fa9371883af62b659eaacca",
       "constructorArgsBytes": 0,
       "enforceMargin": true,
-      "initcodeBytes": 5325,
+      "initcodeBytes": 9941,
       "maskedRanges": [],
       "minimumRuntimeMargin": 2048,
-      "runtimeBytes": 5263,
-      "runtimeCodeHashUnlinked": "0x15c31cbdd03a88815e646a42ee88a7573cde143efeefb01991d27dc4829fb391"
+      "runtimeBytes": 9879,
+      "runtimeCodeHashUnlinked": "0x39e267dc3a0ede25f8aa0b3b2e027dd342b1e83788dc37d4482207663135fa54"
     },
     {
       "artifact": "src/spoke/facets/SpokeViewFacet.sol:SpokeViewFacet",
@@ -982,11 +990,11 @@
     },
     {
       "artifact": "src/spoke/logic/LendingPoolRateLogic.sol:LendingPoolRateLogic",
-      "artifactBytecodeSha256": "757241722b45512ad0d86b27b175bf0dfec1856ecbb91ac2372ff1e3492decc8",
-      "artifactCreationBytecodeSha256": "0233a53c1f6ba835bfb0821d778992680a750291fea763ab7099092cb254b911",
+      "artifactBytecodeSha256": "f11367fd8e131f40fdf693302bc68aeb71a2dd3d4a5d0c1afaa194a27ff77aaf",
+      "artifactCreationBytecodeSha256": "5c21cf9ac5df29896f8150017522de3e9b6a84deca42f2961e35be0611c58d59",
       "constructorArgsBytes": 0,
       "enforceMargin": true,
-      "initcodeBytes": 4734,
+      "initcodeBytes": 5067,
       "maskedRanges": [
         {
           "length": 32,
@@ -994,16 +1002,16 @@
         }
       ],
       "minimumRuntimeMargin": 2048,
-      "runtimeBytes": 4702,
-      "runtimeCodeHashUnlinked": "0x9177563119c1cee7208ac6f1450cb37cc748fd9924f17146fef1f519c89f8043"
+      "runtimeBytes": 5035,
+      "runtimeCodeHashUnlinked": "0x99e12890c74d1b39c9040e71536b8767205921b4a96fb735c2988d4ded2d4b20"
     },
     {
       "artifact": "src/spoke/logic/LendingPoolSupplyLogic.sol:LendingPoolSupplyLogic",
-      "artifactBytecodeSha256": "c9371a167c62d77fb277bd9754c52c893f68c592d2ca2ec5d0dbf3b313bd1232",
-      "artifactCreationBytecodeSha256": "c7d1749caa18cb116dbb633cc03f428a6f3104f6882a6afd83383bc7f676d098",
+      "artifactBytecodeSha256": "7a9492d4299435081040cb06939e537a9c570e7a329e322643bf8f4edcbc2480",
+      "artifactCreationBytecodeSha256": "81b7bb2c39737b7a79fc1fcb384ae4cfc099c8b9a6b4039cbd4156085b0777e4",
       "constructorArgsBytes": 0,
       "enforceMargin": true,
-      "initcodeBytes": 2728,
+      "initcodeBytes": 2830,
       "maskedRanges": [
         {
           "length": 32,
@@ -1011,16 +1019,16 @@
         },
         {
           "length": 20,
-          "start": 177
+          "start": 509
         },
         {
           "length": 20,
-          "start": 1185
+          "start": 1817
         }
       ],
       "minimumRuntimeMargin": 2048,
-      "runtimeBytes": 2696,
-      "runtimeCodeHashUnlinked": "0x2f83b9c3a985fba16ff233a2b7bf72d8446610a16aa00cf7991cfebc7b4a983f"
+      "runtimeBytes": 2798,
+      "runtimeCodeHashUnlinked": "0xbdb02c63de7c8e2e03448fcad92fb3a86251e0092cf8a56102c5ffc02ddc76cb"
     },
     {
       "artifact": "src/spoke/logic/LendingPoolWithdrawLogic.sol:LendingPoolWithdrawLogic",
@@ -1161,133 +1169,137 @@
     },
     {
       "artifact": "src/spoke/LendingPool.sol:LendingPool",
-      "artifactBytecodeSha256": "a974a27ce90e13cb7e667334db13026f6d88c1799ebb591598ab654ede6410e8",
-      "artifactCreationBytecodeSha256": "d4d195b1ab283ca0ecaf479f39171ab9f172bec8dec3ec2121fd05f67e5c7f28",
+      "artifactBytecodeSha256": "2f032cda14463853e2b2a6d1a76488418926b36364d38f5a1365013661f3b266",
+      "artifactCreationBytecodeSha256": "942e1d6e3d9ad4a43663428c583acb858170b59e91ec6c13074945420013d5c9",
       "constructorArgsBytes": 0,
       "enforceMargin": true,
-      "initcodeBytes": 20416,
+      "initcodeBytes": 20801,
       "maskedRanges": [
         {
           "length": 20,
-          "start": 1108
+          "start": 1156
         },
         {
           "length": 20,
-          "start": 1738
+          "start": 1786
         },
         {
           "length": 20,
-          "start": 1916
+          "start": 1964
         },
         {
           "length": 20,
-          "start": 5693
+          "start": 4258
+        },
+        {
+          "length": 20,
+          "start": 5084
+        },
+        {
+          "length": 20,
+          "start": 6141
         },
         {
           "length": 32,
-          "start": 6385
+          "start": 6831
         },
         {
           "length": 20,
-          "start": 6528
+          "start": 6974
         },
         {
           "length": 20,
-          "start": 8239
+          "start": 8685
         },
         {
           "length": 20,
-          "start": 8655
+          "start": 9044
         },
         {
           "length": 20,
-          "start": 9002
+          "start": 9391
         },
         {
           "length": 20,
-          "start": 11892
+          "start": 12281
         },
         {
           "length": 20,
-          "start": 12308
+          "start": 12697
         },
         {
           "length": 20,
-          "start": 12491
-        },
-        {
-          "length": 20,
-          "start": 13965
+          "start": 14349
         },
         {
           "length": 32,
-          "start": 15836
+          "start": 16240
         },
         {
           "length": 20,
-          "start": 18008
+          "start": 18392
         },
         {
           "length": 20,
-          "start": 18339
+          "start": 18723
         },
         {
           "length": 20,
-          "start": 18462
+          "start": 18846
         },
         {
           "length": 20,
-          "start": 19051
+          "start": 19435
         }
       ],
-      "minimumRuntimeMargin": 4096,
-      "runtimeBytes": 20143,
-      "runtimeCodeHashUnlinked": "0xa3f127d7f92120f9d0f52564c0f9320c8060d21b016c78c3ae1bd79ea7db5a0f"
+      "minimumRuntimeMargin": 4048,
+      "runtimeBytes": 20528,
+      "runtimeCodeHashUnlinked": "0x2af72a3b2c3a84d7773d4ff46ddc82e5f7733840ef5abf47ce7434402163ca30"
     },
     {
       "artifact": "src/spoke/EscrowVault.sol:EscrowVault",
-      "artifactBytecodeSha256": "fe8770ab766bafb2ea5d80ce34b6ccab5805a8151b42cdac7979cde4dc6c3799",
-      "artifactCreationBytecodeSha256": "7638cc9cb3cdf40b2fdffc9e87bfdd934fcf066c6d6faf212b96ec3e2726e457",
+      "artifactBytecodeSha256": "424eb53631f10be3e7127ee1b8e53df10215ecaf5077bf59b417c318b95d6961",
+      "artifactCreationBytecodeSha256": "cafd891793a578209ba24b3c5717ae0164b1322b3d47dc032eb8382a194b86f3",
       "constructorArgsBytes": 0,
       "enforceMargin": true,
-      "initcodeBytes": 10242,
+      "initcodeBytes": 10897,
       "maskedRanges": [
         {
           "length": 20,
-          "start": 1538
+          "start": 1571
         },
         {
           "length": 20,
-          "start": 1660
+          "start": 1693
         },
         {
           "length": 20,
-          "start": 2229
+          "start": 2262
         },
         {
           "length": 20,
-          "start": 4844
+          "start": 4877
         },
         {
           "length": 32,
-          "start": 5035
+          "start": 5104
         },
         {
           "length": 32,
-          "start": 5307
+          "start": 5376
         },
         {
           "length": 20,
-          "start": 5985
+          "start": 6105
         },
         {
           "length": 20,
-          "start": 6091
+          "start": 6468
         }
       ],
       "minimumRuntimeMargin": 2048,
-      "runtimeBytes": 9969,
-      "runtimeCodeHashUnlinked": "0xe0f34b88359e5670fbf062d7e3272e06d9b196ccea6b7df013c75d1f4a799f7a"
+      "runtimeBytes": 10624,
+      "runtimeCodeHashUnlinked": "0x39053b2eb63d9e7cc22ee904fe1ac6ef84207cf8c17807f98bd4dceaa97719bb"
     },
     {
       "artifact": "src/tokenization/SpokeTokenFactory.sol:SpokeTokenFactory",
