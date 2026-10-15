@@ -1,5 +1,5 @@
 {
-  "abiSha256": "0x8ae74791d5795875c7fc342693994597c1023ba5f2523fdc8a31133fc1068039",
+  "abiSha256": "0x4b91570ce5c966d5abd3896c70b82e5e3a017b264274e5b9a10e1aaa7863925b",
   "build": {
     "compilerVersion": "0.8.26+commit.8a97fa7a",
     "dependencyRevisions": {
