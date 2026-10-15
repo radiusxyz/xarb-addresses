@@ -4,8 +4,8 @@ updated_at: "2026-10-15"
 
 protocol:
   name: xarb
-  release: "1a9b434"
-  contracts_commit: 1a9b434e37811675c5a27a989097dbb7d542294d
+  release: "69fe9f0"
+  contracts_commit: 69fe9f0b960a924625eb665df96c7db187dd88f7
 
 artifacts:
   event_registry:
@@ -13,14 +13,14 @@ artifacts:
     sha256: "3732da519ce7838efb693bcc07211bcc508b3aa44a846449f39f4c0a6ca2eb8f"
   hub_manifest:
     path: artifacts/manifests/hub.json
-    keccak256: "0xfb6afb746ba42ff53256e67e52d6fe4b2c7b2ded8147a3b72c7e00a3d0753086"
+    keccak256: "0xbc62ea9e386e082d75ab247a892eae98967abc7b344e27ee58f62ee847ce31e2"
   spoke_manifest:
     path: artifacts/manifests/spoke.json
     keccak256: "0x25cdb6005388134c92cffe0bdbfc7fc9c7865ffe55595d4dec2f5285e79029a3"
   abi:
     hub:
       path: artifacts/abi/hub.json
-      sha256: "8ae74791d5795875c7fc342693994597c1023ba5f2523fdc8a31133fc1068039"
+      sha256: "4b91570ce5c966d5abd3896c70b82e5e3a017b264274e5b9a10e1aaa7863925b"
     spoke:
       path: artifacts/abi/spoke.json
       sha256: "c8a6479dee4331f7a0e7d501b173d3604bcfb6aaa9f621e9b2abf42e1a328107"
